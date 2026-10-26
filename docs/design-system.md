@@ -160,7 +160,7 @@ Added 2026-10-25. This supersedes the earlier "no scroll-triggered animation" gu
 Added 2026-10-25. Icons are functional only.
 
 - Inline SVG on a 24px grid, 1.75px stroke, round caps and joins, `currentColor`, `aria-hidden` by default.
-- Allowed uses: the resources table, training formats, the process loop bar, and menu, arrow, external-link, and download markers.
+- Allowed uses: the resources table, training formats, the process loop bar, and menu, arrow, external-link, and download markers. Conversion pages also use check (selected pill), alert (errors), and the message, layers, and file icons that label rows on Contact.
 - Do not use icons as decoration or build an icon collection. Do not add an icon library.
 - Set: live (broadcast), calendar, book (guides), checklist, template, glossary, help (FAQ), edit (blog), loop, menu, arrow, external, download. Live, calendar, book, checklist, template, glossary, help, edit, and loop come from the approved reference. Menu, arrow, external, and download are drawn in the same style.
 

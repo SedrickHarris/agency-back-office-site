@@ -19,6 +19,9 @@
   --color-on-dark-muted: #c9d4ea;
   --color-placeholder: #e6eaf0;
   --color-placeholder-line: #8d99ab;
+  --color-error: #b3261e;
+  --color-field-border: #6b7a94;
+  --color-highlight: #d9e5fd;
 }
 
 :root {
@@ -1252,5 +1255,718 @@ details.q .ans {
   * {
     transition: none !important;
     animation: none !important;
+  }
+}
+
+/* ---------- contact page ---------- */
+/* Selectors start with .ct-page so they out-specify the `.page p { margin: 0 }`
+   reset (see the hero spacing note in docs/decisions-change-log.md). Colors come
+   from the tokens above, never hex. No transitions or animation here. */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+.page .crumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--color-muted);
+}
+.page .crumbs li[aria-current="page"] {
+  color: var(--color-ink);
+  font-weight: 500;
+}
+.page .crumbs .crumb-sep {
+  margin-inline: 8px;
+}
+.ct-page .ct-crumbs {
+  padding-top: 24px;
+}
+
+.ct-page .ct-main {
+  padding-top: 32px;
+  padding-bottom: 96px;
+}
+.ct-page .ct-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  column-gap: 64px;
+  align-items: start;
+}
+.ct-page .ct-side {
+  position: sticky;
+  top: 32px;
+}
+.ct-page .ct-intro {
+  border-top: 2px solid var(--color-ink);
+  padding-top: 20px;
+}
+.ct-page .ct-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  line-height: 1.5;
+}
+.ct-page .ct-h1 {
+  margin-top: 16px;
+  font-weight: 800;
+  font-size: clamp(2.125rem, 1.5rem + 1.9vw, 3rem);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+}
+.ct-page p.ct-lead {
+  margin-top: 20px;
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: var(--color-muted);
+  max-width: 440px;
+}
+.ct-page .ct-h2 {
+  font-weight: 700;
+  font-size: 1.75rem;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+.ct-page .ct-h2-sm {
+  font-weight: 700;
+  font-size: 1.75rem;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+.ct-page .ct-list .ct-h2-sm {
+  margin-top: 48px;
+  margin-bottom: 16px;
+  font-size: 1.25rem;
+  letter-spacing: 0;
+}
+
+/* rows: icon + text, used by the list, callouts, and options */
+.ct-page .ct-row {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 20px 0;
+  border-top: 1px solid var(--color-rule);
+}
+.ct-page ol > .ct-row:last-child,
+.ct-page ul > .ct-row:last-child {
+  border-bottom: 1px solid var(--color-rule);
+}
+.ct-page .ct-ico {
+  flex: none;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-rule);
+  border-radius: 4px;
+  color: var(--color-ink);
+}
+.ct-page .ct-ico .ico {
+  width: 24px;
+  height: 24px;
+  color: var(--color-ink);
+}
+.ct-page p.ct-row-title {
+  font-weight: 600;
+  font-size: 1rem;
+}
+.ct-page p.ct-row-text {
+  margin-top: 4px;
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  color: var(--color-muted);
+}
+
+/* survey panel */
+.ct-page .ct-panel {
+  border: 1px solid var(--color-rule);
+  border-top: 2px solid var(--color-ink);
+  padding: 36px 40px 40px;
+  background: var(--color-paper);
+}
+.ct-page .ct-progress {
+  margin-top: 16px;
+}
+.ct-page .ct-segs {
+  display: flex;
+  gap: 6px;
+  margin-top: 8px;
+}
+.ct-page .ct-seg {
+  flex: 1;
+  height: 4px;
+  background: var(--color-rule);
+  border-radius: 1px;
+}
+.ct-page .ct-seg.on {
+  background: var(--color-ink);
+}
+.ct-page .ct-form {
+  margin-top: 32px;
+}
+.ct-page .ct-noscript {
+  margin-top: 16px;
+  border: 1px solid var(--color-rule);
+  border-top: 2px solid var(--color-error);
+  padding: 16px 20px;
+}
+.ct-page fieldset.ct-group {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+}
+.ct-page .ct-group > legend {
+  padding: 0;
+}
+.ct-page .ct-q {
+  font-weight: 700;
+  font-size: 1.375rem;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  margin-bottom: 6px;
+  scroll-margin-top: 24px;
+}
+.ct-page .ct-req {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  color: var(--color-muted);
+}
+.ct-page p.ct-help {
+  font-size: 0.875rem;
+  line-height: 1.45;
+  color: var(--color-muted);
+}
+
+/* pills: native radio inputs styled as buttons */
+.ct-page .ct-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+.ct-page .ct-pill {
+  position: relative;
+  display: inline-flex;
+}
+.ct-page .ct-pill input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+.ct-page .ct-pill span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 48px;
+  padding: 0 20px;
+  border: 1px solid var(--color-field-border);
+  border-radius: 4px;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-weight: 500;
+  font-size: 1rem;
+}
+.ct-page .ct-pill:hover span {
+  border-color: var(--color-ink);
+  background: var(--color-tint);
+}
+.ct-page .ct-pill .ct-chk {
+  display: none;
+  width: 18px;
+  height: 18px;
+  stroke-width: 2.25;
+  color: currentColor;
+}
+.ct-page .ct-pill input:checked + span {
+  background: var(--color-ink);
+  border-color: var(--color-ink);
+  color: #ffffff;
+}
+.ct-page .ct-pill input:checked + span .ct-chk {
+  display: inline-block;
+}
+.ct-page .ct-pill input:focus-visible + span {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 2px;
+}
+.ct-page .has-error .ct-pill span {
+  border-color: var(--color-error);
+}
+
+/* fields */
+.ct-page .ct-field {
+  margin-top: 18px;
+}
+.ct-page .ct-group .ct-field:first-of-type {
+  margin-top: 20px;
+}
+.ct-page .ct-fl {
+  display: block;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  line-height: 1.3;
+  margin-bottom: 6px;
+}
+.ct-page .ct-field .ct-help {
+  margin-bottom: 6px;
+}
+.ct-page .ct-input {
+  display: block;
+  width: 100%;
+  min-height: 48px;
+  padding: 0 14px;
+  border: 1px solid var(--color-field-border);
+  border-radius: 4px;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+.ct-page .ct-input:hover {
+  border-color: var(--color-ink);
+}
+.ct-page textarea.ct-textarea {
+  padding-block: 12px;
+  resize: vertical;
+}
+.ct-page .has-error .ct-input,
+.ct-page .ct-input[aria-invalid="true"] {
+  border-color: var(--color-error);
+}
+.ct-page .has-error .ct-fl {
+  color: var(--color-error);
+}
+.ct-page p.ct-error {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  margin-top: 8px;
+  font-size: 0.9375rem;
+  line-height: 1.4;
+  color: var(--color-error);
+}
+.ct-page .ct-error .ico,
+.ct-page .ct-alert .ico {
+  width: 20px;
+  height: 20px;
+  margin-top: 1px;
+  color: var(--color-error);
+}
+.ct-page .ct-hp {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.ct-page .ct-security {
+  margin-top: 24px;
+}
+.ct-page .ct-turnstile {
+  min-height: 65px;
+  max-width: 100%;
+  overflow: hidden;
+}
+.ct-page p.ct-privacy {
+  margin-top: 20px;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: var(--color-muted);
+}
+
+/* error summary and form notice */
+.ct-page .ct-alert {
+  border: 1px solid var(--color-rule);
+  border-top: 2px solid var(--color-error);
+  background: var(--color-paper);
+  padding: 16px 20px;
+  margin-bottom: 24px;
+}
+.ct-page .ct-notice {
+  margin-top: 24px;
+  margin-bottom: 0;
+}
+.ct-page .ct-alert-h {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-weight: 700;
+  font-size: 1.125rem;
+  line-height: 1.3;
+  scroll-margin-top: 24px;
+}
+.ct-page .ct-summary ul {
+  margin-top: 8px;
+  padding-left: 28px;
+  list-style: disc;
+}
+.ct-page .ct-summary li {
+  padding-block: 2px;
+}
+.ct-page .ct-notice p {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  scroll-margin-top: 24px;
+}
+
+/* actions */
+.ct-page .ct-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 36px;
+}
+.ct-page button.ct-btn {
+  border: 2px solid var(--color-accent);
+  cursor: pointer;
+  padding-inline: 28px;
+}
+.ct-page button.ct-btn:hover {
+  border-color: var(--color-accent-hover);
+}
+.ct-page button.ct-btn[aria-disabled="true"] {
+  cursor: progress;
+  background: var(--color-accent-hover);
+}
+.ct-page .ct-back {
+  background: none;
+  border: 0;
+  color: var(--color-accent);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1rem;
+  min-height: 48px;
+  padding: 0 8px;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.ct-page .ct-back:hover {
+  text-decoration-thickness: 2px;
+}
+.ct-page .ct-success {
+  margin-top: 24px;
+}
+.ct-page .ct-success p {
+  margin-top: 12px;
+}
+.ct-page .ct-success .ct-back {
+  margin-top: 12px;
+  padding-left: 0;
+}
+.ct-page .ct-success .ct-h2-sm {
+  scroll-margin-top: 24px;
+}
+
+/* focus: 3px accent outline, 2px offset, on every control and link */
+.ct-page a:focus-visible,
+.ct-page button:focus-visible,
+.ct-page input:focus-visible,
+.ct-page textarea:focus-visible,
+.ct-page [tabindex="-1"]:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* sections below the survey */
+.ct-page .ct-sec {
+  padding-bottom: 96px;
+}
+.ct-page .ct-sec-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 4fr) minmax(0, 8fr);
+  column-gap: 64px;
+  align-items: start;
+  border-top: 2px solid var(--color-ink);
+  padding-top: 28px;
+}
+.ct-page .ct-sec-rule {
+  border-top: 2px solid var(--color-ink);
+  padding-top: 28px;
+}
+.ct-page .ct-h2 {
+  font-size: 2rem;
+  line-height: 1.15;
+}
+.ct-page .ct-panel .ct-h2 {
+  font-size: 1.75rem;
+  line-height: 1.2;
+}
+.ct-page p.ct-sec-intro {
+  margin-top: 16px;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: var(--color-muted);
+}
+.ct-page .ct-example {
+  background: var(--color-tint);
+  border: 1px solid var(--color-rule);
+  border-radius: 4px;
+  padding: 32px 36px;
+}
+.ct-page p.ct-example-text {
+  margin-top: 16px;
+  font-size: 1.25rem;
+  line-height: 1.75;
+}
+.ct-page .ct-hl {
+  background: var(--color-highlight);
+  padding: 2px 0;
+}
+.ct-page .ct-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  margin-left: 4px;
+  background: var(--color-ink);
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1;
+  border-radius: 2px;
+  vertical-align: 2px;
+}
+.ct-page .ct-badge.ct-badge-lg {
+  flex: none;
+  width: 24px;
+  height: 24px;
+  margin: 0;
+  font-size: 0.8125rem;
+  vertical-align: baseline;
+}
+.ct-page .ct-callouts {
+  margin-top: 8px;
+}
+.ct-page .ct-callouts .ct-row {
+  padding: 16px 0;
+  font-size: 1rem;
+  line-height: 1.55;
+}
+.ct-page .ct-callouts strong {
+  font-weight: 600;
+}
+.ct-page .ct-callouts span:not(.ct-badge) {
+  color: var(--color-muted);
+}
+.ct-page .ct-options {
+  margin-top: 24px;
+}
+.ct-page .ct-opt {
+  position: relative;
+  align-items: center;
+  padding: 24px 0;
+}
+.ct-page .ct-opt-body {
+  flex: 1;
+}
+.ct-page .ct-opt-link {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.25rem;
+  text-decoration: none;
+}
+.ct-page .ct-opt-link:hover {
+  text-decoration: underline;
+}
+/* The whole row is the tap target. */
+.ct-page a.ct-opt-link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+.ct-page .ct-opt p.ct-row-text {
+  font-size: 1rem;
+}
+.ct-page .ct-opt-arrow {
+  width: 24px;
+  height: 24px;
+}
+.ct-page .ct-band {
+  background: var(--color-tint);
+  border-top: 2px solid var(--color-ink);
+}
+.ct-page .ct-band-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 48px;
+  padding-block: 48px;
+}
+.ct-page .ct-band-text {
+  max-width: 620px;
+}
+.ct-page .ct-band-text p {
+  margin-top: 12px;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: var(--color-muted);
+}
+.ct-page .ct-band-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 48px;
+  font-weight: 600;
+  font-size: 1.0625rem;
+  white-space: nowrap;
+}
+.ct-page .ct-band-link .ico {
+  width: 24px;
+  height: 24px;
+  color: currentColor;
+}
+
+@media (max-width: 980px) {
+  .ct-page .ct-grid {
+    display: flex;
+    flex-direction: column;
+  }
+  /* The wrapper dissolves so the survey sits between the lead and the list. */
+  .ct-page .ct-side {
+    display: contents;
+  }
+  .ct-page .ct-intro {
+    order: 1;
+    padding-top: 16px;
+  }
+  .ct-page .ct-panel {
+    order: 2;
+    margin-top: 32px;
+  }
+  .ct-page .ct-list {
+    order: 3;
+    margin-top: 48px;
+    border-top: 2px solid var(--color-ink);
+    padding-top: 16px;
+  }
+  .ct-page .ct-list .ct-h2-sm {
+    margin-top: 0;
+    margin-bottom: 8px;
+  }
+  .ct-page .ct-sec-grid {
+    grid-template-columns: 1fr;
+    row-gap: 24px;
+  }
+  .ct-page .ct-band-inner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
+}
+@media (max-width: 720px) {
+  .ct-page .ct-main {
+    padding-top: 20px;
+    padding-bottom: 0;
+  }
+  .ct-page .ct-panel {
+    padding: 24px 20px;
+  }
+  .ct-page .ct-h1 {
+    margin-top: 12px;
+  }
+  .ct-page p.ct-lead {
+    margin-top: 16px;
+    font-size: 1.0625rem;
+    max-width: none;
+  }
+  .ct-page .ct-panel .ct-h2 {
+    font-size: 1.5rem;
+  }
+  .ct-page .ct-form {
+    margin-top: 24px;
+  }
+  .ct-page .ct-q {
+    font-size: 1.25rem;
+  }
+  .ct-page .ct-pills {
+    gap: 10px;
+    margin-top: 16px;
+  }
+  .ct-page .ct-pill span {
+    padding: 0 16px;
+  }
+  .ct-page .ct-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    margin-top: 28px;
+  }
+  .ct-page .ct-actions .ct-btn {
+    width: 100%;
+    min-height: 52px;
+  }
+  .ct-page .ct-back {
+    align-self: flex-start;
+  }
+  .ct-page .ct-sec {
+    padding-top: 48px;
+    padding-bottom: 0;
+  }
+  .ct-page .ct-sec-grid,
+  .ct-page .ct-sec-rule {
+    padding-top: 16px;
+  }
+  .ct-page .ct-h2 {
+    font-size: 1.5rem;
+  }
+  .ct-page .ct-list .ct-h2-sm {
+    font-size: 1.375rem;
+  }
+  .ct-page .ct-example {
+    padding: 20px;
+    margin-top: 20px;
+  }
+  .ct-page p.ct-example-text {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+  }
+  .ct-page .ct-opt {
+    padding: 18px 0;
+  }
+  .ct-page .ct-opt-link {
+    font-size: 1.125rem;
+  }
+  .ct-page .ct-opt-arrow {
+    display: none;
+  }
+  .ct-page .ct-band {
+    margin-top: 48px;
+  }
+  .ct-page .ct-band-inner {
+    padding-block: 32px;
+  }
+  .ct-page .ct-band-text .ct-h2-sm {
+    font-size: 1.5rem;
+  }
+  .ct-page .ct-band-link {
+    justify-content: space-between;
+    min-height: 52px;
+    border-block: 1px solid var(--color-rule);
+    text-decoration: none;
   }
 }
