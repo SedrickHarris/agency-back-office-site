@@ -31,6 +31,10 @@ The site is a static export (`output: 'export'`) hosted on Cloudflare Pages. See
 - The production domain comes from the `NEXT_PUBLIC_SITE_URL` environment variable via `lib/site.ts`. Never hardcode it.
 - If a feature needs a server runtime, reopen the rendering decision in `docs/decisions-change-log.md` first.
 
+## Git Workflow
+
+All work is committed directly to main. Do not create branches or pull requests.
+
 ## Core Business
 
 Agency Back Office provides practical training in:

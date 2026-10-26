@@ -143,10 +143,10 @@ Runtime image optimization is unavailable. Use `images: { unoptimized: true }` a
 - `NEXT_PUBLIC_SITE_URL` is the production site URL. It is read in one place (`lib/site.ts`) and used for `metadataBase`, canonicals, the sitemap, and robots. It is inlined at build time.
 - Variables are documented in `.env.example` with no real values. Never commit secrets or `.env` files.
 
-### Preview vs Production
+### Production vs Non-Production Builds
 
 - Production: the `main` branch, with `NEXT_PUBLIC_SITE_URL` set to the final domain.
-- Preview: pull requests and other branches, on `*.pages.dev` hostnames. Leave `NEXT_PUBLIC_SITE_URL` unset for preview. When it is unset, `robots.ts` disallows all crawling.
+- Non-production builds (local builds, and any build without a final production domain): leave `NEXT_PUBLIC_SITE_URL` unset. When it is unset, `robots.ts` disallows all crawling.
 - `*.pages.dev` hostnames also receive `X-Robots-Tag: noindex` from `public/_headers`.
 
 ### Forms

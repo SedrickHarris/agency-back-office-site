@@ -30,7 +30,6 @@ The site is a static export hosted on Cloudflare Pages (see `nextjs-technical-ar
 | Path | Purpose |
 |---|---|
 | `.github/workflows/` | Continuous integration (lint, typecheck, build). Deployment is handled by Cloudflare's Git integration, not by GitHub Actions. |
-| `.github/pull_request_template.md` | Short QA checklist derived from `qa-checklist.md`. |
 | `public/_redirects` | Cloudflare Pages redirects. Static export cannot use `next.config` redirects. |
 | `public/_headers` | Cloudflare Pages response headers (security, caching, noindex for `*.pages.dev`). |
 | `.nvmrc` | Pins the Node version for local, CI, and Cloudflare builds. |

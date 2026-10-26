@@ -53,10 +53,12 @@ npm run check     # lint, typecheck, and build
 
 To preview the export locally, serve the `out/` directory with any static file server after `npm run build`.
 
-Branch and deploy flow:
+All work is committed directly to main. Do not create branches or pull requests.
 
-- `main` is the production branch.
-- Pull requests and other branches get preview deployments.
+Deploy flow:
+
+- `main` is the production branch. Cloudflare deploys production on every push to `main`.
+- Before every push, run `npm run check`. For page-level work, also review `docs/qa-checklist.md`.
 - GitHub Actions runs checks only. Cloudflare's Git integration performs deployment.
 - Copy `.env.example` to `.env.local` for local variables. Never commit `.env` files.
 

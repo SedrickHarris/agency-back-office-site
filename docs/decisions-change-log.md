@@ -45,6 +45,24 @@ Use service pages, audience pages, and audience + service pages, supported by tr
 **Decision:**  
 Use `/audiences/{audience-slug}/{service-slug}/`.
 
+### 2026-10-25 — Git workflow - direct pushes to main, no PRs
+
+**Area:** Technical
+
+**Decision:**  
+All work is committed directly to main. No feature branches, no pull requests. This supersedes the preview-deployment wording for pull requests and other branches in "Rendering and hosting - static export on Cloudflare Pages".
+
+**Reason:**  
+Owner's hard rule.
+
+**Affected Files/Routes:**  
+`README.md`, `CLAUDE.md`, `.github/workflows/ci.yml`, Cloudflare Pages settings.
+
+**Follow-Up:**  
+Run `npm run check` locally before every push. Review CI results after each push and fix forward with a new commit. Cloudflare deploys production on every push to main.
+
+---
+
 ### 2026-10-25 — Rendering and hosting - static export on Cloudflare Pages
 
 **Area:** Technical
