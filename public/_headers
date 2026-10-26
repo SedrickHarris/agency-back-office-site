@@ -1,0 +1,21 @@
+# Cloudflare Pages response headers. Applies to static assets only.
+# Syntax verified against Cloudflare Pages docs (developers.cloudflare.com/pages/configuration/headers).
+# TODO (future task): add a Content-Security-Policy after testing. Not set yet.
+
+# Security headers for all paths
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: DENY
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+
+# Long-cache rule for hashed static assets emitted by Next.js
+/_next/static/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Never index Cloudflare default hostnames. Placeholders match one host label
+# (no periods), so both the production default and per-deployment preview hosts are covered.
+https://:project.pages.dev/*
+  X-Robots-Tag: noindex
+https://:deployment.:project.pages.dev/*
+  X-Robots-Tag: noindex
