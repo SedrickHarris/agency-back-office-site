@@ -14,7 +14,9 @@ export function PillGroup({
   value,
   error,
   headingRef,
+  clearLabel,
   onChange,
+  onClear,
   onFocus,
 }: {
   name: string;
@@ -25,7 +27,10 @@ export function PillGroup({
   value: string;
   error?: string;
   headingRef?: Ref<HTMLHeadingElement>;
+  // Optional groups only: a text button that appears once an answer is chosen.
+  clearLabel?: string;
   onChange: (value: string) => void;
+  onClear?: () => void;
   onFocus: () => void;
 }) {
   const helperId = `ct-${name}-help`;
@@ -69,6 +74,11 @@ export function PillGroup({
           </label>
         ))}
       </div>
+      {clearLabel && onClear && value ? (
+        <button type="button" className="ct-back ct-clear" onClick={onClear}>
+          {clearLabel}
+        </button>
+      ) : null}
       {error ? <FieldError id={errorId} message={error} /> : null}
     </fieldset>
   );

@@ -48,8 +48,9 @@ export default function ContactPage() {
       {/* 2. Intro and survey */}
       <section className="wrap ct-main" aria-labelledby="h-survey">
         <div className="ct-grid">
-          <ContactIntro content={intro} />
-          <ContactSurvey />
+          <ContactIntro content={intro}>
+            <ContactSurvey />
+          </ContactIntro>
         </div>
       </section>
 

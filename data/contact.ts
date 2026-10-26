@@ -73,6 +73,7 @@ export const survey = {
   progress: (step: number) => `Step ${step} of ${TOTAL_STEPS}`,
   next: "Next",
   back: "Back",
+  clear: "Clear answer",
   send: "Send message",
   sending: "Sending...",
   sendingStatus: "Sending your message",

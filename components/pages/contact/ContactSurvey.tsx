@@ -25,6 +25,7 @@ import {
   stepOfField,
   validateField,
   validateStep,
+  type ContactErrorCode,
   type ContactErrors,
   type ContactField,
   type ContactStep,
@@ -218,6 +219,12 @@ export function ContactSurvey() {
     if (attempted) revalidate(field, values[field]);
   }
 
+  // "Clear answer" on the optional role question. Fires no analytics event.
+  function handleClearRole() {
+    setValue("role", "");
+    document.getElementById(`ct-role-${roleOptions[0].value}`)?.focus();
+  }
+
   function handleNext() {
     const found = validateStep(step, values);
     if (Object.keys(found).length > 0) {
@@ -306,7 +313,12 @@ export function ContactSurvey() {
           const target = Math.min(...fields.map(stepOfField)) as ContactStep;
           const stepErrors: ContactErrors = {};
           for (const field of STEP_FIELDS[target]) {
-            const code = validateField(field, values[field]);
+            // Use the rule that failed here if there is one, otherwise the
+            // code the Function sent (if it is a code this page knows).
+            const sent = data.errors[field] as ContactErrorCode | undefined;
+            const code =
+              validateField(field, values[field]) ??
+              (sent && sent in fieldErrors ? sent : null);
             if (code) stepErrors[field] = code;
           }
           if (Object.keys(stepErrors).length > 0) {
@@ -429,7 +441,9 @@ export function ContactSurvey() {
                   value={values.role}
                   error={errorText("role")}
                   headingRef={headingRef}
+                  clearLabel={survey.clear}
                   onChange={(value) => onPillChange("role", value)}
+                  onClear={handleClearRole}
                   onFocus={() => onFieldFocus("role")}
                 />
               ) : null}

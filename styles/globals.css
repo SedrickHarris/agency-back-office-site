@@ -1300,16 +1300,25 @@ details.q .ans {
 .ct-page .ct-grid {
   display: grid;
   grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  grid-template-rows: auto 1fr;
   column-gap: 64px;
   align-items: start;
 }
-.ct-page .ct-side {
-  position: sticky;
-  top: 32px;
-}
+/* DOM order is intro, survey, list (the mobile order). On desktop the survey
+   takes the right column and the list sits under the intro on the left. */
 .ct-page .ct-intro {
+  grid-column: 1;
+  grid-row: 1;
   border-top: 2px solid var(--color-ink);
   padding-top: 20px;
+}
+.ct-page .ct-panel {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+}
+.ct-page .ct-list {
+  grid-column: 1;
+  grid-row: 2;
 }
 .ct-page .ct-label {
   font-size: 0.75rem;
@@ -1846,20 +1855,13 @@ details.q .ans {
     display: flex;
     flex-direction: column;
   }
-  /* The wrapper dissolves so the survey sits between the lead and the list. */
-  .ct-page .ct-side {
-    display: contents;
-  }
   .ct-page .ct-intro {
-    order: 1;
     padding-top: 16px;
   }
   .ct-page .ct-panel {
-    order: 2;
     margin-top: 32px;
   }
   .ct-page .ct-list {
-    order: 3;
     margin-top: 48px;
     border-top: 2px solid var(--color-ink);
     padding-top: 16px;
@@ -1969,4 +1971,10 @@ details.q .ans {
     border-block: 1px solid var(--color-rule);
     text-decoration: none;
   }
+}
+
+.ct-page .ct-clear {
+  display: block;
+  margin-top: 4px;
+  padding-left: 0;
 }
