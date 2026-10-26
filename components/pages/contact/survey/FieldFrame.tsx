@@ -10,7 +10,7 @@ export function FieldError({ id, message }: { id: string; message: string }) {
   );
 }
 
-// Label above, helper text, the control, then the error. The control receives
+// Label above, the control, helper text below it, then the error. The control receives
 // aria-describedby from describedBy().
 export function FieldFrame({
   id,
@@ -32,12 +32,12 @@ export function FieldFrame({
       <label htmlFor={id} className="ct-fl">
         {label} <span className="ct-req">{qualifier}</span>
       </label>
+      {children}
       {helper ? (
         <p id={`${id}-help`} className="ct-help">
           {helper}
         </p>
       ) : null}
-      {children}
       {error ? <FieldError id={`${id}-err`} message={error} /> : null}
     </div>
   );

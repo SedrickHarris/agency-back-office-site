@@ -1428,10 +1428,7 @@ details.q .ans {
   margin-top: 32px;
 }
 .ct-page .ct-noscript {
-  margin-top: 16px;
-  border: 1px solid var(--color-rule);
-  border-top: 2px solid var(--color-error);
-  padding: 16px 20px;
+  margin: 16px 0 0;
 }
 .ct-page fieldset.ct-group {
   border: 0;
@@ -1449,6 +1446,9 @@ details.q .ans {
   letter-spacing: -0.01em;
   margin-bottom: 6px;
   scroll-margin-top: 24px;
+}
+.ct-page .ct-q .ct-req {
+  font-size: 1rem;
 }
 .ct-page .ct-req {
   font-family: var(--font-sans);
@@ -1488,7 +1488,7 @@ details.q .ans {
   align-items: center;
   gap: 8px;
   min-height: 48px;
-  padding: 0 20px;
+  padding: 0 var(--ct-pill-px, 20px);
   border: 1px solid var(--color-field-border);
   border-radius: 4px;
   background: var(--color-paper);
@@ -1520,7 +1520,8 @@ details.q .ans {
   outline-offset: 2px;
 }
 .ct-page .has-error .ct-pill span {
-  border-color: var(--color-error);
+  border: 2px solid var(--color-error);
+  padding-inline: calc(var(--ct-pill-px, 20px) - 1px);
 }
 
 /* fields */
@@ -1528,7 +1529,7 @@ details.q .ans {
   margin-top: 18px;
 }
 .ct-page .ct-group .ct-field:first-of-type {
-  margin-top: 20px;
+  margin-top: 12px;
 }
 .ct-page .ct-fl {
   display: block;
@@ -1538,7 +1539,7 @@ details.q .ans {
   margin-bottom: 6px;
 }
 .ct-page .ct-field .ct-help {
-  margin-bottom: 6px;
+  margin-top: 6px;
 }
 .ct-page .ct-input {
   display: block;
@@ -1560,27 +1561,35 @@ details.q .ans {
   padding-block: 12px;
   resize: vertical;
 }
+/* Error state: 2px border, with the padding reduced by 1px so nothing shifts. */
 .ct-page .has-error .ct-input,
 .ct-page .ct-input[aria-invalid="true"] {
-  border-color: var(--color-error);
+  border: 2px solid var(--color-error);
+  padding-inline: 13px;
 }
-.ct-page .has-error .ct-fl {
-  color: var(--color-error);
+.ct-page .has-error textarea.ct-textarea {
+  padding-top: 11px;
 }
 .ct-page p.ct-error {
   display: flex;
   gap: 8px;
   align-items: flex-start;
   margin-top: 8px;
-  font-size: 0.9375rem;
+  font-size: 0.875rem;
+  font-weight: 500;
   line-height: 1.4;
   color: var(--color-error);
 }
-.ct-page .ct-error .ico,
-.ct-page .ct-alert .ico {
-  width: 20px;
-  height: 20px;
+.ct-page .ct-error .ico {
+  width: 18px;
+  height: 18px;
   margin-top: 1px;
+  color: var(--color-error);
+}
+.ct-page .ct-alert .ico {
+  width: 24px;
+  height: 24px;
+  margin-top: 0;
   color: var(--color-error);
 }
 .ct-page .ct-hp {
@@ -1610,8 +1619,10 @@ details.q .ans {
   border: 1px solid var(--color-rule);
   border-top: 2px solid var(--color-error);
   background: var(--color-paper);
-  padding: 16px 20px;
-  margin-bottom: 24px;
+  padding: 14px 16px;
+  margin-bottom: 18px;
+  font-size: 0.9375rem;
+  line-height: 1.5;
 }
 .ct-page .ct-notice {
   margin-top: 24px;
@@ -1619,24 +1630,24 @@ details.q .ans {
 }
 .ct-page .ct-alert-h {
   display: flex;
-  gap: 8px;
+  gap: 12px;
   align-items: center;
   font-weight: 700;
-  font-size: 1.125rem;
+  font-size: 1.0625rem;
   line-height: 1.3;
   scroll-margin-top: 24px;
 }
 .ct-page .ct-summary ul {
   margin-top: 8px;
-  padding-left: 28px;
-  list-style: disc;
-}
-.ct-page .ct-summary li {
-  padding-block: 2px;
+  padding-left: 36px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 .ct-page .ct-notice p {
   display: flex;
-  gap: 8px;
+  gap: 12px;
   align-items: flex-start;
   scroll-margin-top: 24px;
 }
@@ -1679,14 +1690,30 @@ details.q .ans {
 .ct-page .ct-success {
   margin-top: 24px;
 }
+.ct-page .ct-success-head {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.ct-page .ct-success-head .ico {
+  width: 28px;
+  height: 28px;
+  color: var(--color-ink);
+}
 .ct-page .ct-success p {
-  margin-top: 12px;
+  margin-top: 14px;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+.ct-page .ct-success p + p {
+  color: var(--color-muted);
 }
 .ct-page .ct-success .ct-back {
   margin-top: 12px;
   padding-left: 0;
 }
 .ct-page .ct-success .ct-h2-sm {
+  font-size: 1.625rem;
   scroll-margin-top: 24px;
 }
 
@@ -1905,15 +1932,18 @@ details.q .ans {
   .ct-page .ct-q {
     font-size: 1.25rem;
   }
+  .ct-page .ct-q .ct-req {
+    font-size: 0.9375rem;
+  }
   .ct-page .ct-pills {
     gap: 10px;
     margin-top: 16px;
   }
-  .ct-page .ct-pill span {
-    padding: 0 16px;
+  .ct-page .ct-pills {
+    --ct-pill-px: 16px;
   }
   .ct-page .ct-actions {
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: stretch;
     gap: 8px;
     margin-top: 28px;

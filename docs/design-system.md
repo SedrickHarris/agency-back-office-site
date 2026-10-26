@@ -120,14 +120,14 @@ Used by conversion pages. All controls are native elements at least 48px tall wi
 
 - **Label:** above the control, Inter 600 15px. Required fields say "(required)" and optional fields say "(optional)" in text.
 - **Field:** text, tel, email, textarea. Border darkens to `ink` on hover. 3px accent focus ring.
-- **Helper text:** 14px `muted` below the label or control, tied with `aria-describedby`.
-- **Field error:** `error` colored text with an icon under the control, `error` border, `aria-invalid="true"`. Never color alone.
-- **Error summary:** white panel with a 2px `error` top rule, an icon, a heading ("Fix N things ..."), and a list of links to each field. `role="alert"`, receives focus.
+- **Helper text:** 14px `muted`, below the control for fields (above the pills for a pill group), tied with `aria-describedby`.
+- **Field error:** `error` colored text (14px, weight 500) with an 18px icon under the control, a 2px `error` border (padding reduced 1px so nothing shifts), `aria-invalid="true"`. The label keeps its color. Pills in an invalid group get the same 2px `error` border. Never color alone.
+- **Error summary:** white panel with a 1px `rule` border, a 2px `error` top rule, 14px 16px padding, a 24px icon, a 17px Manrope 700 heading ("Fix N things ..."), and an unbulleted list of links to each field, indented 36px. `role="alert"`, receives focus.
 - **Form notice:** same panel treatment for form-level errors (verification, network, server). `role="alert"`.
-- **Success panel:** 2px `ink` top rule, H2, one sentence, two links, a text button. `role="status"`, heading receives focus.
+- **Success panel:** 2px `ink` top rule, a 28px check-circle icon beside a 26px H2, one sentence, a muted line with two links, a text button. `role="status"`, heading receives focus.
 - **Pill (native radio):** radio input styled as a button. Default: 1px `field-border`, white. Hover: `ink` border, `tint` fill. Focus: 3px accent outline, 2px offset. Selected: `ink` fill, white text, check icon. Wraps with a 12px gap (10px on mobile).
 - **Step indicator:** text "Step N of 3" plus three 4px segments (`rule`, `ink` when reached). Segments are `aria-hidden`.
-- **Back:** underlined accent text button, 48px tall. Not a second primary button.
+- **Back:** underlined accent text button, 48px tall, placed before the primary button on desktop and under it on mobile. Not a second primary button.
 - **Clear answer:** the Back styling, placed under an optional pill group. Shown only after an answer is chosen. Clears the group and returns focus to its first pill. Fires no analytics event.
 - **Annotated example:** `tint` panel with a 1px `rule` border, `highlight` spans with small numbered `ink` badges, and a numbered list of callouts below.
 

@@ -31,6 +31,7 @@ import {
   type ContactStep,
   type ContactValues,
 } from "@/shared/contact-schema";
+import { Icon } from "@/components/ui/Icon";
 import { SiteLink } from "@/components/ui/SiteLink";
 import { ErrorSummary, type SummaryItem } from "./survey/ErrorSummary";
 import { Notice } from "./survey/Notice";
@@ -392,7 +393,12 @@ export function ContactSurvey() {
 
       <noscript>
         <style>{".ct-live,.ct-form,.ct-progress{display:none}"}</style>
-        <p className="ct-noscript">{survey.noscript}</p>
+        <div className="ct-alert ct-notice ct-noscript">
+          <p>
+            <Icon name="alert" />
+            <span>{survey.noscript}</span>
+          </p>
+        </div>
       </noscript>
 
       {/* Announces step changes and the sending state to screen readers. */}
@@ -555,15 +561,6 @@ export function ContactSurvey() {
             ) : null}
 
             <div className="ct-actions">
-              <button
-                type="submit"
-                className="btn ct-btn"
-                ref={submitRef}
-                aria-disabled={sending || undefined}
-                onMouseDown={keepFieldFocus}
-              >
-                {step < 3 ? survey.next : sending ? survey.sending : survey.send}
-              </button>
               {step > 1 && !sending ? (
                 <button
                   type="button"
@@ -574,6 +571,15 @@ export function ContactSurvey() {
                   {survey.back}
                 </button>
               ) : null}
+              <button
+                type="submit"
+                className="btn ct-btn"
+                ref={submitRef}
+                aria-disabled={sending || undefined}
+                onMouseDown={keepFieldFocus}
+              >
+                {step < 3 ? survey.next : sending ? survey.sending : survey.send}
+              </button>
             </div>
           </form>
         </>

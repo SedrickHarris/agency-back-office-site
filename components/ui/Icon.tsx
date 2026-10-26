@@ -78,6 +78,12 @@ const paths = {
     </>
   ),
   check: <path d="M5 12.5l4.5 4.5L19 7.5" />,
+  "check-circle": (
+    <>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M8 12.5l2.7 2.7L16 9.5" />
+    </>
+  ),
   alert: (
     <>
       <circle cx="12" cy="12" r="9" />
