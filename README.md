@@ -40,6 +40,28 @@ Start with:
 6. `docs/content-specification.md`
 7. `CLAUDE.md`
 
+## Development and Deployment
+
+The site is a static Next.js export deployed to Cloudflare Pages from GitHub. Use the Node version in `.nvmrc`.
+
+```bash
+npm ci            # install dependencies from the lockfile
+npm run dev       # local development server
+npm run build     # static export to out/
+npm run check     # lint, typecheck, and build
+```
+
+To preview the export locally, serve the `out/` directory with any static file server after `npm run build`.
+
+Branch and deploy flow:
+
+- `main` is the production branch.
+- Pull requests and other branches get preview deployments.
+- GitHub Actions runs checks only. Cloudflare's Git integration performs deployment.
+- Copy `.env.example` to `.env.local` for local variables. Never commit `.env` files.
+
+See `docs/nextjs-technical-architecture.md` (Deployment) for constraints.
+
 ## Core Rule
 
 The repository documentation is the source of truth. If a page build, content request, component, or route conflicts with an approved document, resolve the conflict in documentation before implementation.

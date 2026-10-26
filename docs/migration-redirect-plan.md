@@ -25,6 +25,12 @@ For each old URL, assign:
 
 Use permanent 301 redirects for genuine route moves.
 
+## Implementation
+
+Redirects are implemented in `public/_redirects`. The site is a static export, so `next.config` redirects cannot be used (see `nextjs-technical-architecture.md`).
+
+`public/_redirects` stays empty until a real inventory of old URLs exists. Verify the file syntax and limits against Cloudflare's official documentation before adding rules.
+
 ## Avoid
 
 - redirecting every old page to the homepage

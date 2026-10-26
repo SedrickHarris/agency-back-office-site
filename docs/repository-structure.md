@@ -11,13 +11,32 @@ agency-back-office-site/
 ├── docs/
 ├── lib/
 ├── public/
+├── scripts/
 ├── styles/
+├── .github/
+├── .env.example
+├── .nvmrc
 ├── CLAUDE.md
 ├── README.md
 ├── next.config.*
 ├── package.json
 └── tsconfig.json
 ```
+
+## Static Export Additions
+
+The site is a static export hosted on Cloudflare Pages (see `nextjs-technical-architecture.md`). These files support that setup:
+
+| Path | Purpose |
+|---|---|
+| `.github/workflows/` | Continuous integration (lint, typecheck, build). Deployment is handled by Cloudflare's Git integration, not by GitHub Actions. |
+| `.github/pull_request_template.md` | Short QA checklist derived from `qa-checklist.md`. |
+| `public/_redirects` | Cloudflare Pages redirects. Static export cannot use `next.config` redirects. |
+| `public/_headers` | Cloudflare Pages response headers (security, caching, noindex for `*.pages.dev`). |
+| `.nvmrc` | Pins the Node version for local, CI, and Cloudflare builds. |
+| `.env.example` | Documents environment variables with no real values. |
+| `scripts/` | Build or maintenance scripts, only when one is required. |
+| `lib/site.ts` | Single source for the site URL, read from `NEXT_PUBLIC_SITE_URL`. |
 
 ## Recommended Responsibilities
 

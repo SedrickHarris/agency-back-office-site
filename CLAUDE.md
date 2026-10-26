@@ -20,6 +20,17 @@ Before making architecture, routing, SEO, content, schema, conversion, or design
 
 Do not silently override approved strategy.
 
+## Deployment Constraints
+
+The site is a static export (`output: 'export'`) hosted on Cloudflare Pages. See `docs/nextjs-technical-architecture.md`.
+
+- No API routes and no middleware.
+- No `next.config` redirects, rewrites, or headers. Redirects and headers live in `public/_redirects` and `public/_headers`.
+- No runtime image optimization or on-demand revalidation.
+- Dynamic routes need `generateStaticParams`.
+- The production domain comes from the `NEXT_PUBLIC_SITE_URL` environment variable via `lib/site.ts`. Never hardcode it.
+- If a feature needs a server runtime, reopen the rendering decision in `docs/decisions-change-log.md` first.
+
 ## Core Business
 
 Agency Back Office provides practical training in:
