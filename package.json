@@ -9,9 +9,11 @@
     "dev": "next dev",
     "build": "next build",
     "lint": "eslint .",
-    "typecheck": "tsc --noEmit",
+    "typecheck": "tsc --noEmit && tsc --noEmit -p functions/tsconfig.json",
+    "test": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --test \"tests/*.test.mts\"",
     "links:home": "node scripts/check-home-links.mjs",
-    "check": "npm run lint && npm run typecheck && npm run build && npm run links:home"
+    "links:contact": "node scripts/check-contact-page.mjs",
+    "check": "npm run lint && npm run typecheck && npm run test && npm run build && npm run links:home && npm run links:contact"
   },
   "dependencies": {
     "next": "^16.4.3",
@@ -19,6 +21,7 @@
     "react-dom": "^19.3.1"
   },
   "devDependencies": {
+    "@cloudflare/workers-types": "^5.20261026.1",
     "@tailwindcss/postcss": "^4.3.3",
     "@types/node": "^24",
     "@types/react": "^19.3.0",

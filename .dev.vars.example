@@ -1,0 +1,9 @@
+# Local secrets for `npx wrangler pages dev out`. Copy to .dev.vars (git-ignored)
+# and fill in. Names only here; never commit real values.
+# In production, set these as secrets in the Cloudflare Pages project settings.
+# For local testing use Cloudflare's published Turnstile test keys:
+# https://developers.cloudflare.com/turnstile/troubleshooting/testing/
+TURNSTILE_SECRET_KEY=
+EMAIL_API_KEY=
+CONTACT_TO_EMAIL=
+CONTACT_FROM_EMAIL=
