@@ -21,18 +21,20 @@
 |---|---|
 | URL | `/` |
 | Page type | Core page, Phase 1, Critical |
+| Primary topic | Agency Back Office as practical digital marketing and agency training |
+| Parent | None (root) |
 | Primary intent | Navigational with some commercial investigation |
 | Audience | Agency owners and new agency owners first |
 | Title direction | "Agency Back Office \| Practical Digital Marketing and Agency Training" |
 | Meta description direction | "Practical training in SEO, AEO, Google Business Profile, reputation management, automation, and agency operations for agency owners, marketers, and consultants." |
 | H1 direction | "Practical digital marketing training for people who deliver client work" |
-| Primary CTA | Explore the training (`/training/`) - pending confirmation |
-| Secondary CTA | Get started (`/get-started/`) - pending confirmation |
+| Primary CTA | Explore the training (`/training/`) |
+| Secondary CTA | Browse training topics (`/services/`), hero only. "Get started" stays in the header navigation. |
 | Schema | Organization, WebSite, WebPage |
 | Internal-link targets | `/services/`, `/audiences/`, `/training/`, `/resources/`, priority service and audience pages, `/about/`, `/contact/`, `/get-started/` |
-| Status | Outline approved, copy not written |
+| Status | In build |
 
-The approved section order is defined in `content-specification.md` (Home Page).
+The approved section order is defined in `content-specification.md` (Core Page: Home).
 
 ## Phase 2 — Core Service Pages
 
@@ -84,6 +86,8 @@ Do not automatically publish the complete theoretical matrix.
 - `/training/sessions/`
 
 Individual course/workshop/session pages may be added as real offerings are confirmed.
+
+Confirmed delivery formats: Live training (`/training/live/`) and Sessions (`/training/sessions/`). Courses and workshops are not referenced on the home page or listed as available until confirmed.
 
 ## Phase 8 — Resource Hubs
 

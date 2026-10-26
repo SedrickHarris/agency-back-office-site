@@ -83,7 +83,7 @@ Must identify:
 - canonical service link
 - next step
 
-## Home Page
+## Core Page: Home
 
 | Field | Value |
 |---|---|
@@ -94,10 +94,10 @@ Must identify:
 | Title direction | "Agency Back Office \| Practical Digital Marketing and Agency Training" |
 | Meta description direction | "Practical training in SEO, AEO, Google Business Profile, reputation management, automation, and agency operations for agency owners, marketers, and consultants." |
 | H1 direction | "Practical digital marketing training for people who deliver client work" |
-| Primary CTA | Explore the training (`/training/`) - pending confirmation |
-| Secondary CTA | Get started (`/get-started/`) - pending confirmation |
+| Primary CTA | Explore the training (`/training/`) |
+| Secondary CTA | Browse training topics (`/services/`), hero only. "Get started" (`/get-started/`) stays in the header navigation. |
 | Schema | Organization, WebSite, WebPage |
-| Status | Outline approved, copy not written |
+| Status | In build |
 
 ### Section Order
 
@@ -106,9 +106,9 @@ Must identify:
 3. Learn / Build / Apply / Improve process diagram
 4. Audience router ("Which describes you?")
 5. Definitions strip - SEO, AEO, GBP, and Local SEO, each linking to its canonical service page
-6. Training delivery
+6. How training is delivered - names only confirmed formats (currently Live training and Sessions). Courses and workshops are not referenced until confirmed. No pricing, schedule, curriculum, or duration language.
 7. Free resources
-8. Proof - conditional, verified items only; omit the section if none exist
+8. Proof - conditional. Renders only from verified data (`data/proof.ts`); the section is omitted when no verified entries exist. Never invent bios, quotes, counts, or ratings.
 9. FAQ of 4-6 questions
 10. Closing CTA band
 
@@ -126,6 +126,8 @@ Must identify:
 ### Notes
 
 - Include a visible "last reviewed" date on the definitions strip (see `aeo-ai-search-strategy.md`, Answer Block Standards).
+- The FAQ is visible on the page. `FAQPage` schema is not used on the home page (see `decisions-change-log.md`).
+- The home page stays `noindex` until the launch gate: `NEXT_PUBLIC_SITE_URL` is set, `robots.txt` and page metadata are released together, and all internal links resolve.
 - Do not invent proof, claims, pricing, or student counts.
 - Define acronyms on first use (SEO, AEO, GBP).
 

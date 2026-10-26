@@ -45,6 +45,60 @@ Use service pages, audience pages, and audience + service pages, supported by tr
 **Decision:**  
 Use `/audiences/{audience-slug}/{service-slug}/`.
 
+### 2026-10-25 - Home page CTAs
+
+**Area:** Conversion
+
+**Decision:**  
+The dominant CTA is "Explore the training" (`/training/`). The secondary CTA is "Browse training topics" (`/services/`), shown in the hero only. "Get started" (`/get-started/`) stays in the header navigation only.
+
+**Reason:**  
+`/get-started/` depends on form handling, which is still pending. `/training/` works as a static page now, matches the page's navigational and commercial-investigation intent, and is a low-friction next step.
+
+**Affected Files/Routes:**  
+`docs/content-specification.md`, `docs/master-page-build-list.md`, `/`.
+
+**Follow-Up:**  
+Revisit when form handling is decided and `/get-started/` has a working conversion path.
+
+---
+
+### 2026-10-25 - Home page schema and proof handling
+
+**Area:** SEO / Conversion
+
+**Decision:**  
+Do not add `FAQPage` schema on the home page. The FAQ stays visible on the page. Use Organization, WebSite, and WebPage only, emitted only when the site URL is configured, with no `sameAs`, logo, address, or `LocalBusiness`. The proof section is data-driven: it renders only from verified entries in `data/proof.ts` and is omitted while that data is empty.
+
+**Reason:**  
+`schema-entity-strategy.md` allows `FAQPage` only where current eligibility makes it worthwhile. No bio or testimonial text has been supplied, and nothing may be invented.
+
+**Affected Files/Routes:**  
+`docs/schema-entity-strategy.md`, `docs/content-specification.md`, `data/proof.ts`, `/`.
+
+**Follow-Up:**  
+Owner to supply the instructor bio and testimonials with permission to publish. Reversible through this change log.
+
+---
+
+### 2026-10-25 - Confirmed training formats and home page launch gate
+
+**Area:** Content / Technical
+
+**Decision:**  
+The only confirmed training formats are Live training (`/training/live/`) and Sessions (`/training/sessions/`). Courses and workshops are not referenced on the home page until confirmed. The home page stays `noindex` until the launch gate: `NEXT_PUBLIC_SITE_URL` is set and `robots.txt` and page metadata are released together.
+
+**Reason:**  
+Do not claim offerings that are not confirmed. Many home page links target pages that are not built yet, which is acceptable only while the site is `noindex`.
+
+**Affected Files/Routes:**  
+`docs/master-page-build-list.md`, `docs/content-specification.md`, `/`, `/training/`.
+
+**Follow-Up:**  
+Before `NEXT_PUBLIC_SITE_URL` is set, resolve every internal link on the home page (run `npm run links:home`). Owner to confirm the one-line descriptions for Live training and Sessions and which resource hubs exist at launch.
+
+---
+
 ### 2026-10-25 — Git workflow - direct pushes to main, no PRs
 
 **Area:** Technical
