@@ -84,6 +84,8 @@
 - [ ] Pills work by keyboard (arrow keys, Space) and show a visible focus ring.
 - [ ] Focus moves to the new step's question on step change. A hidden live line announces "Step N of 3".
 - [ ] Back keeps every answer. Nothing advances automatically.
+- [ ] "Clear answer" appears only after a role is selected, clears it, returns focus to the first pill, fires no analytics event, and is at least 48px tall.
+- [ ] DOM order matches the mobile order: breadcrumb, H1, lead, survey, "What you can write about", example, options, Get started band.
 - [ ] Phone validation: 9 digits fails, 10 to 15 passes, 16 fails.
 - [ ] Success and error states (validation, verification, network, server) all show and keep answers.
 - [ ] No typed values (name, phone, email, message) are sent to analytics.

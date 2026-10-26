@@ -615,6 +615,26 @@ Owner corrects the spreadsheet (see the Contact build report).
 
 ---
 
+### 2026-10-25 - Contact: reading order, Clear answer, analytics hook
+
+**Area:** Design / Conversion / Technical
+
+**Decision:**  
+1. The Contact DOM order is breadcrumb, H1, lead, survey, "What you can write about", example, options, Get started band, on every viewport. Desktop moves the survey to the right column with CSS grid, so the left column is no longer sticky.
+2. Step 1 gets a "Clear answer" text button, shown only after a role is selected. It clears the selection, returns focus to the first pill, and fires no analytics event.
+3. `trackEvent` also dispatches an `abo:track` window event so calls can be inspected in tests. It sends nothing anywhere until a tool is chosen.
+
+**Reason:**  
+Reading and tab order should match the mobile order. Radio inputs cannot be unselected, so an optional question needs a way to skip after choosing. The Playwright check needs a place to observe analytics calls without a tool.
+
+**Affected Files/Routes:**  
+`docs/contact-page-spec.md`, `docs/design-system.md`, `docs/qa-checklist.md`, `docs/analytics-measurement.md`, `/contact/`, `lib/analytics.ts`.
+
+**Follow-Up:**  
+Attach the analytics tool inside `trackEvent` when chosen.
+
+---
+
 ### 2026-08-23 — Matrix Quality Rule
 
 **Area:** Content

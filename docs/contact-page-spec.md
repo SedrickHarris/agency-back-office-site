@@ -42,7 +42,7 @@ The 2px navy rule opens each section, hairlines separate rows, radius is 4px at 
 | --- | --- | --- | --- |
 | 0 | Header and footer | Reused components. Footer Company group reads About, Reviews, Contact, Get Started. Contact is a footer link, not a primary nav item. | Existing mobile menu |
 | 1 | Breadcrumb | One quiet text row: Home / Contact. Drives the visible BreadcrumbList. | One line |
-| 2 | Intro and survey | Two columns on desktop. Left (about 5/12): small-caps label, H1, lead, ruled list of three things to write about. Right (about 7/12): survey panel with 2px navy top rule and 1px side and bottom rules. Inside: H2 "Send a message", step indicator ("Step N of 3" plus three 4px segments), one fieldset per step. Left column stays in view (sticky). | Single column: H1, lead, survey, then the ruled list. |
+| 2 | Intro and survey | Two columns on desktop. Left (about 5/12): small-caps label, H1, lead, ruled list of three things to write about. Right (about 7/12): survey panel with 2px navy top rule and 1px side and bottom rules. Inside: H2 "Send a message", step indicator ("Step N of 3" plus three 4px segments), one fieldset per step. The left column is not sticky: the DOM order is intro, survey, list so reading order and tab order match the mobile order. | Single column: H1, lead, survey, then the ruled list. |
 | 3 | Useful message | Annotated example built from text, with three numbered callouts | Callouts stack |
 | 4 | Not ready to write | Ruled list of three rows, each with icon and descriptive link | Rows stack |
 | 5 | Ready to start instead | Tint band (#EEF3FC): text left, one text link to Get started right. Not a button. | Stacks |
@@ -55,7 +55,7 @@ Three-step survey, the page's only client component. Native elements, `noValidat
 
 | Step | Field (name) | Control | Required | Rules | Error text | Autocomplete |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Which describes you best? (`role`) | Pills (radio group) | No | One of: agency-owner, new-agency-owner, consultant, freelancer, other. May stay empty. | None. A value outside the list is rejected by the Function. | none |
+| 1 | Which describes you best? (`role`) | Pills (radio group) plus a "Clear answer" text button | No | One of: agency-owner, new-agency-owner, consultant, freelancer, other. May stay empty. | None. A value outside the list is rejected by the Function. | none |
 | 2 | What is your message about? (`topic`) | Pills (radio group), nothing preselected | Yes | One of: training-topics, live-training, sessions, other | Choose what your message is about. | none |
 | 2 | Your message (`message`) | Textarea, 6 rows | Yes | Trimmed, 10 to 2,000 characters | Empty: Enter your message. Short: Write at least 10 characters. Long: Keep your message under 2,000 characters. | none |
 | 3 | Full name (`name`) | Text | Yes | Trimmed, 1 to 100 characters | Enter your full name. | `name` |
@@ -69,6 +69,7 @@ Three-step survey, the page's only client component. Native elements, `noValidat
 1. Next validates only the current step. If an answer is missing or invalid, stay on the step, show the error summary above the question, move focus to its heading, and mark each problem with `aria-invalid` and `aria-describedby`. The pill group's error attaches to its fieldset.
 2. Step 1 has no required answer, so Next is always available there. Steps 2 and 3 do not move forward until valid.
 3. Back never validates and never clears an answer. Nothing advances automatically when a pill is chosen.
+3a. Step 1 shows a "Clear answer" text button under the pills, only after a role is selected. It clears the selection, returns focus to the first pill, and fires no analytics event. It uses the Back button styling and a 48px target.
 4. After a failed attempt, re-validate a field on blur and clear its error as soon as it is valid. Never validate on focus or on each keystroke. Do not block pasting.
 5. Load the Turnstile script on the first pill or field interaction, so the check is ready by step 3.
 6. The Function re-validates every field. If it rejects something from an earlier step, return the visitor to that step with its summary.
@@ -89,6 +90,7 @@ Errors never rely on color alone: each has an icon, a text message and a 2px top
 | State | Trigger | What the visitor sees | Focus and announcement |
 | --- | --- | --- | --- |
 | Idle, step 1 | Page load | Step 1 question with five unselected pills and Next. Security check not loaded yet. | None |
+| Clear answer | Activate "Clear answer" on step 1 | The selection is cleared and the button disappears. No analytics event. | Focus moves to the first pill |
 | Pill focus and selection | Keyboard or pointer | Focused pill gets the 3px ring. Selected pill fills navy with white text and a check icon. Arrow keys move inside the group. | Native radio announcements |
 | Step change | Next passes validation, or Back | The next or previous step replaces the current one. Indicator updates. Earlier answers kept. | Focus moves to the new step's question. Hidden status line says "Step N of 3". |
 | Step error | Next with a missing or invalid answer | Summary above the question ("Fix N things to continue") with a link to each problem, plus a message under each field or pill group | Focus moves to the summary heading; summary has `role=alert` |
@@ -193,7 +195,7 @@ Home / Contact
 **H2: Send a message**
 
 - Progress label: Step {n} of 3
-- **Step 1.** Question: Which describes you best? (optional). Helper: Choose one, or skip this question. Pills: Agency owner or leader, New agency owner, Consultant, Freelancer, Other. Button: Next
+- **Step 1.** Question: Which describes you best? (optional). Helper: Choose one, or skip this question. Pills: Agency owner or leader, New agency owner, Consultant, Freelancer, Other. Text button under the pills, shown only after a selection: Clear answer. Button: Next
 - **Step 2.** Question: What is your message about? (required). Pills: Training topics, Live training, Sessions, Something else. Then the field Your message (required). Helper: Say what you are working on and what you want to know. Buttons: Back, Next
 - **Step 3.** Heading: Your contact details. Fields: Full name (required); Phone number (required); Email address (required), helper: Use the address where you want your reply. Label above the Turnstile widget: Security check
 - Privacy line (step 3): We use the details you send to reply to your message. See the privacy page for more. ("privacy page" links to /privacy/)

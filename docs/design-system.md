@@ -128,6 +128,7 @@ Used by conversion pages. All controls are native elements at least 48px tall wi
 - **Pill (native radio):** radio input styled as a button. Default: 1px `field-border`, white. Hover: `ink` border, `tint` fill. Focus: 3px accent outline, 2px offset. Selected: `ink` fill, white text, check icon. Wraps with a 12px gap (10px on mobile).
 - **Step indicator:** text "Step N of 3" plus three 4px segments (`rule`, `ink` when reached). Segments are `aria-hidden`.
 - **Back:** underlined accent text button, 48px tall. Not a second primary button.
+- **Clear answer:** the Back styling, placed under an optional pill group. Shown only after an answer is chosen. Clears the group and returns focus to its first pill. Fires no analytics event.
 - **Annotated example:** `tint` panel with a 1px `rule` border, `highlight` spans with small numbered `ink` badges, and a numbered list of callouts below.
 
 ## Ruled-Line Motif

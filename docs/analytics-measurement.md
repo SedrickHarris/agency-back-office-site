@@ -109,6 +109,8 @@ Events go through one `trackEvent(name, params)` helper in `lib/analytics.ts`. I
 | `contact_success` | The Function returns ok | `page_path`, `topic`, `role` |
 | `contact_error` | Validation fails or the request fails | `page_path`, `step`, `error_type`, `field_count` |
 
+Every call is also announced as a `abo:track` window event (`detail.name`, `detail.params`) from `lib/analytics.ts`. That is the single place to attach an analytics tool, and the hook the Playwright check uses to confirm no typed value is ever sent.
+
 Funnel: `contact_form_view`, `contact_step_complete` for steps 1 to 3, `contact_success`. Conversion rate is `contact_success` divided by `contact_form_view`. `role` and `topic` are the selected option values only.
 
 ## Naming
