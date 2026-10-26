@@ -25,7 +25,9 @@ export function SiteLink({
   }
 
   return (
-    <Link href={href} className={className}>
+    // prefetch is off: in the static export the prefetch payload URLs 404
+    // (see docs/decisions-change-log.md, "Internal links do not prefetch").
+    <Link href={href} className={className} prefetch={false}>
       {children}
       {arrow ? (
         <span className="arrow" aria-hidden="true">

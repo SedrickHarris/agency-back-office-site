@@ -326,6 +326,14 @@ body {
   color: var(--color-muted);
   max-width: 34em;
 }
+/* The reset `.page p { margin: 0 }` out-specifies `.lead` and `.support`, so
+   raise their specificity to keep the intended spacing. */
+.page p.lead {
+  margin-top: 28px;
+}
+.page p.support {
+  margin-top: 20px;
+}
 .cta-row {
   display: flex;
   align-items: center;

@@ -261,10 +261,10 @@ export const delivery = {
 };
 
 export const resourcesSection = {
-  // TODO: restore "Free resources" only after the owner confirms the
-  // resources are free.
+  // Do not imply the resources are free until the owner confirms it.
   h2: "Resources",
-  intro: "Practical references you can use without enrolling in anything.",
+  intro:
+    "Guides, checklists, templates, a glossary, and blog posts that support the training.",
   caption: "Resource hubs",
   columns: { resource: "Resource", covers: "What it covers", goTo: "Go to" },
   rows: [

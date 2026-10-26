@@ -1,7 +1,8 @@
 import Image from "next/image";
 
-// Official logo files live in public/brand/logos/. The files below are
-// 2x site-sized derivatives of those masters (see docs/design-system.md, Brand).
+// Official logo masters live in assets/brand-masters/ and are not shipped. The
+// files below are 2x site-sized derivatives of those masters (see
+// docs/design-system.md, Brand).
 const LOGO_ALT = "Agency Back Office - Practical Agency Training";
 
 const variants = {

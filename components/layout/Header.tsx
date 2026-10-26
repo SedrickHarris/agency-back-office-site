@@ -9,7 +9,7 @@ export function Header() {
   return (
     <header className="hdr">
       <div className="wrap">
-        <Link className="brand" href="/">
+        <Link className="brand" href="/" prefetch={false}>
           <Logo variant="horizontal" />
         </Link>
         <nav className="nav" aria-label="Primary">
@@ -18,6 +18,7 @@ export function Header() {
               key={item.href}
               href={item.href}
               className={item.action ? "cta" : undefined}
+              prefetch={false}
             >
               {item.label}
             </Link>
@@ -33,7 +34,9 @@ export function Header() {
             <ul>
               {primaryNavigation.map((item) => (
                 <li key={item.href}>
-                  <Link href={item.href}>{item.label}</Link>
+                  <Link href={item.href} prefetch={false}>
+                    {item.label}
+                  </Link>
                 </li>
               ))}
             </ul>

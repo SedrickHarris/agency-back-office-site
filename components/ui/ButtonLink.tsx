@@ -8,7 +8,7 @@ export function ButtonLink({
   children: string;
 }) {
   return (
-    <Link className="btn" href={href}>
+    <Link className="btn" href={href} prefetch={false}>
       {children}
       <span className="arrow" aria-hidden="true">
         &rarr;
