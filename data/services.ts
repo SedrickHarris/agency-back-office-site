@@ -9,6 +9,8 @@ export type Service = {
   theme?: ServiceTheme;
   // Approved one-line description. Omitted until approved copy exists.
   description?: string;
+  // Intended content for the topic card image slot (see ImagePlaceholder).
+  imageNote?: string;
 };
 
 export const serviceThemes: Record<ServiceTheme, string> = {
@@ -25,6 +27,7 @@ export const services: Service[] = [
     theme: "systems",
     description:
       "The foundation: how the main channels fit together in client work.",
+    imageNote: "channel map diagram",
   },
   {
     slug: "seo-training",
@@ -33,6 +36,7 @@ export const services: Service[] = [
     theme: "search-visibility",
     description:
       "Learn keyword research, on-page SEO, technical SEO, and how to run SEO for client websites.",
+    imageNote: "SEO workflow screenshot",
   },
   {
     slug: "aeo-training",
@@ -41,6 +45,7 @@ export const services: Service[] = [
     theme: "search-visibility",
     description:
       "Learn answer engine optimization (AEO): structuring content for featured snippets, voice search, and artificial intelligence (AI) answers.",
+    imageNote: "answer structure example",
   },
   {
     slug: "google-business-profile-training",
@@ -49,6 +54,7 @@ export const services: Service[] = [
     theme: "search-visibility",
     description:
       "Learn what a Google Business Profile (GBP) contains and how agencies set up and maintain it.",
+    imageNote: "annotated profile example",
   },
   {
     slug: "reputation-management-training",
@@ -56,6 +62,7 @@ export const services: Service[] = [
     priority: "High",
     theme: "reputation-leads",
     description: "Build review request, response, and monitoring workflows.",
+    imageNote: "review workflow example",
   },
   {
     slug: "local-seo-training",
@@ -64,6 +71,7 @@ export const services: Service[] = [
     theme: "search-visibility",
     description:
       "Learn how local search works and how agencies approach it for clients.",
+    imageNote: "local search diagram",
   },
   {
     slug: "website-seo-training",
@@ -82,6 +90,7 @@ export const services: Service[] = [
     theme: "systems",
     description:
       "Use AI tools in marketing workflows, with clear points for human review.",
+    imageNote: "AI workflow with review step",
   },
   {
     slug: "marketing-automation-training",
@@ -89,6 +98,7 @@ export const services: Service[] = [
     priority: "High",
     theme: "systems",
     description: "Set up follow-up, lead nurture, and onboarding workflows.",
+    imageNote: "automation flow screenshot",
   },
   {
     slug: "lead-generation-training",
@@ -97,6 +107,7 @@ export const services: Service[] = [
     theme: "reputation-leads",
     description:
       "Learn how agencies attract, capture, and follow up on leads for clients.",
+    imageNote: "lead capture flow",
   },
   {
     slug: "conversion-optimization-training",
@@ -115,6 +126,7 @@ export const services: Service[] = [
     theme: "systems",
     description:
       "Build systems for onboarding, delivery, reporting, and client retention.",
+    imageNote: "onboarding checklist example",
   },
   {
     slug: "crm-training",

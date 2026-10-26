@@ -7,7 +7,7 @@ import "../styles/globals.css";
 
 const manrope = Manrope({
   subsets: ["latin"],
-  weight: ["600", "700"],
+  weight: ["500", "600", "700", "800"],
   display: "swap",
   variable: "--font-manrope",
 });
@@ -31,16 +31,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${manrope.variable} ${inter.variable}`}>
-      <body className={inter.className}>
-        <a
-          href="#main-content"
-          className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-paper focus:px-4 focus:py-2"
-        >
-          Skip to main content
-        </a>
-        <Header />
-        <main id="main-content">{children}</main>
-        <Footer />
+      <body>
+        <div className="page">
+          <a className="skip" href="#main">
+            Skip to main content
+          </a>
+          <Header />
+          <main id="main">{children}</main>
+          <Footer />
+        </div>
       </body>
     </html>
   );

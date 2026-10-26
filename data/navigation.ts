@@ -2,6 +2,8 @@
 export type NavItem = {
   label: string;
   href: string;
+  // Rendered as the outlined header action.
+  action?: boolean;
 };
 
 export const primaryNavigation: NavItem[] = [
@@ -10,10 +12,5 @@ export const primaryNavigation: NavItem[] = [
   { label: "Who We Help", href: "/audiences/" },
   { label: "Resources", href: "/resources/" },
   { label: "About", href: "/about/" },
-  { label: "Get Started", href: "/get-started/" },
-];
-
-export const footerNavigation: NavItem[] = [
-  ...primaryNavigation,
-  { label: "Contact", href: "/contact/" },
+  { label: "Get Started", href: "/get-started/", action: true },
 ];

@@ -1,61 +1,39 @@
-import Link from "next/link";
-import { SectionHeader } from "@/components/ui/SectionHeader";
+import { SiteLink } from "@/components/ui/SiteLink";
+import type { audienceRouter } from "@/data/home";
 import { audienceHref, getAudience } from "@/lib/content/registry";
 
-type Row = { slug: string; statement: string; linkLabel: string };
-
-export function AudienceRouter({
-  headingId,
-  h2,
-  intro,
-  rows,
-  seeAll,
-}: {
-  headingId: string;
-  h2: string;
-  intro: string;
-  rows: Row[];
-  seeAll: { label: string; href: string };
-}) {
+export function AudienceRouter({ content }: { content: typeof audienceRouter }) {
   return (
-    <div>
-      <SectionHeader
-        id={headingId}
-        title={h2}
-        intro={intro}
-        className="lg:max-w-[66%]"
-      />
-      <ul className="mt-10 border-b border-rule">
-        {rows.map((row) => {
-          // Validates the slug against the audience registry at build time.
-          getAudience(row.slug);
-          return (
-            <li
-              key={row.slug}
-              className="grid gap-3 border-t border-rule py-5 hover:bg-tint lg:grid-cols-12 lg:gap-8 lg:px-2"
-            >
-              <p className="font-display text-lead font-semibold lg:col-span-8">
-                {row.statement}
-              </p>
-              <p className="lg:col-span-4 lg:text-right">
-                <Link
-                  href={audienceHref(row.slug)}
-                  className="font-semibold underline underline-offset-4"
-                >
-                  {row.linkLabel}
-                </Link>{" "}
-                <span aria-hidden="true">&rarr;</span>
-              </p>
-            </li>
-          );
-        })}
-      </ul>
-      <p className="mt-6 font-display font-semibold">
-        <Link href={seeAll.href} className="underline underline-offset-4">
-          {seeAll.label}
-        </Link>{" "}
-        <span aria-hidden="true">&rarr;</span>
-      </p>
-    </div>
+    <section className="sec rule-top" aria-labelledby="h-aud">
+      <div className="wrap">
+        <div className="aud-head">
+          <h2 id="h-aud" className="h2">
+            {content.h2}
+          </h2>
+          <p>{content.intro}</p>
+        </div>
+        <ul className="rows">
+          {content.rows.map((row) => {
+            // Validates the slug against the audience registry at build time.
+            getAudience(row.slug);
+            return (
+              <li key={row.slug}>
+                <p className="stmt">&ldquo;{row.statement}&rdquo;</p>
+                <p className="go">
+                  <SiteLink href={audienceHref(row.slug)} arrow>
+                    {row.linkLabel}
+                  </SiteLink>
+                </p>
+              </li>
+            );
+          })}
+        </ul>
+        <p style={{ marginTop: 28, fontWeight: 600 }}>
+          <SiteLink href={content.seeAll.href} arrow>
+            {content.seeAll.label}
+          </SiteLink>
+        </p>
+      </div>
+    </section>
   );
 }

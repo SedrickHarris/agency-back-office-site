@@ -1,24 +1,28 @@
-import Link from "next/link";
-import { Container } from "@/components/ui/Container";
-import { footerNavigation } from "@/data/navigation";
+import { Logo } from "@/components/ui/Logo";
+import { SiteLink } from "@/components/ui/SiteLink";
+import { LAST_REVIEWED, footer } from "@/data/home";
+import { formatLongDate } from "@/lib/utils/date";
 
 export function Footer() {
   return (
-    <footer className="border-t border-rule bg-paper">
-      <Container className="flex flex-col gap-4 py-10 lg:flex-row lg:items-center lg:justify-between">
-        <p className="font-display text-body font-bold">Agency Back Office</p>
-        <nav aria-label="Footer">
-          <ul className="flex flex-wrap gap-x-6 gap-y-2 text-small">
-            {footerNavigation.map((item) => (
-              <li key={item.href}>
-                <Link href={item.href} className="py-2 hover:underline">
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      </Container>
+    <footer className="ftr">
+      <div className="wrap">
+        <p className="ftr-brand">
+          <Logo variant="icon" />
+          <span>
+            {footer.line}{" "}
+            <time dateTime={LAST_REVIEWED}>{formatLongDate(LAST_REVIEWED)}</time>
+            .
+          </span>
+        </p>
+        <ul>
+          {footer.links.map((link) => (
+            <li key={link.href}>
+              <SiteLink href={link.href}>{link.label}</SiteLink>
+            </li>
+          ))}
+        </ul>
+      </div>
     </footer>
   );
 }

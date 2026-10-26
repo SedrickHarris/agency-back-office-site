@@ -1,35 +1,45 @@
-import { SectionHeader } from "@/components/ui/SectionHeader";
+import { SiteLink } from "@/components/ui/SiteLink";
+import type { faq } from "@/data/home";
 
-type Item = { question: string; answer: string };
-
-export function FaqList({
-  headingId,
-  h2,
-  items,
-}: {
-  headingId: string;
-  h2: string;
-  items: Item[];
-}) {
+// Native details and summary: works without JavaScript. The two columns
+// stack on mobile.
+export function FaqList({ content }: { content: typeof faq }) {
   return (
-    <div className="lg:mx-auto lg:max-w-[720px]">
-      <SectionHeader id={headingId} title={h2} />
-      <div className="mt-10 border-b border-rule">
-        {items.map((item, index) => (
-          <details
-            key={item.question}
-            open={index === 0}
-            className="border-t border-rule"
-          >
-            <summary className="faq-summary flex min-h-14 cursor-pointer items-center justify-between gap-4 py-3">
-              <h3 className="font-display text-h3 font-semibold">
-                {item.question}
-              </h3>
-            </summary>
-            <p className="max-w-[68ch] pb-6 text-muted">{item.answer}</p>
-          </details>
-        ))}
+    <section className="sec rule-top" aria-labelledby="h-faq">
+      <div className="wrap">
+        <div className="faq-wrap">
+          <h2 id="h-faq" className="h2">
+            {content.h2}
+          </h2>
+          <div className="faq-cols">
+            {content.columns.map((column) => (
+              <div className="faq-col" key={column.label}>
+                <p className="faq-label">{column.label}</p>
+                {column.items.map((item) => (
+                  <details
+                    className="q"
+                    key={item.question}
+                    open={"open" in item && item.open ? true : undefined}
+                  >
+                    <summary>{item.question}</summary>
+                    <p className="ans">
+                      {item.answer.map((part, index) =>
+                        typeof part === "string" ? (
+                          part
+                        ) : (
+                          <SiteLink key={index} href={part.href}>
+                            {part.text}
+                          </SiteLink>
+                        ),
+                      )}
+                    </p>
+                  </details>
+                ))}
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   );
 }

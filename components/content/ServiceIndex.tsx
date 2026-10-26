@@ -1,91 +1,76 @@
-import Link from "next/link";
-import { SectionHeader } from "@/components/ui/SectionHeader";
+import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
+import { SiteLink } from "@/components/ui/SiteLink";
+import { serviceThemes } from "@/data/services";
+import type { servicesIndex } from "@/data/home";
 import { getService, serviceHref } from "@/lib/content/registry";
-import { serviceThemes, type ServiceTheme } from "@/data/services";
 
-type Theme = { id: ServiceTheme; slugs: string[] };
-type More = { slug: string; suffix?: string };
-
-export function ServiceIndex({
-  headingId,
-  h2,
-  intro,
-  themes,
-  moreLabel,
-  more,
-  seeAll,
-}: {
-  headingId: string;
-  h2: string;
-  intro: string;
-  themes: Theme[];
-  moreLabel: string;
-  more: More[];
-  seeAll: { label: string; href: string };
-}) {
+export function ServiceIndex({ content }: { content: typeof servicesIndex }) {
   return (
-    <div className="grid gap-10 lg:grid-cols-12 lg:gap-8">
-      <div className="lg:col-span-3">
-        <SectionHeader
-          id={headingId}
-          title={h2}
-          intro={intro}
-          className="lg:sticky lg:top-8"
-        />
-      </div>
-      <div className="space-y-12 lg:col-span-9">
-        {themes.map((theme) => (
-          <div key={theme.id} className="border-t border-rule pt-4">
-            <h3 className="text-eyebrow font-display font-semibold uppercase">
-              {serviceThemes[theme.id]}
-            </h3>
-            <ul className="mt-6 grid gap-x-10 gap-y-8 sm:grid-cols-2">
-              {theme.slugs.map((slug) => {
-                const service = getService(slug);
-                return (
-                  <li key={slug}>
-                    <Link
-                      href={serviceHref(slug)}
-                      className="font-display text-h3 font-semibold underline decoration-rule underline-offset-4 hover:decoration-accent"
-                    >
-                      {service.name}
-                    </Link>
-                    {service.description ? (
-                      <p className="mt-2 text-muted">{service.description}</p>
-                    ) : null}
-                  </li>
-                );
-              })}
-            </ul>
+    <section className="sec rule-top" aria-labelledby="h-topics">
+      <div className="wrap svc-grid">
+        <div className="svc-aside">
+          <div className="inner">
+            <p className="eyebrow" style={{ marginBottom: 12 }}>
+              {content.eyebrow}
+            </p>
+            <h2 id="h-topics" className="h2">
+              {content.h2}
+            </h2>
+            <p>{content.intro}</p>
           </div>
-        ))}
-        <div className="border-t border-rule pt-4">
-          <h3 className="text-eyebrow font-display font-semibold uppercase">
-            {moreLabel}
-          </h3>
-          <ul className="mt-4 flex flex-wrap gap-x-6 gap-y-2 text-small">
-            {more.map((item) => (
-              <li key={item.slug}>
-                <Link
-                  href={serviceHref(item.slug)}
-                  className="underline underline-offset-4"
-                >
-                  {getService(item.slug).name}
-                </Link>
-                {item.suffix ? (
-                  <span className="text-muted"> {item.suffix}</span>
-                ) : null}
-              </li>
-            ))}
-          </ul>
-          <p className="mt-6 font-display font-semibold">
-            <Link href={seeAll.href} className="underline underline-offset-4">
-              {seeAll.label}
-            </Link>{" "}
-            <span aria-hidden="true">&rarr;</span>
-          </p>
+        </div>
+        <div className="svc-main">
+          {content.themes.map((theme) => (
+            <div key={theme.id}>
+              <h3 className="group-label">{serviceThemes[theme.id]}</h3>
+              <ul className="topics cards">
+                {theme.slugs.map((slug) => {
+                  const service = getService(slug);
+                  return (
+                    <li key={slug}>
+                      <ImagePlaceholder
+                        subject={service.name}
+                        note={service.imageNote ?? "image"}
+                      />
+                      <div className="card-body">
+                        <h4 className="h3">
+                          <SiteLink href={serviceHref(slug)}>
+                            {service.name}
+                          </SiteLink>
+                        </h4>
+                        <p>{service.description}</p>
+                      </div>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          ))}
+          <div className="more">
+            <h3 className="group-label">{content.moreLabel}</h3>
+            <ul>
+              {content.more.map((item) => (
+                <li key={item.slug}>
+                  <SiteLink href={serviceHref(item.slug)}>
+                    {getService(item.slug).name}
+                  </SiteLink>
+                  {"suffix" in item && item.suffix ? (
+                    <>
+                      {" "}
+                      <span className="small">{item.suffix}</span>
+                    </>
+                  ) : null}
+                </li>
+              ))}
+            </ul>
+            <p className="all-link">
+              <SiteLink href={content.seeAll.href} arrow>
+                {content.seeAll.label}
+              </SiteLink>
+            </p>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

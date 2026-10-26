@@ -1,50 +1,52 @@
-import Link from "next/link";
-import { HeroWorkflowDiagram } from "@/components/content/HeroWorkflowDiagram";
+import { SiteLink } from "@/components/ui/SiteLink";
 import { ButtonLink } from "@/components/ui/ButtonLink";
-import { Section } from "@/components/ui/Section";
 import type { hero } from "@/data/home";
 
 export function Hero({ content }: { content: typeof hero }) {
   return (
-    <Section
-      labelledBy="home-hero-title"
-      className="pt-10 pb-16 lg:pt-16 lg:pb-24"
-    >
-      <div className="grid gap-12 lg:grid-cols-12 lg:items-start lg:gap-8">
-        <div className="lg:col-span-7">
-          <p className="text-eyebrow font-display font-semibold uppercase">
-            {content.eyebrow}
-          </p>
-          <h1
-            id="home-hero-title"
-            className="mt-4 max-w-[16ch] font-display text-h1 font-bold sm:max-w-[20ch]"
-          >
+    <section className="hero" aria-labelledby="h-hero">
+      <div className="wrap hero-grid">
+        <div>
+          <p className="eyebrow">{content.eyebrow}</p>
+          <h1 id="h-hero" className="h1">
             {content.h1}
           </h1>
-          <p className="mt-6 max-w-[68ch] border-l-2 border-ink pl-5 text-lead">
-            {content.definition}
-          </p>
-          <p className="mt-4 max-w-[68ch] text-muted">{content.supporting}</p>
-          <div className="mt-8 flex flex-col items-stretch gap-4 sm:flex-row sm:items-center sm:gap-6">
+          <p className="lead">{content.definition}</p>
+          <p className="support">{content.supporting}</p>
+          <div className="cta-row">
             <ButtonLink href={content.primaryCta.href}>
               {content.primaryCta.label}
             </ButtonLink>
-            <Link
-              href={content.secondaryCta.href}
-              className="text-center font-semibold underline underline-offset-4 sm:text-left"
-            >
+            <SiteLink href={content.secondaryCta.href} className="sec-link">
               {content.secondaryCta.label}
-            </Link>
+            </SiteLink>
           </div>
         </div>
-        <div className="lg:col-span-5">
-          <HeroWorkflowDiagram
-            title={content.diagram.title}
-            steps={content.diagram.steps}
-            caption={content.diagram.caption}
-          />
-        </div>
+        <figure className="diagram" aria-labelledby="h-diagram">
+          <p id="h-diagram" className="dtitle">
+            {content.diagram.title}
+          </p>
+          <ol className="flow">
+            {content.diagram.steps.map((step, index) => (
+              <li key={step.label}>
+                <span className="mark" aria-hidden="true">
+                  {index + 1}
+                </span>
+                <p className="step">{step.label}</p>
+                <p>
+                  {"callout" in step && step.callout ? (
+                    <>
+                      <span className="ann">{step.callout}:</span>{" "}
+                    </>
+                  ) : null}
+                  {step.description}
+                </p>
+              </li>
+            ))}
+          </ol>
+          <figcaption className="small">{content.diagram.caption}</figcaption>
+        </figure>
       </div>
-    </Section>
+    </section>
   );
 }
