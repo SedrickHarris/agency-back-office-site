@@ -1,0 +1,655 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Contact page design reference</title><style>body{margin:0;font:16px Inter,system-ui,sans-serif;background:#EEF3FC;color:#04153A;padding:24px}h1{font-size:20px}h2{font-size:15px;margin:32px 0 8px}iframe{border:1px solid #D2DAE8;background:#fff;display:block;max-width:100%}</style></head><body><h1>Contact page (/contact/) - approved design reference</h1><p>Each board below is a self-contained render. Links inside point nowhere on purpose; use the build prompt for routes.</p><h2>Desktop, survey step 1 (1440px)</h2><iframe title="Desktop, survey step 1 (1440px)" width="1440" height="2700" srcdoc="&lt;!doctype html&gt;&lt;html lang=&quot;en&quot;&gt;&lt;head&gt;&lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;link href=&quot;https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@600;700;800&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;style&gt;
+body{margin:0;font-family:&#x27;Inter&#x27;,system-ui,sans-serif;color:#04153A;background:#FFFFFF}
+*{box-sizing:border-box}
+h1,h2,h3,p,ol,ul{margin:0;padding:0}
+a{color:#0360FC} a:hover{color:#024BC9}
+.hd{font-family:&#x27;Manrope&#x27;,system-ui,sans-serif}
+.label{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#425068}
+.wrap{max-width:1200px;margin:0 auto;padding:0 48px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 28px;background:#0360FC;color:#FFFFFF;font:600 16px &#x27;Inter&#x27;,sans-serif;border:2px solid #0360FC;border-radius:4px;cursor:pointer;text-decoration:none}
+.btn:hover{background:#024BC9;border-color:#024BC9;color:#FFFFFF}
+.btn-out{display:inline-flex;align-items:center;min-height:44px;padding:0 20px;color:#0360FC;font:600 15px &#x27;Inter&#x27;,sans-serif;border:2px solid #0360FC;border-radius:4px;text-decoration:none;background:#FFFFFF}
+.btn-out:hover{background:#0360FC;color:#FFFFFF}
+.back{background:none;border:0;color:#0360FC;font:600 16px &#x27;Inter&#x27;,sans-serif;min-height:48px;padding:0 8px;cursor:pointer;text-decoration:underline}
+.navlink{color:#04153A;text-decoration:none;font-weight:500;font-size:15px}
+.navlink:hover{color:#0360FC}
+.help{font-size:14px;line-height:1.45;color:#425068}
+.req{font-weight:400;color:#425068}
+.q{font:700 22px/1.25 &#x27;Manrope&#x27;,system-ui,sans-serif;letter-spacing:-.01em;padding:0;margin:0 0 6px;color:#04153A}
+.segs{display:flex;gap:6px;margin-top:8px}
+.seg{flex:1;height:4px;background:#D2DAE8;border-radius:1px}
+.seg.on{background:#04153A}
+.pills{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
+.pill{position:relative;display:inline-flex}
+.sr{position:absolute;opacity:0;width:100%;height:100%;margin:0;cursor:pointer}
+.pill span{display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:0 20px;border:1px solid #6B7A94;border-radius:4px;background:#FFFFFF;color:#04153A;font:500 16px &#x27;Inter&#x27;,sans-serif}
+.pill:hover span{border-color:#04153A;background:#EEF3FC}
+.pill .chk{display:none}
+.pill input:checked + span{background:#04153A;border-color:#04153A;color:#FFFFFF}
+.pill input:checked + span .chk{display:inline-block}
+.pill input:focus-visible + span{outline:3px solid #0360FC;outline-offset:2px}
+.inp{width:100%;min-height:48px;padding:0 14px;border:1px solid #6B7A94;border-radius:4px;font:400 16px &#x27;Inter&#x27;,sans-serif;color:#04153A;background:#FFFFFF}
+.inp:focus,.btn:focus-visible,.back:focus-visible,a:focus-visible{outline:3px solid #0360FC;outline-offset:2px}
+.row{display:flex;gap:16px;align-items:flex-start;padding:20px 0;border-top:1px solid #D2DAE8}
+.ico{flex:none;width:40px;height:40px;display:flex;align-items:center;justify-content:center;border:1px solid #D2DAE8;border-radius:4px;color:#04153A}
+.hl{background:#D9E5FD;padding:2px 0}
+.bdg{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;margin-left:4px;background:#04153A;color:#FFFFFF;font:600 12px &#x27;Inter&#x27;,sans-serif;border-radius:2px;vertical-align:2px}
+.ft a{color:#C9D3E6;text-decoration:none;font-size:15px}
+.ft a:hover{color:#FFFFFF;text-decoration:underline}
+.opt:hover .opt-t{text-decoration:underline}
+&lt;/style&gt;
+&lt;/head&gt;&lt;body&gt;
+
+&lt;div style=&quot;width:100%;background:#FFFFFF&quot;&gt;
+
+&lt;header style=&quot;border-bottom:1px solid #D2DAE8&quot;&gt;
+&lt;div class=&quot;wrap&quot; style=&quot;display:flex;align-items:center;justify-content:space-between;height:88px&quot;&gt;
+&lt;a href=&quot;Main.dc.html&quot; aria-label=&quot;Agency Back Office home&quot; style=&quot;display:flex;align-items:center;gap:12px;text-decoration:none;color:#04153A&quot;&gt;
+&lt;span style=&quot;width:40px;height:40px;background:#04153A;border-radius:4px;display:flex;align-items:center;justify-content:center;color:#7BA7FF;font:800 15px &#x27;Manrope&#x27;,sans-serif&quot;&gt;ABO&lt;/span&gt;
+&lt;span class=&quot;hd&quot; style=&quot;font-weight:800;font-size:20px;letter-spacing:-.01em&quot;&gt;Agency Back Office&lt;/span&gt;
+&lt;/a&gt;
+&lt;nav aria-label=&quot;Primary&quot; style=&quot;display:flex;align-items:center;gap:32px&quot;&gt;
+&lt;a class=&quot;navlink&quot; href=&quot;Main.dc.html&quot;&gt;Training&lt;/a&gt;
+&lt;a class=&quot;navlink&quot; href=&quot;Main.dc.html&quot;&gt;Topics&lt;/a&gt;
+&lt;a class=&quot;navlink&quot; href=&quot;Main.dc.html&quot;&gt;Who We Help&lt;/a&gt;
+&lt;a class=&quot;navlink&quot; href=&quot;Main.dc.html&quot;&gt;Resources&lt;/a&gt;
+&lt;a class=&quot;navlink&quot; href=&quot;Main.dc.html&quot;&gt;About&lt;/a&gt;
+&lt;a class=&quot;btn-out&quot; href=&quot;Main.dc.html&quot;&gt;Get Started&lt;/a&gt;
+&lt;/nav&gt;
+&lt;/div&gt;
+&lt;/header&gt;
+
+&lt;main&gt;
+
+&lt;div class=&quot;wrap&quot; style=&quot;padding-top:24px&quot;&gt;
+&lt;nav aria-label=&quot;Breadcrumb&quot; style=&quot;font-size:14px;color:#425068&quot;&gt;
+&lt;ol style=&quot;list-style:none;display:flex;gap:8px;align-items:center&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;Main.dc.html&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+&lt;li aria-hidden=&quot;true&quot;&gt;/&lt;/li&gt;
+&lt;li aria-current=&quot;page&quot; style=&quot;color:#04153A;font-weight:500&quot;&gt;Contact&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/nav&gt;
+&lt;/div&gt;
+
+&lt;section class=&quot;wrap&quot; style=&quot;padding-top:32px;padding-bottom:96px&quot;&gt;
+&lt;div style=&quot;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);column-gap:64px;align-items:start&quot;&gt;
+
+&lt;div style=&quot;position:sticky;top:32px;border-top:2px solid #04153A;padding-top:20px&quot;&gt;
+&lt;p class=&quot;label&quot;&gt;Contact&lt;/p&gt;
+&lt;h1 class=&quot;hd&quot; style=&quot;margin-top:16px;font-weight:800;font-size:48px;line-height:1.08;letter-spacing:-.02em&quot;&gt;Contact Agency Back Office&lt;/h1&gt;
+&lt;p style=&quot;margin-top:20px;font-size:18px;line-height:1.6;color:#425068;max-width:440px&quot;&gt;Ask a question about Agency Back Office training, or tell us what you are trying to learn. The more you say about your work, the more useful the reply can be.&lt;/p&gt;
+
+&lt;h2 class=&quot;hd&quot; style=&quot;margin-top:48px;margin-bottom:16px;font-weight:700;font-size:20px&quot;&gt;What you can write about&lt;/h2&gt;
+&lt;ol style=&quot;list-style:none&quot;&gt;
+&lt;li class=&quot;row&quot;&gt;
+&lt;span class=&quot;ico&quot;&gt;&lt;svg width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.75&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M4 5.5A1.5 1.5 0 0 1 5.5 4H11v15H5.5A1.5 1.5 0 0 0 4 20.5z&quot;/&gt;&lt;path d=&quot;M20 5.5A1.5 1.5 0 0 0 18.5 4H13v15h5.5a1.5 1.5 0 0 1 1.5 1.5z&quot;/&gt;&lt;/svg&gt;&lt;/span&gt;
+&lt;div&gt;&lt;p style=&quot;font-weight:600;font-size:16px&quot;&gt;Training topics&lt;/p&gt;&lt;p style=&quot;margin-top:4px;font-size:15px;line-height:1.55;color:#425068&quot;&gt;Search engine optimization (SEO), answer engine optimization (AEO), Google Business Profile (GBP), local SEO, reputation management, AI marketing, marketing automation, lead generation, agency operations, and the other topics we teach.&lt;/p&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li class=&quot;row&quot;&gt;
+&lt;span class=&quot;ico&quot;&gt;&lt;svg width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.75&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot;&gt;&lt;rect x=&quot;4&quot; y=&quot;5&quot; width=&quot;16&quot; height=&quot;15&quot; rx=&quot;2&quot;/&gt;&lt;path d=&quot;M4 10h16M9 3v4M15 3v4&quot;/&gt;&lt;/svg&gt;&lt;/span&gt;
+&lt;div&gt;&lt;p style=&quot;font-weight:600;font-size:16px&quot;&gt;Live training and sessions&lt;/p&gt;&lt;p style=&quot;margin-top:4px;font-size:15px;line-height:1.55;color:#425068&quot;&gt;Questions about the live training and sessions formats.&lt;/p&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li class=&quot;row&quot; style=&quot;border-bottom:1px solid #D2DAE8&quot;&gt;
+&lt;span class=&quot;ico&quot;&gt;&lt;svg width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.75&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v7a2.5 2.5 0 0 1-2.5 2.5H11l-4 4v-4h-.5A2.5 2.5 0 0 1 4 13.5z&quot;/&gt;&lt;/svg&gt;&lt;/span&gt;
+&lt;div&gt;&lt;p style=&quot;font-weight:600;font-size:16px&quot;&gt;Something else&lt;/p&gt;&lt;p style=&quot;margin-top:4px;font-size:15px;line-height:1.55;color:#425068&quot;&gt;A question that fits neither of the above, or a note about this site.&lt;/p&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;!-- Survey panel: step 1 --&gt;
+&lt;div style=&quot;border:1px solid #D2DAE8;border-top:2px solid #04153A;padding:36px 40px 40px;background:#FFFFFF&quot;&gt;
+&lt;h2 class=&quot;hd&quot; style=&quot;font-weight:700;font-size:28px;letter-spacing:-.01em&quot;&gt;Send a message&lt;/h2&gt;
+&lt;div style=&quot;margin-top:16px&quot;&gt;
+&lt;p class=&quot;label&quot;&gt;Step 1 of 3&lt;/p&gt;
+&lt;div class=&quot;segs&quot; aria-hidden=&quot;true&quot;&gt;&lt;span class=&quot;seg on&quot;&gt;&lt;/span&gt;&lt;span class=&quot;seg&quot;&gt;&lt;/span&gt;&lt;span class=&quot;seg&quot;&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;form style=&quot;margin-top:32px&quot; onsubmit=&quot;return false&quot;&gt;
+&lt;fieldset style=&quot;border:0;padding:0;margin:0;min-width:0&quot;&gt;
+&lt;legend class=&quot;q&quot;&gt;Which describes you best? &lt;span class=&quot;req&quot; style=&quot;font:400 16px &#x27;Inter&#x27;,sans-serif&quot;&gt;(optional)&lt;/span&gt;&lt;/legend&gt;
+&lt;p class=&quot;help&quot;&gt;Choose one, or skip this question.&lt;/p&gt;
+&lt;div class=&quot;pills&quot; role=&quot;radiogroup&quot; aria-label=&quot;Which describes you best?&quot;&gt;
+&lt;label class=&quot;pill&quot;&gt;&lt;input class=&quot;sr&quot; type=&quot;radio&quot; name=&quot;role&quot; value=&quot;agency-owner&quot;&gt;&lt;span&gt;&lt;svg class=&quot;chk&quot; width=&quot;18&quot; height=&quot;18&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.25&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M5 12.5l4.5 4.5L19 7.5&quot;/&gt;&lt;/svg&gt;Agency owner or leader&lt;/span&gt;&lt;/label&gt;
+&lt;label class=&quot;pill&quot;&gt;&lt;input class=&quot;sr&quot; type=&quot;radio&quot; name=&quot;role&quot; value=&quot;new-agency-owner&quot;&gt;&lt;span&gt;&lt;svg class=&quot;chk&quot; width=&quot;18&quot; height=&quot;18&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.25&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M5 12.5l4.5 4.5L19 7.5&quot;/&gt;&lt;/svg&gt;New agency owner&lt;/span&gt;&lt;/label&gt;
+&lt;label class=&quot;pill&quot;&gt;&lt;input class=&quot;sr&quot; type=&quot;radio&quot; name=&quot;role&quot; value=&quot;consultant&quot;&gt;&lt;span&gt;&lt;svg class=&quot;chk&quot; width=&quot;18&quot; height=&quot;18&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.25&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M5 12.5l4.5 4.5L19 7.5&quot;/&gt;&lt;/svg&gt;Consultant&lt;/span&gt;&lt;/label&gt;
+&lt;label class=&quot;pill&quot;&gt;&lt;input class=&quot;sr&quot; type=&quot;radio&quot; name=&quot;role&quot; value=&quot;freelancer&quot;&gt;&lt;span&gt;&lt;svg class=&quot;chk&quot; width=&quot;18&quot; height=&quot;18&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.25&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M5 12.5l4.5 4.5L19 7.5&quot;/&gt;&lt;/svg&gt;Freelancer&lt;/span&gt;&lt;/label&gt;
+&lt;label class=&quot;pill&quot;&gt;&lt;input class=&quot;sr&quot; type=&quot;radio&quot; name=&quot;role&quot; value=&quot;other&quot;&gt;&lt;span&gt;&lt;svg class=&quot;chk&quot; width=&quot;18&quot; height=&quot;18&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.25&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M5 12.5l4.5 4.5L19 7.5&quot;/&gt;&lt;/svg&gt;Other&lt;/span&gt;&lt;/label&gt;
+&lt;/div&gt;
+&lt;/fieldset&gt;
+&lt;div style=&quot;margin-top:36px&quot;&gt;&lt;button class=&quot;btn&quot; type=&quot;button&quot;&gt;Next&lt;/button&gt;&lt;/div&gt;
+&lt;/form&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/section&gt;
+
+&lt;section class=&quot;wrap&quot; style=&quot;padding-bottom:96px&quot;&gt;
+&lt;div style=&quot;border-top:2px solid #04153A;padding-top:28px;display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);column-gap:64px;align-items:start&quot;&gt;
+&lt;div&gt;
+&lt;h2 class=&quot;hd&quot; style=&quot;font-weight:700;font-size:32px;line-height:1.15;letter-spacing:-.01em&quot;&gt;What makes a useful message&lt;/h2&gt;
+&lt;p style=&quot;margin-top:16px;font-size:17px;line-height:1.6;color:#425068&quot;&gt;You do not need to write much. Three details help most.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div&gt;
+&lt;div style=&quot;background:#EEF3FC;border:1px solid #D2DAE8;border-radius:4px;padding:32px 36px&quot;&gt;
+&lt;p class=&quot;label&quot;&gt;Example message (illustrative, not from a real person)&lt;/p&gt;
+&lt;p style=&quot;margin-top:16px;font-size:20px;line-height:1.75;color:#04153A&quot;&gt;&lt;span class=&quot;hl&quot;&gt;I run a small web design agency&lt;span class=&quot;bdg&quot; aria-hidden=&quot;true&quot;&gt;1&lt;/span&gt;&lt;/span&gt; and &lt;span class=&quot;hl&quot;&gt;want to add Google Business Profile work for my existing clients.&lt;span class=&quot;bdg&quot; aria-hidden=&quot;true&quot;&gt;2&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;hl&quot;&gt;Which topics should I start with, and in what order?&lt;span class=&quot;bdg&quot; aria-hidden=&quot;true&quot;&gt;3&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;ol style=&quot;list-style:none;margin-top:8px&quot;&gt;
+&lt;li class=&quot;row&quot; style=&quot;padding:16px 0&quot;&gt;&lt;span class=&quot;bdg&quot; style=&quot;margin:0;width:24px;height:24px;font-size:13px;flex:none&quot; aria-hidden=&quot;true&quot;&gt;1&lt;/span&gt;&lt;p style=&quot;font-size:16px;line-height:1.55&quot;&gt;&lt;strong style=&quot;font-weight:600&quot;&gt;Who you are.&lt;/strong&gt; &lt;span style=&quot;color:#425068&quot;&gt;Your role helps point you to the right training.&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li class=&quot;row&quot; style=&quot;padding:16px 0&quot;&gt;&lt;span class=&quot;bdg&quot; style=&quot;margin:0;width:24px;height:24px;font-size:13px;flex:none&quot; aria-hidden=&quot;true&quot;&gt;2&lt;/span&gt;&lt;p style=&quot;font-size:16px;line-height:1.55&quot;&gt;&lt;strong style=&quot;font-weight:600&quot;&gt;What you are working on.&lt;/strong&gt; &lt;span style=&quot;color:#425068&quot;&gt;Your situation shapes the answer.&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li class=&quot;row&quot; style=&quot;padding:16px 0;border-bottom:1px solid #D2DAE8&quot;&gt;&lt;span class=&quot;bdg&quot; style=&quot;margin:0;width:24px;height:24px;font-size:13px;flex:none&quot; aria-hidden=&quot;true&quot;&gt;3&lt;/span&gt;&lt;p style=&quot;font-size:16px;line-height:1.55&quot;&gt;&lt;strong style=&quot;font-weight:600&quot;&gt;What you want to know.&lt;/strong&gt; &lt;span style=&quot;color:#425068&quot;&gt;A specific question can get a specific reply.&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/section&gt;
+
+&lt;section class=&quot;wrap&quot; style=&quot;padding-bottom:96px&quot;&gt;
+&lt;div style=&quot;border-top:2px solid #04153A;padding-top:28px&quot;&gt;
+&lt;h2 class=&quot;hd&quot; style=&quot;font-weight:700;font-size:32px;letter-spacing:-.01em&quot;&gt;Not ready to write?&lt;/h2&gt;
+&lt;p style=&quot;margin-top:12px;font-size:17px;color:#425068&quot;&gt;These pages may answer your question first.&lt;/p&gt;
+&lt;ul style=&quot;list-style:none;margin-top:24px&quot;&gt;
+&lt;li class=&quot;row opt&quot; style=&quot;align-items:center;padding:24px 0&quot;&gt;
+&lt;span class=&quot;ico&quot;&gt;&lt;svg width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.75&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M4 5.5A1.5 1.5 0 0 1 5.5 4H11v15H5.5A1.5 1.5 0 0 0 4 20.5z&quot;/&gt;&lt;path d=&quot;M20 5.5A1.5 1.5 0 0 0 18.5 4H13v15h5.5a1.5 1.5 0 0 1 1.5 1.5z&quot;/&gt;&lt;/svg&gt;&lt;/span&gt;
+&lt;div style=&quot;flex:1&quot;&gt;&lt;a class=&quot;opt-t hd&quot; href=&quot;Main.dc.html&quot; style=&quot;font-weight:700;font-size:20px;text-decoration:none&quot;&gt;Browse training topics&lt;/a&gt;&lt;p style=&quot;margin-top:4px;font-size:16px;color:#425068&quot;&gt;See what Agency Back Office teaches, from SEO to agency operations.&lt;/p&gt;&lt;/div&gt;
+&lt;svg width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;#0360FC&quot; stroke-width=&quot;1.75&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M5 12h14M13 6l6 6-6 6&quot;/&gt;&lt;/svg&gt;
+&lt;/li&gt;
+&lt;li class=&quot;row opt&quot; style=&quot;align-items:center;padding:24px 0&quot;&gt;
+&lt;span class=&quot;ico&quot;&gt;&lt;svg width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.75&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M12 4l8 4-8 4-8-4z&quot;/&gt;&lt;path d=&quot;M4 12l8 4 8-4&quot;/&gt;&lt;path d=&quot;M4 16l8 4 8-4&quot;/&gt;&lt;/svg&gt;&lt;/span&gt;
+&lt;div style=&quot;flex:1&quot;&gt;&lt;a class=&quot;opt-t hd&quot; href=&quot;Main.dc.html&quot; style=&quot;font-weight:700;font-size:20px;text-decoration:none&quot;&gt;Explore training formats&lt;/a&gt;&lt;p style=&quot;margin-top:4px;font-size:16px;color:#425068&quot;&gt;See how training is delivered, including live training and sessions.&lt;/p&gt;&lt;/div&gt;
+&lt;svg width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;#0360FC&quot; stroke-width=&quot;1.75&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M5 12h14M13 6l6 6-6 6&quot;/&gt;&lt;/svg&gt;
+&lt;/li&gt;
+&lt;li class=&quot;row opt&quot; style=&quot;align-items:center;padding:24px 0;border-bottom:1px solid #D2DAE8&quot;&gt;
+&lt;span class=&quot;ico&quot;&gt;&lt;svg width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.75&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M7 3h7l5 5v13H7z&quot;/&gt;&lt;path d=&quot;M14 3v5h5M10 13h6M10 17h6&quot;/&gt;&lt;/svg&gt;&lt;/span&gt;
+&lt;div style=&quot;flex:1&quot;&gt;&lt;a class=&quot;opt-t hd&quot; href=&quot;Main.dc.html&quot; style=&quot;font-weight:700;font-size:20px;text-decoration:none&quot;&gt;Read the resources&lt;/a&gt;&lt;p style=&quot;margin-top:4px;font-size:16px;color:#425068&quot;&gt;Guides, checklists, templates, and answers to common questions.&lt;/p&gt;&lt;/div&gt;
+&lt;svg width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;#0360FC&quot; stroke-width=&quot;1.75&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M5 12h14M13 6l6 6-6 6&quot;/&gt;&lt;/svg&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/section&gt;
+
+&lt;section style=&quot;background:#EEF3FC;border-top:2px solid #04153A&quot;&gt;
+&lt;div class=&quot;wrap&quot; style=&quot;display:flex;align-items:center;justify-content:space-between;gap:48px;padding-top:48px;padding-bottom:48px&quot;&gt;
+&lt;div style=&quot;max-width:620px&quot;&gt;
+&lt;h2 class=&quot;hd&quot; style=&quot;font-weight:700;font-size:28px;letter-spacing:-.01em&quot;&gt;Ready to take the next step?&lt;/h2&gt;
+&lt;p style=&quot;margin-top:12px;font-size:17px;line-height:1.6;color:#425068&quot;&gt;If you already know you want training, the Get started page is the faster route.&lt;/p&gt;
+&lt;/div&gt;
+&lt;a href=&quot;Main.dc.html&quot; style=&quot;display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:17px;min-height:48px&quot;&gt;See how to get started
+&lt;svg width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.75&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M5 12h14M13 6l6 6-6 6&quot;/&gt;&lt;/svg&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;/section&gt;
+
+&lt;/main&gt;
+
+&lt;footer class=&quot;ft&quot; style=&quot;background:#04153A;color:#C9D3E6&quot;&gt;
+&lt;div class=&quot;wrap&quot; style=&quot;padding-top:56px;padding-bottom:56px;display:grid;grid-template-columns:minmax(0,4fr) minmax(0,2fr) minmax(0,2fr) minmax(0,2fr);column-gap:48px&quot;&gt;
+&lt;div&gt;
+&lt;div style=&quot;display:flex;align-items:center;gap:12px&quot;&gt;
+&lt;span style=&quot;width:40px;height:40px;border:2px solid #7BA7FF;border-radius:4px;display:flex;align-items:center;justify-content:center;color:#7BA7FF;font:800 15px &#x27;Manrope&#x27;,sans-serif&quot;&gt;ABO&lt;/span&gt;
+&lt;span class=&quot;hd&quot; style=&quot;font-weight:800;font-size:20px;color:#FFFFFF&quot;&gt;Agency Back Office&lt;/span&gt;
+&lt;/div&gt;
+&lt;p style=&quot;margin-top:16px;font-size:15px;line-height:1.6;max-width:320px&quot;&gt;Practical digital marketing and agency implementation training.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div&gt;&lt;p class=&quot;label&quot; style=&quot;color:#9FB0CD&quot;&gt;Learn&lt;/p&gt;
+&lt;ul style=&quot;list-style:none;margin-top:16px;display:flex;flex-direction:column;gap:12px&quot;&gt;&lt;li&gt;&lt;a href=&quot;Main.dc.html&quot;&gt;Training&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;Main.dc.html&quot;&gt;Topics&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;Main.dc.html&quot;&gt;Who We Help&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;Main.dc.html&quot;&gt;Resources&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;
+&lt;div&gt;&lt;p class=&quot;label&quot; style=&quot;color:#9FB0CD&quot;&gt;Company&lt;/p&gt;
+&lt;ul style=&quot;list-style:none;margin-top:16px;display:flex;flex-direction:column;gap:12px&quot;&gt;&lt;li&gt;&lt;a href=&quot;Main.dc.html&quot;&gt;About&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;Main.dc.html&quot;&gt;Reviews&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;Main.dc.html&quot; aria-current=&quot;page&quot; style=&quot;color:#FFFFFF;font-weight:600&quot;&gt;Contact&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;Main.dc.html&quot;&gt;Get Started&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;
+&lt;div&gt;&lt;p class=&quot;label&quot; style=&quot;color:#9FB0CD&quot;&gt;Legal&lt;/p&gt;
+&lt;ul style=&quot;list-style:none;margin-top:16px;display:flex;flex-direction:column;gap:12px&quot;&gt;&lt;li&gt;&lt;a href=&quot;Main.dc.html&quot;&gt;Privacy&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;Main.dc.html&quot;&gt;Terms&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/footer&gt;
+
+&lt;/div&gt;
+&lt;/body&gt;&lt;/html&gt;"></iframe><h2>Mobile, survey step 1 (390px)</h2><iframe title="Mobile, survey step 1 (390px)" width="390" height="3250" srcdoc="&lt;!doctype html&gt;&lt;html lang=&quot;en&quot;&gt;&lt;head&gt;&lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;link href=&quot;https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@600;700;800&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;style&gt;
+body{margin:0;font-family:&#x27;Inter&#x27;,system-ui,sans-serif;color:#04153A;background:#FFFFFF}
+*{box-sizing:border-box}
+h1,h2,h3,p,ol,ul{margin:0;padding:0}
+a{color:#0360FC} a:hover{color:#024BC9}
+.hd{font-family:&#x27;Manrope&#x27;,system-ui,sans-serif}
+.label{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#425068}
+.btn{display:flex;width:100%;align-items:center;justify-content:center;min-height:52px;padding:0 24px;background:#0360FC;color:#FFFFFF;font:600 16px &#x27;Inter&#x27;,sans-serif;border:2px solid #0360FC;border-radius:4px;cursor:pointer;text-decoration:none}
+.btn:hover{background:#024BC9;border-color:#024BC9}
+.help{font-size:14px;line-height:1.45;color:#425068}
+.req{font-weight:400;color:#425068}
+.q{font:700 20px/1.25 &#x27;Manrope&#x27;,system-ui,sans-serif;letter-spacing:-.01em;padding:0;margin:0 0 6px;color:#04153A}
+.segs{display:flex;gap:6px;margin-top:8px}
+.seg{flex:1;height:4px;background:#D2DAE8;border-radius:1px}
+.seg.on{background:#04153A}
+.pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.pill{position:relative;display:inline-flex}
+.sr{position:absolute;opacity:0;width:100%;height:100%;margin:0;cursor:pointer}
+.pill span{display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:0 16px;border:1px solid #6B7A94;border-radius:4px;background:#FFFFFF;color:#04153A;font:500 16px &#x27;Inter&#x27;,sans-serif}
+.pill .chk{display:none}
+.pill input:checked + span{background:#04153A;border-color:#04153A;color:#FFFFFF}
+.pill input:checked + span .chk{display:inline-block}
+.pill input:focus-visible + span{outline:3px solid #0360FC;outline-offset:2px}
+.btn:focus-visible,a:focus-visible{outline:3px solid #0360FC;outline-offset:2px}
+.row{display:flex;gap:14px;align-items:flex-start;padding:18px 0;border-top:1px solid #D2DAE8}
+.ico{flex:none;width:40px;height:40px;display:flex;align-items:center;justify-content:center;border:1px solid #D2DAE8;border-radius:4px;color:#04153A}
+.hl{background:#D9E5FD;padding:2px 0}
+.bdg{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;margin-left:4px;background:#04153A;color:#FFFFFF;font:600 12px &#x27;Inter&#x27;,sans-serif;border-radius:2px;vertical-align:2px}
+.ft a{color:#C9D3E6;text-decoration:none;font-size:15px;display:inline-block;padding:6px 0}
+&lt;/style&gt;
+&lt;/head&gt;&lt;body&gt;
+
+&lt;div style=&quot;width:390px;background:#FFFFFF&quot;&gt;
+
+&lt;header style=&quot;border-bottom:1px solid #D2DAE8;display:flex;align-items:center;justify-content:space-between;height:64px;padding:0 16px&quot;&gt;
+&lt;a href=&quot;Mobile.dc.html&quot; aria-label=&quot;Agency Back Office home&quot; style=&quot;display:flex;align-items:center;gap:10px;text-decoration:none;color:#04153A&quot;&gt;
+&lt;span style=&quot;width:36px;height:36px;background:#04153A;border-radius:4px;display:flex;align-items:center;justify-content:center;color:#7BA7FF;font:800 13px &#x27;Manrope&#x27;,sans-serif&quot;&gt;ABO&lt;/span&gt;
+&lt;span class=&quot;hd&quot; style=&quot;font-weight:800;font-size:17px&quot;&gt;Agency Back Office&lt;/span&gt;
+&lt;/a&gt;
+&lt;button type=&quot;button&quot; aria-label=&quot;Open menu&quot; style=&quot;width:48px;height:48px;border:1px solid #D2DAE8;border-radius:4px;background:#FFFFFF;color:#04153A;display:flex;align-items:center;justify-content:center;cursor:pointer&quot;&gt;
+&lt;svg width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.75&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M4 7h16M4 12h16M4 17h16&quot;/&gt;&lt;/svg&gt;&lt;/button&gt;
+&lt;/header&gt;
+
+&lt;main&gt;
+
+&lt;nav aria-label=&quot;Breadcrumb&quot; style=&quot;padding:16px 16px 0;font-size:14px;color:#425068&quot;&gt;
+&lt;ol style=&quot;list-style:none;display:flex;gap:8px&quot;&gt;&lt;li&gt;&lt;a href=&quot;Mobile.dc.html&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;&lt;li aria-hidden=&quot;true&quot;&gt;/&lt;/li&gt;&lt;li aria-current=&quot;page&quot; style=&quot;color:#04153A;font-weight:500&quot;&gt;Contact&lt;/li&gt;&lt;/ol&gt;
+&lt;/nav&gt;
+
+&lt;section style=&quot;padding:20px 16px 0&quot;&gt;
+&lt;div style=&quot;border-top:2px solid #04153A;padding-top:16px&quot;&gt;
+&lt;p class=&quot;label&quot;&gt;Contact&lt;/p&gt;
+&lt;h1 class=&quot;hd&quot; style=&quot;margin-top:12px;font-weight:800;font-size:34px;line-height:1.1;letter-spacing:-.02em&quot;&gt;Contact Agency Back Office&lt;/h1&gt;
+&lt;p style=&quot;margin-top:16px;font-size:17px;line-height:1.6;color:#425068&quot;&gt;Ask a question about Agency Back Office training, or tell us what you are trying to learn. The more you say about your work, the more useful the reply can be.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/section&gt;
+
+&lt;section style=&quot;padding:32px 16px 0&quot;&gt;
+&lt;div style=&quot;border:1px solid #D2DAE8;border-top:2px solid #04153A;padding:24px 20px 24px&quot;&gt;
+&lt;h2 class=&quot;hd&quot; style=&quot;font-weight:700;font-size:24px;letter-spacing:-.01em&quot;&gt;Send a message&lt;/h2&gt;
+&lt;div style=&quot;margin-top:14px&quot;&gt;
+&lt;p class=&quot;label&quot;&gt;Step 1 of 3&lt;/p&gt;
+&lt;div class=&quot;segs&quot; aria-hidden=&quot;true&quot;&gt;&lt;span class=&quot;seg on&quot;&gt;&lt;/span&gt;&lt;span class=&quot;seg&quot;&gt;&lt;/span&gt;&lt;span class=&quot;seg&quot;&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;form style=&quot;margin-top:24px&quot; onsubmit=&quot;return false&quot;&gt;
+&lt;fieldset style=&quot;border:0;padding:0;margin:0;min-width:0&quot;&gt;
+&lt;legend class=&quot;q&quot;&gt;Which describes you best? &lt;span class=&quot;req&quot; style=&quot;font:400 15px &#x27;Inter&#x27;,sans-serif&quot;&gt;(optional)&lt;/span&gt;&lt;/legend&gt;
+&lt;p class=&quot;help&quot;&gt;Choose one, or skip this question.&lt;/p&gt;
+&lt;div class=&quot;pills&quot; role=&quot;radiogroup&quot; aria-label=&quot;Which describes you best?&quot;&gt;
+&lt;label class=&quot;pill&quot;&gt;&lt;input class=&quot;sr&quot; type=&quot;radio&quot; name=&quot;mrole&quot; value=&quot;agency-owner&quot;&gt;&lt;span&gt;&lt;svg class=&quot;chk&quot; width=&quot;18&quot; height=&quot;18&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.25&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M5 12.5l4.5 4.5L19 7.5&quot;/&gt;&lt;/svg&gt;Agency owner or leader&lt;/span&gt;&lt;/label&gt;
+&lt;label class=&quot;pill&quot;&gt;&lt;input class=&quot;sr&quot; type=&quot;radio&quot; name=&quot;mrole&quot; value=&quot;new-agency-owner&quot;&gt;&lt;span&gt;&lt;svg class=&quot;chk&quot; width=&quot;18&quot; height=&quot;18&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.25&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M5 12.5l4.5 4.5L19 7.5&quot;/&gt;&lt;/svg&gt;New agency owner&lt;/span&gt;&lt;/label&gt;
+&lt;label class=&quot;pill&quot;&gt;&lt;input class=&quot;sr&quot; type=&quot;radio&quot; name=&quot;mrole&quot; value=&quot;consultant&quot;&gt;&lt;span&gt;&lt;svg class=&quot;chk&quot; width=&quot;18&quot; height=&quot;18&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.25&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M5 12.5l4.5 4.5L19 7.5&quot;/&gt;&lt;/svg&gt;Consultant&lt;/span&gt;&lt;/label&gt;
+&lt;label class=&quot;pill&quot;&gt;&lt;input class=&quot;sr&quot; type=&quot;radio&quot; name=&quot;mrole&quot; value=&quot;freelancer&quot;&gt;&lt;span&gt;&lt;svg class=&quot;chk&quot; width=&quot;18&quot; height=&quot;18&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.25&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M5 12.5l4.5 4.5L19 7.5&quot;/&gt;&lt;/svg&gt;Freelancer&lt;/span&gt;&lt;/label&gt;
+&lt;label class=&quot;pill&quot;&gt;&lt;input class=&quot;sr&quot; type=&quot;radio&quot; name=&quot;mrole&quot; value=&quot;other&quot;&gt;&lt;span&gt;&lt;svg class=&quot;chk&quot; width=&quot;18&quot; height=&quot;18&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.25&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M5 12.5l4.5 4.5L19 7.5&quot;/&gt;&lt;/svg&gt;Other&lt;/span&gt;&lt;/label&gt;
+&lt;/div&gt;
+&lt;/fieldset&gt;
+&lt;div style=&quot;margin-top:28px&quot;&gt;&lt;button class=&quot;btn&quot; type=&quot;button&quot;&gt;Next&lt;/button&gt;&lt;/div&gt;
+&lt;/form&gt;
+&lt;/div&gt;
+&lt;/section&gt;
+
+&lt;section style=&quot;padding:48px 16px 0&quot;&gt;
+&lt;div style=&quot;border-top:2px solid #04153A;padding-top:16px&quot;&gt;
+&lt;h2 class=&quot;hd&quot; style=&quot;font-weight:700;font-size:22px;margin-bottom:8px&quot;&gt;What you can write about&lt;/h2&gt;
+&lt;ol style=&quot;list-style:none&quot;&gt;
+&lt;li class=&quot;row&quot;&gt;&lt;span class=&quot;ico&quot;&gt;&lt;svg width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.75&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M4 5.5A1.5 1.5 0 0 1 5.5 4H11v15H5.5A1.5 1.5 0 0 0 4 20.5z&quot;/&gt;&lt;path d=&quot;M20 5.5A1.5 1.5 0 0 0 18.5 4H13v15h5.5a1.5 1.5 0 0 1 1.5 1.5z&quot;/&gt;&lt;/svg&gt;&lt;/span&gt;
+&lt;div&gt;&lt;p style=&quot;font-weight:600;font-size:16px&quot;&gt;Training topics&lt;/p&gt;&lt;p style=&quot;margin-top:4px;font-size:15px;line-height:1.55;color:#425068&quot;&gt;Search engine optimization (SEO), answer engine optimization (AEO), Google Business Profile (GBP), local SEO, reputation management, AI marketing, marketing automation, lead generation, agency operations, and the other topics we teach.&lt;/p&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li class=&quot;row&quot;&gt;&lt;span class=&quot;ico&quot;&gt;&lt;svg width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.75&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot;&gt;&lt;rect x=&quot;4&quot; y=&quot;5&quot; width=&quot;16&quot; height=&quot;15&quot; rx=&quot;2&quot;/&gt;&lt;path d=&quot;M4 10h16M9 3v4M15 3v4&quot;/&gt;&lt;/svg&gt;&lt;/span&gt;
+&lt;div&gt;&lt;p style=&quot;font-weight:600;font-size:16px&quot;&gt;Live training and sessions&lt;/p&gt;&lt;p style=&quot;margin-top:4px;font-size:15px;line-height:1.55;color:#425068&quot;&gt;Questions about the live training and sessions formats.&lt;/p&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li class=&quot;row&quot; style=&quot;border-bottom:1px solid #D2DAE8&quot;&gt;&lt;span class=&quot;ico&quot;&gt;&lt;svg width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.75&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v7a2.5 2.5 0 0 1-2.5 2.5H11l-4 4v-4h-.5A2.5 2.5 0 0 1 4 13.5z&quot;/&gt;&lt;/svg&gt;&lt;/span&gt;
+&lt;div&gt;&lt;p style=&quot;font-weight:600;font-size:16px&quot;&gt;Something else&lt;/p&gt;&lt;p style=&quot;margin-top:4px;font-size:15px;line-height:1.55;color:#425068&quot;&gt;A question that fits neither of the above, or a note about this site.&lt;/p&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;/section&gt;
+
+&lt;section style=&quot;padding:48px 16px 0&quot;&gt;
+&lt;div style=&quot;border-top:2px solid #04153A;padding-top:16px&quot;&gt;
+&lt;h2 class=&quot;hd&quot; style=&quot;font-weight:700;font-size:24px;line-height:1.15;letter-spacing:-.01em&quot;&gt;What makes a useful message&lt;/h2&gt;
+&lt;p style=&quot;margin-top:12px;font-size:16px;line-height:1.6;color:#425068&quot;&gt;You do not need to write much. Three details help most.&lt;/p&gt;
+&lt;div style=&quot;margin-top:20px;background:#EEF3FC;border:1px solid #D2DAE8;border-radius:4px;padding:20px&quot;&gt;
+&lt;p class=&quot;label&quot; style=&quot;line-height:1.5&quot;&gt;Example message (illustrative, not from a real person)&lt;/p&gt;
+&lt;p style=&quot;margin-top:12px;font-size:17px;line-height:1.8&quot;&gt;&lt;span class=&quot;hl&quot;&gt;I run a small web design agency&lt;span class=&quot;bdg&quot; aria-hidden=&quot;true&quot;&gt;1&lt;/span&gt;&lt;/span&gt; and &lt;span class=&quot;hl&quot;&gt;want to add Google Business Profile work for my existing clients.&lt;span class=&quot;bdg&quot; aria-hidden=&quot;true&quot;&gt;2&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;hl&quot;&gt;Which topics should I start with, and in what order?&lt;span class=&quot;bdg&quot; aria-hidden=&quot;true&quot;&gt;3&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;ol style=&quot;list-style:none;margin-top:8px&quot;&gt;
+&lt;li class=&quot;row&quot; style=&quot;padding:14px 0&quot;&gt;&lt;span class=&quot;bdg&quot; style=&quot;margin:0;width:24px;height:24px;font-size:13px;flex:none&quot; aria-hidden=&quot;true&quot;&gt;1&lt;/span&gt;&lt;p style=&quot;font-size:15px;line-height:1.55&quot;&gt;&lt;strong style=&quot;font-weight:600&quot;&gt;Who you are.&lt;/strong&gt; &lt;span style=&quot;color:#425068&quot;&gt;Your role helps point you to the right training.&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li class=&quot;row&quot; style=&quot;padding:14px 0&quot;&gt;&lt;span class=&quot;bdg&quot; style=&quot;margin:0;width:24px;height:24px;font-size:13px;flex:none&quot; aria-hidden=&quot;true&quot;&gt;2&lt;/span&gt;&lt;p style=&quot;font-size:15px;line-height:1.55&quot;&gt;&lt;strong style=&quot;font-weight:600&quot;&gt;What you are working on.&lt;/strong&gt; &lt;span style=&quot;color:#425068&quot;&gt;Your situation shapes the answer.&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li class=&quot;row&quot; style=&quot;padding:14px 0;border-bottom:1px solid #D2DAE8&quot;&gt;&lt;span class=&quot;bdg&quot; style=&quot;margin:0;width:24px;height:24px;font-size:13px;flex:none&quot; aria-hidden=&quot;true&quot;&gt;3&lt;/span&gt;&lt;p style=&quot;font-size:15px;line-height:1.55&quot;&gt;&lt;strong style=&quot;font-weight:600&quot;&gt;What you want to know.&lt;/strong&gt; &lt;span style=&quot;color:#425068&quot;&gt;A specific question can get a specific reply.&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;/section&gt;
+
+&lt;section style=&quot;padding:48px 16px 0&quot;&gt;
+&lt;div style=&quot;border-top:2px solid #04153A;padding-top:16px&quot;&gt;
+&lt;h2 class=&quot;hd&quot; style=&quot;font-weight:700;font-size:24px;letter-spacing:-.01em&quot;&gt;Not ready to write?&lt;/h2&gt;
+&lt;p style=&quot;margin-top:8px;font-size:16px;color:#425068&quot;&gt;These pages may answer your question first.&lt;/p&gt;
+&lt;ul style=&quot;list-style:none;margin-top:16px&quot;&gt;
+&lt;li class=&quot;row&quot; style=&quot;padding:18px 0;align-items:center&quot;&gt;&lt;span class=&quot;ico&quot;&gt;&lt;svg width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.75&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M4 5.5A1.5 1.5 0 0 1 5.5 4H11v15H5.5A1.5 1.5 0 0 0 4 20.5z&quot;/&gt;&lt;path d=&quot;M20 5.5A1.5 1.5 0 0 0 18.5 4H13v15h5.5a1.5 1.5 0 0 1 1.5 1.5z&quot;/&gt;&lt;/svg&gt;&lt;/span&gt;
+&lt;div style=&quot;flex:1&quot;&gt;&lt;a class=&quot;hd&quot; href=&quot;Mobile.dc.html&quot; style=&quot;font-weight:700;font-size:18px;text-decoration:none&quot;&gt;Browse training topics&lt;/a&gt;&lt;p style=&quot;margin-top:4px;font-size:15px;line-height:1.5;color:#425068&quot;&gt;See what Agency Back Office teaches, from SEO to agency operations.&lt;/p&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li class=&quot;row&quot; style=&quot;padding:18px 0;align-items:center&quot;&gt;&lt;span class=&quot;ico&quot;&gt;&lt;svg width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.75&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M12 4l8 4-8 4-8-4z&quot;/&gt;&lt;path d=&quot;M4 12l8 4 8-4&quot;/&gt;&lt;path d=&quot;M4 16l8 4 8-4&quot;/&gt;&lt;/svg&gt;&lt;/span&gt;
+&lt;div style=&quot;flex:1&quot;&gt;&lt;a class=&quot;hd&quot; href=&quot;Mobile.dc.html&quot; style=&quot;font-weight:700;font-size:18px;text-decoration:none&quot;&gt;Explore training formats&lt;/a&gt;&lt;p style=&quot;margin-top:4px;font-size:15px;line-height:1.5;color:#425068&quot;&gt;See how training is delivered, including live training and sessions.&lt;/p&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li class=&quot;row&quot; style=&quot;padding:18px 0;align-items:center;border-bottom:1px solid #D2DAE8&quot;&gt;&lt;span class=&quot;ico&quot;&gt;&lt;svg width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.75&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M7 3h7l5 5v13H7z&quot;/&gt;&lt;path d=&quot;M14 3v5h5M10 13h6M10 17h6&quot;/&gt;&lt;/svg&gt;&lt;/span&gt;
+&lt;div style=&quot;flex:1&quot;&gt;&lt;a class=&quot;hd&quot; href=&quot;Mobile.dc.html&quot; style=&quot;font-weight:700;font-size:18px;text-decoration:none&quot;&gt;Read the resources&lt;/a&gt;&lt;p style=&quot;margin-top:4px;font-size:15px;line-height:1.5;color:#425068&quot;&gt;Guides, checklists, templates, and answers to common questions.&lt;/p&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/section&gt;
+
+&lt;section style=&quot;margin-top:48px;background:#EEF3FC;border-top:2px solid #04153A;padding:32px 16px&quot;&gt;
+&lt;h2 class=&quot;hd&quot; style=&quot;font-weight:700;font-size:24px;letter-spacing:-.01em&quot;&gt;Ready to take the next step?&lt;/h2&gt;
+&lt;p style=&quot;margin-top:12px;font-size:16px;line-height:1.6;color:#425068&quot;&gt;If you already know you want training, the Get started page is the faster route.&lt;/p&gt;
+&lt;a href=&quot;Mobile.dc.html&quot; style=&quot;margin-top:16px;display:flex;align-items:center;justify-content:space-between;min-height:52px;font-weight:600;font-size:17px;text-decoration:none;border-top:1px solid #D2DAE8;border-bottom:1px solid #D2DAE8&quot;&gt;See how to get started
+&lt;svg width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.75&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M5 12h14M13 6l6 6-6 6&quot;/&gt;&lt;/svg&gt;&lt;/a&gt;
+&lt;/section&gt;
+
+&lt;/main&gt;
+
+&lt;footer class=&quot;ft&quot; style=&quot;background:#04153A;color:#C9D3E6;padding:40px 16px&quot;&gt;
+&lt;div style=&quot;display:flex;align-items:center;gap:10px&quot;&gt;&lt;span style=&quot;width:36px;height:36px;border:2px solid #7BA7FF;border-radius:4px;display:flex;align-items:center;justify-content:center;color:#7BA7FF;font:800 13px &#x27;Manrope&#x27;,sans-serif&quot;&gt;ABO&lt;/span&gt;&lt;span class=&quot;hd&quot; style=&quot;font-weight:800;font-size:17px;color:#FFFFFF&quot;&gt;Agency Back Office&lt;/span&gt;&lt;/div&gt;
+&lt;p style=&quot;margin-top:12px;font-size:15px;line-height:1.6&quot;&gt;Practical digital marketing and agency implementation training.&lt;/p&gt;
+&lt;div style=&quot;margin-top:28px;display:grid;grid-template-columns:1fr 1fr;gap:24px&quot;&gt;
+&lt;div&gt;&lt;p class=&quot;label&quot; style=&quot;color:#9FB0CD&quot;&gt;Learn&lt;/p&gt;&lt;ul style=&quot;list-style:none;margin-top:8px&quot;&gt;&lt;li&gt;&lt;a href=&quot;Mobile.dc.html&quot;&gt;Training&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;Mobile.dc.html&quot;&gt;Topics&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;Mobile.dc.html&quot;&gt;Who We Help&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;Mobile.dc.html&quot;&gt;Resources&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;
+&lt;div&gt;&lt;p class=&quot;label&quot; style=&quot;color:#9FB0CD&quot;&gt;Company&lt;/p&gt;&lt;ul style=&quot;list-style:none;margin-top:8px&quot;&gt;&lt;li&gt;&lt;a href=&quot;Mobile.dc.html&quot;&gt;About&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;Mobile.dc.html&quot;&gt;Reviews&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;Mobile.dc.html&quot; aria-current=&quot;page&quot; style=&quot;color:#FFFFFF;font-weight:600&quot;&gt;Contact&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;Mobile.dc.html&quot;&gt;Get Started&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;Mobile.dc.html&quot;&gt;Privacy&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;Mobile.dc.html&quot;&gt;Terms&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/footer&gt;
+
+&lt;/div&gt;
+&lt;/body&gt;&lt;/html&gt;"></iframe><h2>Survey steps 1 to 3 and pill states</h2><iframe title="Survey steps 1 to 3 and pill states" width="1440" height="1900" srcdoc="&lt;!doctype html&gt;&lt;html lang=&quot;en&quot;&gt;&lt;head&gt;&lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;link href=&quot;https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@600;700;800&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;style&gt;
+body{margin:0;font-family:&#x27;Inter&#x27;,system-ui,sans-serif;color:#04153A;background:#FFFFFF}
+*{box-sizing:border-box}
+h1,h2,h3,p,ol,ul{margin:0;padding:0}
+a{color:#0360FC}
+.hd{font-family:&#x27;Manrope&#x27;,system-ui,sans-serif}
+.label{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#425068}
+.tile{display:flex;flex-direction:column;gap:12px}
+.tile-h{border-top:2px solid #04153A;padding-top:12px}
+.panel{border:1px solid #D2DAE8;border-top:2px solid #04153A;padding:28px 28px 30px;background:#FFFFFF}
+.note{font-size:13px;line-height:1.5;color:#425068;border-top:1px solid #D2DAE8;padding-top:10px}
+.help{font-size:14px;line-height:1.45;color:#425068}
+.req{font-weight:400;color:#425068}
+.q{font:700 20px/1.25 &#x27;Manrope&#x27;,system-ui,sans-serif;letter-spacing:-.01em;padding:0;margin:0 0 6px;color:#04153A}
+.segs{display:flex;gap:6px;margin-top:8px}
+.seg{flex:1;height:4px;background:#D2DAE8;border-radius:1px}
+.seg.on{background:#04153A}
+.pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.pill{position:relative;display:inline-flex}
+.sr{position:absolute;opacity:0;width:100%;height:100%;margin:0;cursor:pointer}
+.pill span{display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:0 16px;border:1px solid #6B7A94;border-radius:4px;background:#FFFFFF;color:#04153A;font:500 16px &#x27;Inter&#x27;,sans-serif}
+.pill .chk{display:none}
+.pill input:checked + span{background:#04153A;border-color:#04153A;color:#FFFFFF}
+.pill input:checked + span .chk{display:inline-block}
+.pill.hov span{border-color:#04153A;background:#EEF3FC}
+.pill.foc span{outline:3px solid #0360FC;outline-offset:2px}
+.fld{display:flex;flex-direction:column;gap:6px;margin-top:18px}
+.fld label{font:600 15px/1.3 &#x27;Inter&#x27;,sans-serif}
+.inp{width:100%;min-height:48px;padding:0 14px;border:1px solid #6B7A94;border-radius:4px;font:400 16px &#x27;Inter&#x27;,sans-serif;color:#04153A;background:#FFFFFF;display:flex;align-items:center}
+.inp.ta{align-items:flex-start;padding-top:12px;min-height:112px;line-height:1.5}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 28px;background:#0360FC;color:#FFFFFF;font:600 16px &#x27;Inter&#x27;,sans-serif;border:2px solid #0360FC;border-radius:4px}
+.back{color:#0360FC;font:600 16px &#x27;Inter&#x27;,sans-serif;padding:0 8px;min-height:48px;display:inline-flex;align-items:center;text-decoration:underline}
+.wdg{width:100%;max-width:300px;height:65px;border:1px dashed #6B7A94;border-radius:4px;background:#EEF3FC;display:flex;align-items:center;justify-content:center;font-size:13px;color:#425068;text-align:center;padding:0 12px}
+&lt;/style&gt;
+&lt;/head&gt;&lt;body&gt;
+
+&lt;div style=&quot;width:1440px;background:#FFFFFF;padding:56px 60px 64px&quot;&gt;
+
+&lt;div style=&quot;border-top:2px solid #04153A;padding-top:16px;max-width:900px&quot;&gt;
+&lt;p class=&quot;label&quot;&gt;Contact page / survey flow&lt;/p&gt;
+&lt;h1 class=&quot;hd&quot; style=&quot;margin-top:12px;font-weight:800;font-size:40px;line-height:1.1;letter-spacing:-.02em&quot;&gt;Three short steps, one question at a time&lt;/h1&gt;
+&lt;p style=&quot;margin-top:12px;font-size:17px;line-height:1.6;color:#425068&quot;&gt;Pills are real radio buttons. Selected pills fill dark and show a check, so selection never depends on color alone. Sample values are made up.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div style=&quot;margin-top:48px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:40px;align-items:start&quot;&gt;
+
+&lt;!-- Step 1 --&gt;
+&lt;div class=&quot;tile&quot;&gt;
+&lt;div class=&quot;tile-h&quot;&gt;&lt;p class=&quot;label&quot;&gt;Step 1&lt;/p&gt;&lt;p style=&quot;margin-top:6px;font-size:15px;color:#425068&quot;&gt;Who you are. Optional, so a visitor can move on.&lt;/p&gt;&lt;/div&gt;
+&lt;div class=&quot;panel&quot;&gt;
+&lt;p class=&quot;label&quot;&gt;Step 1 of 3&lt;/p&gt;
+&lt;div class=&quot;segs&quot; aria-hidden=&quot;true&quot;&gt;&lt;span class=&quot;seg on&quot;&gt;&lt;/span&gt;&lt;span class=&quot;seg&quot;&gt;&lt;/span&gt;&lt;span class=&quot;seg&quot;&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;fieldset style=&quot;border:0;padding:0;margin:24px 0 0;min-width:0&quot;&gt;
+&lt;legend class=&quot;q&quot;&gt;Which describes you best? &lt;span class=&quot;req&quot; style=&quot;font:400 15px &#x27;Inter&#x27;,sans-serif&quot;&gt;(optional)&lt;/span&gt;&lt;/legend&gt;
+&lt;p class=&quot;help&quot;&gt;Choose one, or skip this question.&lt;/p&gt;
+&lt;div class=&quot;pills&quot; role=&quot;radiogroup&quot; aria-label=&quot;Which describes you best?&quot;&gt;
+&lt;label class=&quot;pill&quot;&gt;&lt;input class=&quot;sr&quot; type=&quot;radio&quot; name=&quot;s1&quot; value=&quot;agency-owner&quot;&gt;&lt;span&gt;&lt;svg class=&quot;chk&quot; width=&quot;18&quot; height=&quot;18&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.25&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M5 12.5l4.5 4.5L19 7.5&quot;/&gt;&lt;/svg&gt;Agency owner or leader&lt;/span&gt;&lt;/label&gt;
+&lt;label class=&quot;pill&quot;&gt;&lt;input class=&quot;sr&quot; type=&quot;radio&quot; name=&quot;s1&quot; value=&quot;new-agency-owner&quot;&gt;&lt;span&gt;&lt;svg class=&quot;chk&quot; width=&quot;18&quot; height=&quot;18&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.25&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M5 12.5l4.5 4.5L19 7.5&quot;/&gt;&lt;/svg&gt;New agency owner&lt;/span&gt;&lt;/label&gt;
+&lt;label class=&quot;pill&quot;&gt;&lt;input class=&quot;sr&quot; type=&quot;radio&quot; name=&quot;s1&quot; value=&quot;consultant&quot; checked&gt;&lt;span&gt;&lt;svg class=&quot;chk&quot; width=&quot;18&quot; height=&quot;18&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.25&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M5 12.5l4.5 4.5L19 7.5&quot;/&gt;&lt;/svg&gt;Consultant&lt;/span&gt;&lt;/label&gt;
+&lt;label class=&quot;pill&quot;&gt;&lt;input class=&quot;sr&quot; type=&quot;radio&quot; name=&quot;s1&quot; value=&quot;freelancer&quot;&gt;&lt;span&gt;&lt;svg class=&quot;chk&quot; width=&quot;18&quot; height=&quot;18&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.25&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M5 12.5l4.5 4.5L19 7.5&quot;/&gt;&lt;/svg&gt;Freelancer&lt;/span&gt;&lt;/label&gt;
+&lt;label class=&quot;pill&quot;&gt;&lt;input class=&quot;sr&quot; type=&quot;radio&quot; name=&quot;s1&quot; value=&quot;other&quot;&gt;&lt;span&gt;&lt;svg class=&quot;chk&quot; width=&quot;18&quot; height=&quot;18&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.25&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M5 12.5l4.5 4.5L19 7.5&quot;/&gt;&lt;/svg&gt;Other&lt;/span&gt;&lt;/label&gt;
+&lt;/div&gt;
+&lt;/fieldset&gt;
+&lt;div style=&quot;margin-top:32px&quot;&gt;&lt;span class=&quot;btn&quot;&gt;Next&lt;/span&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p class=&quot;note&quot;&gt;Next is always enabled on this step. Arrow keys move between pills; Space selects. Nothing advances automatically.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;!-- Step 2 --&gt;
+&lt;div class=&quot;tile&quot;&gt;
+&lt;div class=&quot;tile-h&quot;&gt;&lt;p class=&quot;label&quot;&gt;Step 2&lt;/p&gt;&lt;p style=&quot;margin-top:6px;font-size:15px;color:#425068&quot;&gt;What it is about, then the message. Both required.&lt;/p&gt;&lt;/div&gt;
+&lt;div class=&quot;panel&quot;&gt;
+&lt;p class=&quot;label&quot;&gt;Step 2 of 3&lt;/p&gt;
+&lt;div class=&quot;segs&quot; aria-hidden=&quot;true&quot;&gt;&lt;span class=&quot;seg on&quot;&gt;&lt;/span&gt;&lt;span class=&quot;seg on&quot;&gt;&lt;/span&gt;&lt;span class=&quot;seg&quot;&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;fieldset style=&quot;border:0;padding:0;margin:24px 0 0;min-width:0&quot;&gt;
+&lt;legend class=&quot;q&quot;&gt;What is your message about? &lt;span class=&quot;req&quot; style=&quot;font:400 15px &#x27;Inter&#x27;,sans-serif&quot;&gt;(required)&lt;/span&gt;&lt;/legend&gt;
+&lt;div class=&quot;pills&quot; role=&quot;radiogroup&quot; aria-label=&quot;What is your message about?&quot; style=&quot;margin-top:12px&quot;&gt;
+&lt;label class=&quot;pill&quot;&gt;&lt;input class=&quot;sr&quot; type=&quot;radio&quot; name=&quot;s2&quot; value=&quot;training-topics&quot; checked&gt;&lt;span&gt;&lt;svg class=&quot;chk&quot; width=&quot;18&quot; height=&quot;18&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.25&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M5 12.5l4.5 4.5L19 7.5&quot;/&gt;&lt;/svg&gt;Training topics&lt;/span&gt;&lt;/label&gt;
+&lt;label class=&quot;pill&quot;&gt;&lt;input class=&quot;sr&quot; type=&quot;radio&quot; name=&quot;s2&quot; value=&quot;live-training&quot;&gt;&lt;span&gt;&lt;svg class=&quot;chk&quot; width=&quot;18&quot; height=&quot;18&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.25&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M5 12.5l4.5 4.5L19 7.5&quot;/&gt;&lt;/svg&gt;Live training&lt;/span&gt;&lt;/label&gt;
+&lt;label class=&quot;pill&quot;&gt;&lt;input class=&quot;sr&quot; type=&quot;radio&quot; name=&quot;s2&quot; value=&quot;sessions&quot;&gt;&lt;span&gt;&lt;svg class=&quot;chk&quot; width=&quot;18&quot; height=&quot;18&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.25&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M5 12.5l4.5 4.5L19 7.5&quot;/&gt;&lt;/svg&gt;Sessions&lt;/span&gt;&lt;/label&gt;
+&lt;label class=&quot;pill&quot;&gt;&lt;input class=&quot;sr&quot; type=&quot;radio&quot; name=&quot;s2&quot; value=&quot;other&quot;&gt;&lt;span&gt;&lt;svg class=&quot;chk&quot; width=&quot;18&quot; height=&quot;18&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.25&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M5 12.5l4.5 4.5L19 7.5&quot;/&gt;&lt;/svg&gt;Something else&lt;/span&gt;&lt;/label&gt;
+&lt;/div&gt;
+&lt;/fieldset&gt;
+&lt;div class=&quot;fld&quot;&gt;&lt;label&gt;Your message &lt;span class=&quot;req&quot;&gt;(required)&lt;/span&gt;&lt;/label&gt;&lt;div class=&quot;inp ta&quot;&gt;I run a small web design agency and want to add Google Business Profile work for my existing clients.&lt;/div&gt;&lt;p class=&quot;help&quot;&gt;Say what you are working on and what you want to know.&lt;/p&gt;&lt;/div&gt;
+&lt;div style=&quot;margin-top:28px;display:flex;align-items:center;gap:16px&quot;&gt;&lt;span class=&quot;back&quot;&gt;Back&lt;/span&gt;&lt;span class=&quot;btn&quot;&gt;Next&lt;/span&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p class=&quot;note&quot;&gt;Next validates the topic and the message. Back keeps everything typed. Focus moves to this step&#x27;s question when it opens.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;!-- Step 3 --&gt;
+&lt;div class=&quot;tile&quot;&gt;
+&lt;div class=&quot;tile-h&quot;&gt;&lt;p class=&quot;label&quot;&gt;Step 3&lt;/p&gt;&lt;p style=&quot;margin-top:6px;font-size:15px;color:#425068&quot;&gt;How to reach you. All three required. Submit lives here.&lt;/p&gt;&lt;/div&gt;
+&lt;div class=&quot;panel&quot;&gt;
+&lt;p class=&quot;label&quot;&gt;Step 3 of 3&lt;/p&gt;
+&lt;div class=&quot;segs&quot; aria-hidden=&quot;true&quot;&gt;&lt;span class=&quot;seg on&quot;&gt;&lt;/span&gt;&lt;span class=&quot;seg on&quot;&gt;&lt;/span&gt;&lt;span class=&quot;seg on&quot;&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;h3 class=&quot;q&quot; style=&quot;margin-top:24px&quot;&gt;Your contact details&lt;/h3&gt;
+&lt;div class=&quot;fld&quot; style=&quot;margin-top:12px&quot;&gt;&lt;label&gt;Full name &lt;span class=&quot;req&quot;&gt;(required)&lt;/span&gt;&lt;/label&gt;&lt;div class=&quot;inp&quot;&gt;Jordan Lee&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;fld&quot;&gt;&lt;label&gt;Phone number &lt;span class=&quot;req&quot;&gt;(required)&lt;/span&gt;&lt;/label&gt;&lt;div class=&quot;inp&quot;&gt;(555) 010-0123&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;fld&quot;&gt;&lt;label&gt;Email address &lt;span class=&quot;req&quot;&gt;(required)&lt;/span&gt;&lt;/label&gt;&lt;div class=&quot;inp&quot;&gt;jordan@example.com&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;fld&quot;&gt;&lt;p style=&quot;font:600 15px &#x27;Inter&#x27;,sans-serif&quot;&gt;Security check&lt;/p&gt;&lt;div class=&quot;wdg&quot;&gt;Turnstile widget renders here (300 x 65)&lt;/div&gt;&lt;/div&gt;
+&lt;p class=&quot;help&quot; style=&quot;margin-top:18px&quot;&gt;We use the details you send to reply to your message. See the &lt;a href=&quot;Steps.dc.html&quot;&gt;privacy page&lt;/a&gt; for more.&lt;/p&gt;
+&lt;div style=&quot;margin-top:22px;display:flex;align-items:center;gap:16px&quot;&gt;&lt;span class=&quot;back&quot;&gt;Back&lt;/span&gt;&lt;span class=&quot;btn&quot;&gt;Send message&lt;/span&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p class=&quot;note&quot;&gt;Send message is the one submit. Errors on this step show a summary plus field messages (see the states board). Phone accepts spaces, dashes, parentheses and a leading plus.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;!-- Pill states --&gt;
+&lt;div style=&quot;margin-top:64px;border-top:2px solid #04153A;padding-top:16px&quot;&gt;
+&lt;p class=&quot;label&quot;&gt;Pill states&lt;/p&gt;
+&lt;div style=&quot;margin-top:20px;display:flex;gap:56px;align-items:flex-start&quot;&gt;
+&lt;div&gt;&lt;div class=&quot;pill&quot;&gt;&lt;span&gt;Consultant&lt;/span&gt;&lt;/div&gt;&lt;p class=&quot;help&quot; style=&quot;margin-top:10px&quot;&gt;Default: 1px #6B7A94 border, white&lt;/p&gt;&lt;/div&gt;
+&lt;div&gt;&lt;div class=&quot;pill hov&quot;&gt;&lt;span&gt;Consultant&lt;/span&gt;&lt;/div&gt;&lt;p class=&quot;help&quot; style=&quot;margin-top:10px&quot;&gt;Hover: navy border, tint fill&lt;/p&gt;&lt;/div&gt;
+&lt;div&gt;&lt;div class=&quot;pill foc&quot;&gt;&lt;span&gt;Consultant&lt;/span&gt;&lt;/div&gt;&lt;p class=&quot;help&quot; style=&quot;margin-top:10px&quot;&gt;Keyboard focus: 3px accent ring&lt;/p&gt;&lt;/div&gt;
+&lt;div&gt;&lt;div class=&quot;pill&quot;&gt;&lt;input class=&quot;sr&quot; type=&quot;radio&quot; name=&quot;demo&quot; checked&gt;&lt;span&gt;&lt;svg class=&quot;chk&quot; width=&quot;18&quot; height=&quot;18&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.25&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M5 12.5l4.5 4.5L19 7.5&quot;/&gt;&lt;/svg&gt;Consultant&lt;/span&gt;&lt;/div&gt;&lt;p class=&quot;help&quot; style=&quot;margin-top:10px&quot;&gt;Selected: navy fill, white text, check icon&lt;/p&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p style=&quot;margin-top:28px;font-size:15px;line-height:1.6;color:#425068;max-width:780px&quot;&gt;Pills are 48px tall with a 4px radius, to stay inside the ledger system (max 4px radius). They wrap onto new rows on narrow screens and each row stays a full 48px tap target.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/body&gt;&lt;/html&gt;"></iframe><h2>Form states</h2><iframe title="Form states" width="1440" height="2700" srcdoc="&lt;!doctype html&gt;&lt;html lang=&quot;en&quot;&gt;&lt;head&gt;&lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;link href=&quot;https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@600;700;800&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;style&gt;
+body{margin:0;font-family:&#x27;Inter&#x27;,system-ui,sans-serif;color:#04153A;background:#FFFFFF}
+*{box-sizing:border-box}
+h1,h2,h3,p,ol,ul{margin:0;padding:0}
+a{color:#0360FC} a:hover{color:#024BC9}
+.hd{font-family:&#x27;Manrope&#x27;,system-ui,sans-serif}
+.label{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#425068}
+.tile{display:flex;flex-direction:column;gap:12px}
+.tile-h{border-top:2px solid #04153A;padding-top:12px}
+.panel{border:1px solid #D2DAE8;border-top:2px solid #04153A;padding:24px;background:#FFFFFF;display:flex;flex-direction:column;gap:18px}
+.note{font-size:13px;line-height:1.5;color:#425068;border-top:1px solid #D2DAE8;padding-top:10px}
+.fld{display:flex;flex-direction:column;gap:6px}
+.fld label{font:600 15px/1.3 &#x27;Inter&#x27;,sans-serif}
+.req{font-weight:400;color:#425068}
+.help{font-size:14px;line-height:1.45;color:#425068}
+.q{font:700 19px/1.25 &#x27;Manrope&#x27;,system-ui,sans-serif;letter-spacing:-.01em;margin:0}
+.inp{width:100%;min-height:48px;padding:0 14px;border:1px solid #6B7A94;border-radius:4px;font:400 16px &#x27;Inter&#x27;,sans-serif;color:#04153A;background:#FFFFFF;display:flex;align-items:center}
+.inp.ta{align-items:flex-start;padding-top:12px;min-height:96px;line-height:1.5}
+.inp.err{border:2px solid #B3261E;padding:0 13px}
+.inp.ta.err{padding-top:11px}
+.merr{display:flex;gap:8px;align-items:flex-start;color:#B3261E;font-size:14px;font-weight:500;line-height:1.4}
+.merr svg{flex:none;margin-top:1px}
+.notice{display:flex;gap:12px;align-items:flex-start;border:1px solid #D2DAE8;border-top:2px solid #B3261E;padding:14px 16px;font-size:15px;line-height:1.5;color:#04153A}
+.notice svg{flex:none;color:#B3261E;margin-top:1px}
+.btn{display:flex;align-items:center;justify-content:center;min-height:48px;padding:0 28px;background:#0360FC;color:#FFFFFF;font:600 16px &#x27;Inter&#x27;,sans-serif;border:2px solid #0360FC;border-radius:4px;width:fit-content}
+.btn.busy{background:#024BC9;border-color:#024BC9}
+.back{color:#0360FC;font:600 16px &#x27;Inter&#x27;,sans-serif;padding:0 8px;min-height:48px;display:inline-flex;align-items:center;text-decoration:underline}
+.wdg{width:100%;max-width:300px;height:65px;border:1px dashed #6B7A94;border-radius:4px;background:#EEF3FC;display:flex;align-items:center;justify-content:center;font-size:13px;color:#425068;text-align:center;padding:0 12px}
+.pills{display:flex;flex-wrap:wrap;gap:10px}
+.pill{position:relative;display:inline-flex}
+.pill span{display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:0 16px;border:1px solid #6B7A94;border-radius:4px;background:#FFFFFF;color:#04153A;font:500 16px &#x27;Inter&#x27;,sans-serif}
+.pill.sel span{background:#04153A;border-color:#04153A;color:#FFFFFF}
+.pill.foc span{outline:3px solid #0360FC;outline-offset:2px}
+.pills.err .pill span{border:2px solid #B3261E;padding:0 15px}
+.dot{width:8px;height:8px;border-radius:2px;background:#04153A;flex:none;margin-top:7px}
+.chk{display:inline-block}
+&lt;/style&gt;
+&lt;/head&gt;&lt;body&gt;
+
+&lt;div style=&quot;width:1440px;background:#FFFFFF;padding:56px 60px 64px&quot;&gt;
+
+&lt;div style=&quot;border-top:2px solid #04153A;padding-top:16px;max-width:900px&quot;&gt;
+&lt;p class=&quot;label&quot;&gt;Contact page / form states board&lt;/p&gt;
+&lt;h1 class=&quot;hd&quot; style=&quot;margin-top:12px;font-weight:800;font-size:40px;line-height:1.1;letter-spacing:-.02em&quot;&gt;Every state the survey can be in&lt;/h1&gt;
+&lt;p style=&quot;margin-top:12px;font-size:17px;line-height:1.6;color:#425068&quot;&gt;Sample values are made up for the mockup. Errors use an icon, text and a 2px top rule in the error color, never color alone. Focus moves as noted under each state.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div style=&quot;margin-top:48px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:40px;row-gap:56px;align-items:start&quot;&gt;
+
+&lt;!-- 1 Pill focus and selection --&gt;
+&lt;div class=&quot;tile&quot;&gt;
+&lt;div class=&quot;tile-h&quot;&gt;&lt;p class=&quot;label&quot;&gt;01 / Step 1, focus and selection&lt;/p&gt;&lt;p style=&quot;margin-top:6px;font-size:15px;color:#425068&quot;&gt;Keyboard focus on one pill, another already selected.&lt;/p&gt;&lt;/div&gt;
+&lt;div class=&quot;panel&quot;&gt;
+&lt;h3 class=&quot;q&quot;&gt;Which describes you best? &lt;span class=&quot;req&quot; style=&quot;font:400 15px &#x27;Inter&#x27;,sans-serif&quot;&gt;(optional)&lt;/span&gt;&lt;/h3&gt;
+&lt;div class=&quot;pills&quot;&gt;
+&lt;div class=&quot;pill sel&quot;&gt;&lt;span&gt;&lt;svg class=&quot;chk&quot; width=&quot;18&quot; height=&quot;18&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.25&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M5 12.5l4.5 4.5L19 7.5&quot;/&gt;&lt;/svg&gt;Agency owner or leader&lt;/span&gt;&lt;/div&gt;
+&lt;div class=&quot;pill foc&quot;&gt;&lt;span&gt;New agency owner&lt;/span&gt;&lt;/div&gt;
+&lt;div class=&quot;pill&quot;&gt;&lt;span&gt;Consultant&lt;/span&gt;&lt;/div&gt;
+&lt;div class=&quot;pill&quot;&gt;&lt;span&gt;Freelancer&lt;/span&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;btn&quot;&gt;Next&lt;/div&gt;
+&lt;/div&gt;
+&lt;p class=&quot;note&quot;&gt;Arrow keys move the selection inside the group. The first Turnstile script load happens on this first interaction, so the check is ready by step 3.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;!-- 2 Step 2 errors --&gt;
+&lt;div class=&quot;tile&quot;&gt;
+&lt;div class=&quot;tile-h&quot;&gt;&lt;p class=&quot;label&quot;&gt;02 / Step 2 errors&lt;/p&gt;&lt;p style=&quot;margin-top:6px;font-size:15px;color:#425068&quot;&gt;Next pressed with no topic chosen and a message that is too short.&lt;/p&gt;&lt;/div&gt;
+&lt;div class=&quot;panel&quot;&gt;
+&lt;div class=&quot;notice&quot; role=&quot;alert&quot; style=&quot;flex-direction:column;gap:8px&quot;&gt;
+&lt;div style=&quot;display:flex;gap:12px;align-items:flex-start&quot;&gt;&lt;svg width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.75&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot;&gt;&lt;circle cx=&quot;12&quot; cy=&quot;12&quot; r=&quot;9&quot;/&gt;&lt;path d=&quot;M12 7.5v5.5M12 16.5v.01&quot;/&gt;&lt;/svg&gt;&lt;h3 class=&quot;hd&quot; style=&quot;font-weight:700;font-size:17px&quot;&gt;Fix 2 things to continue&lt;/h3&gt;&lt;/div&gt;
+&lt;ul style=&quot;list-style:none;padding-left:36px;display:flex;flex-direction:column;gap:6px;font-size:15px&quot;&gt;&lt;li&gt;&lt;a href=&quot;FormStates.dc.html&quot;&gt;Choose what your message is about.&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;FormStates.dc.html&quot;&gt;Write at least 10 characters.&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;fld&quot;&gt;&lt;h3 class=&quot;q&quot;&gt;What is your message about? &lt;span class=&quot;req&quot; style=&quot;font:400 15px &#x27;Inter&#x27;,sans-serif&quot;&gt;(required)&lt;/span&gt;&lt;/h3&gt;
+&lt;div class=&quot;pills err&quot; style=&quot;margin-top:6px&quot;&gt;&lt;div class=&quot;pill&quot;&gt;&lt;span&gt;Training topics&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;pill&quot;&gt;&lt;span&gt;Live training&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;pill&quot;&gt;&lt;span&gt;Sessions&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;pill&quot;&gt;&lt;span&gt;Something else&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p class=&quot;merr&quot;&gt;&lt;svg width=&quot;18&quot; height=&quot;18&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.75&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot;&gt;&lt;circle cx=&quot;12&quot; cy=&quot;12&quot; r=&quot;9&quot;/&gt;&lt;path d=&quot;M12 7.5v5.5M12 16.5v.01&quot;/&gt;&lt;/svg&gt;Choose what your message is about.&lt;/p&gt;&lt;/div&gt;
+&lt;div class=&quot;fld&quot;&gt;&lt;label&gt;Your message &lt;span class=&quot;req&quot;&gt;(required)&lt;/span&gt;&lt;/label&gt;&lt;div class=&quot;inp ta err&quot;&gt;Hi&lt;/div&gt;&lt;p class=&quot;merr&quot;&gt;&lt;svg width=&quot;18&quot; height=&quot;18&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.75&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot;&gt;&lt;circle cx=&quot;12&quot; cy=&quot;12&quot; r=&quot;9&quot;/&gt;&lt;path d=&quot;M12 7.5v5.5M12 16.5v.01&quot;/&gt;&lt;/svg&gt;Write at least 10 characters.&lt;/p&gt;&lt;/div&gt;
+&lt;div style=&quot;display:flex;align-items:center;gap:16px&quot;&gt;&lt;span class=&quot;back&quot;&gt;Back&lt;/span&gt;&lt;div class=&quot;btn&quot;&gt;Next&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p class=&quot;note&quot;&gt;The visitor stays on step 2. Focus moves to the summary heading. Pill errors outline every pill in the group and add text, so the problem is not color alone.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;!-- 3 Step 3 errors --&gt;
+&lt;div class=&quot;tile&quot;&gt;
+&lt;div class=&quot;tile-h&quot;&gt;&lt;p class=&quot;label&quot;&gt;03 / Step 3 errors&lt;/p&gt;&lt;p style=&quot;margin-top:6px;font-size:15px;color:#425068&quot;&gt;Send pressed with missing or invalid details.&lt;/p&gt;&lt;/div&gt;
+&lt;div class=&quot;panel&quot;&gt;
+&lt;div class=&quot;notice&quot; role=&quot;alert&quot; style=&quot;flex-direction:column;gap:8px&quot;&gt;
+&lt;div style=&quot;display:flex;gap:12px;align-items:flex-start&quot;&gt;&lt;svg width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.75&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot;&gt;&lt;circle cx=&quot;12&quot; cy=&quot;12&quot; r=&quot;9&quot;/&gt;&lt;path d=&quot;M12 7.5v5.5M12 16.5v.01&quot;/&gt;&lt;/svg&gt;&lt;h3 class=&quot;hd&quot; style=&quot;font-weight:700;font-size:17px&quot;&gt;Fix 3 things to send your message&lt;/h3&gt;&lt;/div&gt;
+&lt;ul style=&quot;list-style:none;padding-left:36px;display:flex;flex-direction:column;gap:6px;font-size:15px&quot;&gt;&lt;li&gt;&lt;a href=&quot;FormStates.dc.html&quot;&gt;Enter your full name.&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;FormStates.dc.html&quot;&gt;Enter a phone number with 10 to 15 digits.&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;FormStates.dc.html&quot;&gt;Enter an email address like name@example.com.&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;fld&quot;&gt;&lt;label&gt;Full name &lt;span class=&quot;req&quot;&gt;(required)&lt;/span&gt;&lt;/label&gt;&lt;div class=&quot;inp err&quot;&gt;&lt;/div&gt;&lt;p class=&quot;merr&quot;&gt;&lt;svg width=&quot;18&quot; height=&quot;18&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.75&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot;&gt;&lt;circle cx=&quot;12&quot; cy=&quot;12&quot; r=&quot;9&quot;/&gt;&lt;path d=&quot;M12 7.5v5.5M12 16.5v.01&quot;/&gt;&lt;/svg&gt;Enter your full name.&lt;/p&gt;&lt;/div&gt;
+&lt;div class=&quot;fld&quot;&gt;&lt;label&gt;Phone number &lt;span class=&quot;req&quot;&gt;(required)&lt;/span&gt;&lt;/label&gt;&lt;div class=&quot;inp err&quot;&gt;555 0123&lt;/div&gt;&lt;p class=&quot;merr&quot;&gt;&lt;svg width=&quot;18&quot; height=&quot;18&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.75&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot;&gt;&lt;circle cx=&quot;12&quot; cy=&quot;12&quot; r=&quot;9&quot;/&gt;&lt;path d=&quot;M12 7.5v5.5M12 16.5v.01&quot;/&gt;&lt;/svg&gt;Enter a phone number with 10 to 15 digits.&lt;/p&gt;&lt;/div&gt;
+&lt;div class=&quot;fld&quot;&gt;&lt;label&gt;Email address &lt;span class=&quot;req&quot;&gt;(required)&lt;/span&gt;&lt;/label&gt;&lt;div class=&quot;inp err&quot;&gt;jordan@&lt;/div&gt;&lt;p class=&quot;merr&quot;&gt;&lt;svg width=&quot;18&quot; height=&quot;18&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.75&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot;&gt;&lt;circle cx=&quot;12&quot; cy=&quot;12&quot; r=&quot;9&quot;/&gt;&lt;path d=&quot;M12 7.5v5.5M12 16.5v.01&quot;/&gt;&lt;/svg&gt;Enter an email address like name@example.com.&lt;/p&gt;&lt;/div&gt;
+&lt;div style=&quot;display:flex;align-items:center;gap:16px&quot;&gt;&lt;span class=&quot;back&quot;&gt;Back&lt;/span&gt;&lt;div class=&quot;btn&quot;&gt;Send message&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p class=&quot;note&quot;&gt;Fields re-validate on blur and clear as soon as they are valid. If an error is traced to an earlier step (for example the Function rejects the message), the survey returns to that step and shows its summary.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;!-- 4 Sending --&gt;
+&lt;div class=&quot;tile&quot;&gt;
+&lt;div class=&quot;tile-h&quot;&gt;&lt;p class=&quot;label&quot;&gt;04 / Sending&lt;/p&gt;&lt;p style=&quot;margin-top:6px;font-size:15px;color:#425068&quot;&gt;Valid submit while the request is in flight.&lt;/p&gt;&lt;/div&gt;
+&lt;div class=&quot;panel&quot;&gt;
+&lt;div class=&quot;fld&quot;&gt;&lt;label&gt;Full name &lt;span class=&quot;req&quot;&gt;(required)&lt;/span&gt;&lt;/label&gt;&lt;div class=&quot;inp&quot;&gt;Jordan Lee&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;fld&quot;&gt;&lt;label&gt;Phone number &lt;span class=&quot;req&quot;&gt;(required)&lt;/span&gt;&lt;/label&gt;&lt;div class=&quot;inp&quot;&gt;(555) 010-0123&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;fld&quot;&gt;&lt;label&gt;Email address &lt;span class=&quot;req&quot;&gt;(required)&lt;/span&gt;&lt;/label&gt;&lt;div class=&quot;inp&quot;&gt;jordan@example.com&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;btn busy&quot; aria-disabled=&quot;true&quot;&gt;Sending...&lt;/div&gt;
+&lt;/div&gt;
+&lt;p class=&quot;note&quot;&gt;Button is set aria-disabled and keeps focus. Back is hidden while sending. A visually hidden status line announces &quot;Sending your message&quot;. Request times out after 15 seconds.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;!-- 5 Verification error --&gt;
+&lt;div class=&quot;tile&quot;&gt;
+&lt;div class=&quot;tile-h&quot;&gt;&lt;p class=&quot;label&quot;&gt;05 / Security check not finished&lt;/p&gt;&lt;p style=&quot;margin-top:6px;font-size:15px;color:#425068&quot;&gt;Turnstile token missing, expired or rejected.&lt;/p&gt;&lt;/div&gt;
+&lt;div class=&quot;panel&quot;&gt;
+&lt;div class=&quot;fld&quot;&gt;&lt;p style=&quot;font:600 15px &#x27;Inter&#x27;,sans-serif&quot;&gt;Security check&lt;/p&gt;&lt;div class=&quot;wdg&quot;&gt;Turnstile widget renders here (300 x 65)&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;notice&quot; role=&quot;alert&quot;&gt;&lt;svg width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.75&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot;&gt;&lt;circle cx=&quot;12&quot; cy=&quot;12&quot; r=&quot;9&quot;/&gt;&lt;path d=&quot;M12 7.5v5.5M12 16.5v.01&quot;/&gt;&lt;/svg&gt;&lt;p&gt;The security check did not finish. Wait for it to complete, then send again.&lt;/p&gt;&lt;/div&gt;
+&lt;div style=&quot;display:flex;align-items:center;gap:16px&quot;&gt;&lt;span class=&quot;back&quot;&gt;Back&lt;/span&gt;&lt;div class=&quot;btn&quot;&gt;Send message&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p class=&quot;note&quot;&gt;The widget is reset. Focus moves to the notice. Every answer from all three steps is kept.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;!-- 6 Network error --&gt;
+&lt;div class=&quot;tile&quot;&gt;
+&lt;div class=&quot;tile-h&quot;&gt;&lt;p class=&quot;label&quot;&gt;06 / Network error&lt;/p&gt;&lt;p style=&quot;margin-top:6px;font-size:15px;color:#425068&quot;&gt;Request fails or times out.&lt;/p&gt;&lt;/div&gt;
+&lt;div class=&quot;panel&quot;&gt;
+&lt;div class=&quot;fld&quot;&gt;&lt;label&gt;Email address &lt;span class=&quot;req&quot;&gt;(required)&lt;/span&gt;&lt;/label&gt;&lt;div class=&quot;inp&quot;&gt;jordan@example.com&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;notice&quot; role=&quot;alert&quot;&gt;&lt;svg width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.75&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot;&gt;&lt;circle cx=&quot;12&quot; cy=&quot;12&quot; r=&quot;9&quot;/&gt;&lt;path d=&quot;M12 7.5v5.5M12 16.5v.01&quot;/&gt;&lt;/svg&gt;&lt;p&gt;Your message did not send. Check your connection and try again. What you wrote is still here.&lt;/p&gt;&lt;/div&gt;
+&lt;div style=&quot;display:flex;align-items:center;gap:16px&quot;&gt;&lt;span class=&quot;back&quot;&gt;Back&lt;/span&gt;&lt;div class=&quot;btn&quot;&gt;Send message&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p class=&quot;note&quot;&gt;Same button, same position, so a retry is one click. No mailto fallback because no public email address exists.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;!-- 7 Server error --&gt;
+&lt;div class=&quot;tile&quot;&gt;
+&lt;div class=&quot;tile-h&quot;&gt;&lt;p class=&quot;label&quot;&gt;07 / Server error&lt;/p&gt;&lt;p style=&quot;margin-top:6px;font-size:15px;color:#425068&quot;&gt;The Function returns a server error.&lt;/p&gt;&lt;/div&gt;
+&lt;div class=&quot;panel&quot;&gt;
+&lt;div class=&quot;fld&quot;&gt;&lt;label&gt;Email address &lt;span class=&quot;req&quot;&gt;(required)&lt;/span&gt;&lt;/label&gt;&lt;div class=&quot;inp&quot;&gt;jordan@example.com&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;notice&quot; role=&quot;alert&quot;&gt;&lt;svg width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.75&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot;&gt;&lt;circle cx=&quot;12&quot; cy=&quot;12&quot; r=&quot;9&quot;/&gt;&lt;path d=&quot;M12 7.5v5.5M12 16.5v.01&quot;/&gt;&lt;/svg&gt;&lt;p&gt;Something went wrong and your message did not send. Try again in a few minutes. What you wrote is still here.&lt;/p&gt;&lt;/div&gt;
+&lt;div style=&quot;display:flex;align-items:center;gap:16px&quot;&gt;&lt;span class=&quot;back&quot;&gt;Back&lt;/span&gt;&lt;div class=&quot;btn&quot;&gt;Send message&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p class=&quot;note&quot;&gt;No stack traces or provider messages are ever shown. The Function logs no message text, phone number or email address.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;!-- 8 Success --&gt;
+&lt;div class=&quot;tile&quot;&gt;
+&lt;div class=&quot;tile-h&quot;&gt;&lt;p class=&quot;label&quot;&gt;08 / Success&lt;/p&gt;&lt;p style=&quot;margin-top:6px;font-size:15px;color:#425068&quot;&gt;The Function returns ok. The survey is replaced.&lt;/p&gt;&lt;/div&gt;
+&lt;div class=&quot;panel&quot; role=&quot;status&quot; style=&quot;gap:14px&quot;&gt;
+&lt;div style=&quot;display:flex;gap:12px;align-items:center;color:#04153A&quot;&gt;&lt;svg width=&quot;28&quot; height=&quot;28&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.75&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot;&gt;&lt;circle cx=&quot;12&quot; cy=&quot;12&quot; r=&quot;9&quot;/&gt;&lt;path d=&quot;M8 12.5l2.7 2.7L16 9.5&quot;/&gt;&lt;/svg&gt;&lt;h2 class=&quot;hd&quot; style=&quot;font-weight:700;font-size:26px;letter-spacing:-.01em&quot;&gt;Message sent&lt;/h2&gt;&lt;/div&gt;
+&lt;p style=&quot;font-size:16px;line-height:1.6&quot;&gt;Thanks, Jordan. Your message has been sent.&lt;/p&gt;
+&lt;p style=&quot;font-size:16px;line-height:1.6;color:#425068&quot;&gt;In the meantime, you can &lt;a href=&quot;FormStates.dc.html&quot;&gt;browse training topics&lt;/a&gt; or &lt;a href=&quot;FormStates.dc.html&quot;&gt;see how to get started&lt;/a&gt;.&lt;/p&gt;
+&lt;p style=&quot;margin-top:4px&quot;&gt;&lt;a href=&quot;FormStates.dc.html&quot; style=&quot;font-weight:600;font-size:16px&quot;&gt;Send another message&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;p class=&quot;note&quot;&gt;Focus moves to the &quot;Message sent&quot; heading. &quot;Send another message&quot; restores step 1 with all answers cleared and a fresh security check.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;!-- 9 JavaScript off --&gt;
+&lt;div class=&quot;tile&quot;&gt;
+&lt;div class=&quot;tile-h&quot;&gt;&lt;p class=&quot;label&quot;&gt;09 / JavaScript off&lt;/p&gt;&lt;p style=&quot;margin-top:6px;font-size:15px;color:#425068&quot;&gt;Scripts disabled or blocked.&lt;/p&gt;&lt;/div&gt;
+&lt;div class=&quot;panel&quot;&gt;
+&lt;h2 class=&quot;hd&quot; style=&quot;font-weight:700;font-size:24px;letter-spacing:-.01em&quot;&gt;Send a message&lt;/h2&gt;
+&lt;div class=&quot;notice&quot;&gt;&lt;svg width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.75&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot;&gt;&lt;circle cx=&quot;12&quot; cy=&quot;12&quot; r=&quot;9&quot;/&gt;&lt;path d=&quot;M12 7.5v5.5M12 16.5v.01&quot;/&gt;&lt;/svg&gt;&lt;p&gt;This form needs JavaScript to send your message. Turn JavaScript on, or try a different browser.&lt;/p&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p class=&quot;note&quot;&gt;Static text inside a noscript element. The steps are not rendered without scripts. The rest of the page still reads and links normally.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;!-- 10 Rules --&gt;
+&lt;div class=&quot;tile&quot;&gt;
+&lt;div class=&quot;tile-h&quot;&gt;&lt;p class=&quot;label&quot;&gt;10 / How states are built&lt;/p&gt;&lt;p style=&quot;margin-top:6px;font-size:15px;color:#425068&quot;&gt;Rules the build follows in every state.&lt;/p&gt;&lt;/div&gt;
+&lt;div style=&quot;border:1px solid #D2DAE8;border-top:2px solid #04153A;padding:24px;display:flex;flex-direction:column;gap:14px;font-size:15px;line-height:1.5&quot;&gt;
+&lt;div style=&quot;display:flex;gap:12px&quot;&gt;&lt;span class=&quot;dot&quot;&gt;&lt;/span&gt;&lt;p&gt;&lt;strong style=&quot;font-weight:600&quot;&gt;Not color alone.&lt;/strong&gt; Icon, text and a 2px top rule carry every error. Error color #B3261E is about 6.5:1 on white. Selected pills add a check and a dark fill.&lt;/p&gt;&lt;/div&gt;
+&lt;div style=&quot;display:flex;gap:12px&quot;&gt;&lt;span class=&quot;dot&quot;&gt;&lt;/span&gt;&lt;p&gt;&lt;strong style=&quot;font-weight:600&quot;&gt;One place to look.&lt;/strong&gt; Field messages sit under the field or pill group. Form-level notices sit directly above the buttons.&lt;/p&gt;&lt;/div&gt;
+&lt;div style=&quot;display:flex;gap:12px&quot;&gt;&lt;span class=&quot;dot&quot;&gt;&lt;/span&gt;&lt;p&gt;&lt;strong style=&quot;font-weight:600&quot;&gt;Announced.&lt;/strong&gt; Summaries and notices use role=alert. Success uses role=status. Step changes move focus to the new question.&lt;/p&gt;&lt;/div&gt;
+&lt;div style=&quot;display:flex;gap:12px&quot;&gt;&lt;span class=&quot;dot&quot;&gt;&lt;/span&gt;&lt;p&gt;&lt;strong style=&quot;font-weight:600&quot;&gt;No lost work.&lt;/strong&gt; Back and every error keep what the visitor chose and typed.&lt;/p&gt;&lt;/div&gt;
+&lt;div style=&quot;display:flex;gap:12px&quot;&gt;&lt;span class=&quot;dot&quot;&gt;&lt;/span&gt;&lt;p&gt;&lt;strong style=&quot;font-weight:600&quot;&gt;No promises.&lt;/strong&gt; No state mentions how soon a reply or call will come.&lt;/p&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/body&gt;&lt;/html&gt;"></iframe></body></html>
