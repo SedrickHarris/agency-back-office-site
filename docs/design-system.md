@@ -38,6 +38,45 @@ Rules:
 - Set `display: swap` and a system-font fallback so text stays visible while fonts load.
 - Implementation approach is documented in `nextjs-technical-architecture.md` (Fonts).
 
+### Type Scale
+
+Defined as Tailwind theme tokens in `styles/globals.css`.
+
+| Role | Size | Font and weight | Line-height |
+|---|---|---|---|
+| H1 | `clamp(2.25rem, 1.6rem + 2.6vw, 3.5rem)` | Manrope 700, tracking -0.02em | 1.1 |
+| H2 | `clamp(1.75rem, 1.4rem + 1.4vw, 2.25rem)` | Manrope 700 | 1.2 |
+| H3 | 1.25rem | Manrope 600 | 1.3 |
+| Body | 1.0625rem | Inter 400 | 1.65 |
+| Lead paragraph | 1.25rem | Inter 400 | 1.55 |
+| Small / meta | 0.875rem | Inter 400 | 1.5 |
+| Eyebrow | 0.8125rem | Manrope 600, uppercase, tracking 0.08em | 1.4 |
+
+Prose measure: maximum 68ch. Definitions and FAQ answers never exceed 68ch.
+
+## Design Tokens
+
+Tokens live in `styles/globals.css` (Tailwind CSS v4 `@theme`). Do not hardcode hex values in components.
+
+| Token | Value | Use |
+|---|---|---|
+| `ink` | `#0b1a3a` | Text, rules, dark surface |
+| `paper` | `#ffffff` | Page background |
+| `tint` | `#eef3fb` | Tinted band surface (one per page where needed) |
+| `rule` | `#c9d3e6` | 1px hairline rules |
+| `muted` | `#45516a` | Secondary text |
+| `accent` | `#1558d6` | Primary buttons, text links on light surfaces |
+| `accent-strong` | `#0f45a8` | Hover state for accent |
+
+Values are derived from the logo's navy and blue. Check contrast before using a token pair for text.
+
+Layout rules:
+- Container: maximum 1200px, 20px gutters (mobile) and 32px (lg and up).
+- Section padding: 64px mobile, 96px desktop.
+- Structure comes from 1px hairline rules. No card shadows, gradients, or icon sets. Maximum border radius 4px (circular step markers are the exception).
+- Focus: 2px solid outline with 2px offset on every interactive element.
+- FAQ and disclosure content uses native `details` and `summary`. No JavaScript is required for content sections.
+
 ## Avoid Generic AI/SaaS Patterns
 
 Avoid overusing:
