@@ -14,6 +14,30 @@ Create an authoritative education/practitioner platform that feels human-designe
 - restrained decoration
 - strong mobile usability
 
+## Typography
+
+Approved font pairing: **Manrope** (display/UI) and **Inter** (text).
+
+| Role | Font | Weight |
+|---|---|---|
+| Page titles and headings (H1–H6) | Manrope | 600–700 |
+| Navigation | Manrope | 600 |
+| Body copy, forms, tables, course details | Inter | 400–500 |
+| Buttons and labels | Inter | 600 |
+
+Sizing:
+- Body: approximately 16–18px (1rem–1.125rem), line-height 1.55–1.7.
+- Large headings: tighter line-height (approximately 1.1–1.25), still readable when wrapped on mobile.
+- Use fluid/responsive sizes (for example `clamp()`) so headings scale down on small screens without shrinking body text below 16px.
+- Keep line length readable (approximately 60–75 characters for body copy).
+
+Rules:
+- Use only these two families. Do not add a third typeface.
+- Use only the specified weights to limit font payload.
+- Do not rely on font weight alone to convey meaning; maintain accessible contrast and visible focus states.
+- Set `display: swap` and a system-font fallback so text stays visible while fonts load.
+- Implementation approach is documented in `nextjs-technical-architecture.md` (Fonts).
+
 ## Avoid Generic AI/SaaS Patterns
 
 Avoid overusing:

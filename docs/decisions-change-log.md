@@ -45,6 +45,24 @@ Use service pages, audience pages, and audience + service pages, supported by tr
 **Decision:**  
 Use `/audiences/{audience-slug}/{service-slug}/`.
 
+### 2026-10-25 — Typography Font Pairing
+
+**Area:** Design
+
+**Decision:**  
+Use Manrope for headings, page titles, and navigation, and Inter for body copy, forms, tables, course details, buttons, and labels. Load both through `next/font/google`.
+
+**Reason:**  
+Approved font pairing for editorial hierarchy with readable body text.
+
+**Affected Files/Routes:**  
+`docs/design-system.md`, `docs/nextjs-technical-architecture.md`, `app/layout.tsx`.
+
+**Follow-Up:**  
+Map `--font-manrope` / `--font-inter` to heading and body styles in global styles or Tailwind theme once the project is scaffolded.
+
+---
+
 ### 2026-08-23 — Matrix Quality Rule
 
 **Area:** Content

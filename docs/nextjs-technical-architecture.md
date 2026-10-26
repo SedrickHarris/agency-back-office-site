@@ -73,6 +73,16 @@ Each page should support:
 - keep font loading efficient
 - monitor Core Web Vitals
 
+## Fonts
+
+Load Manrope and Inter with `next/font/google` (built into Next.js; no font packages) in `app/layout.tsx`. This is the only font-loading method.
+
+- Fonts are self-hosted at build time with `display: "swap"`.
+- Each font exposes a CSS variable: `--font-manrope` and `--font-inter`.
+- Request only the approved weights: Manrope 600, 700; Inter 400, 500, 600.
+- Inter is the default body font. Manrope is applied to headings and navigation through global styles or Tailwind theme tokens once those exist.
+- Typography roles and sizing are defined in `design-system.md`.
+
 ## Accessibility
 
 Use:
