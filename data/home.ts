@@ -409,9 +409,11 @@ export const footer = {
   line: "Agency Back Office. Home content last reviewed",
   links: [
     { label: "About", href: "/about/" },
+    // Real, verified reviews only. Text until the page exists.
+    { label: "Reviews", href: "/reviews/" },
     { label: "Contact", href: "/contact/" },
     { label: "Get Started", href: "/get-started/" },
-    { label: "Privacy Policy", href: "/privacy-policy/" },
+    { label: "Privacy", href: "/privacy/" },
     { label: "Terms", href: "/terms/" },
   ],
 };
