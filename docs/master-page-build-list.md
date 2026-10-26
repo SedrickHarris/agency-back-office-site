@@ -1,5 +1,7 @@
 # Master Page Build List
 
+This file is the canonical page registry. `ABO-Site-Page-Build-List.xlsx` is a tracker and is corrected to match this file, not the reverse.
+
 ## Phase 1 — Foundation
 
 | Page | URL | Priority |
@@ -12,8 +14,9 @@
 | Resources Hub | `/resources/` | High |
 | Contact | `/contact/` | High |
 | Get Started | `/get-started/` | High |
-| Privacy Policy | `/privacy-policy/` | Required |
+| Privacy | `/privacy/` | Required |
 | Terms | `/terms/` | Required |
+| Reviews | `/reviews/` | Deferred (verified reviews only) |
 
 ### Home Page Entry
 
@@ -36,6 +39,34 @@
 | Status | In build |
 
 The approved section order is defined in `content-specification.md` (Core Page: Home).
+
+### Contact Page Entry
+
+| Field | Value |
+|---|---|
+| URL | `/contact/` |
+| Page type | Conversion, Phase 1, High |
+| Parent | Home |
+| Canonical | `/contact/` (from the site-URL helper; omitted while the site URL is unset) |
+| Primary topic | Questions and inquiries about Agency Back Office training |
+| Audience | All audiences. One optional role question in the form. |
+| Primary CTA | Send message (form submit) |
+| Secondary CTA | Text link to `/get-started/` |
+| Schema | ContactPage, BreadcrumbList. No contactPoint, LocalBusiness, FAQPage, Review, or sameAs. |
+| Robots | noindex until the launch gate. Excluded from the sitemap while noindex. |
+| Internal-link targets | `/get-started/`, `/services/`, `/training/`, `/resources/`, `/privacy/` |
+| Spec | `contact-page-spec.md` |
+| Status | In build |
+
+### Reviews Page Entry
+
+| Field | Value |
+|---|---|
+| URL | `/reviews/` |
+| Page type | Trust, deferred |
+| Parent | Home |
+| Rule | Shows only real, verified reviews. Linked from the footer Company group. Until built, the footer item is plain text. No Review or AggregateRating schema until real reviews are on the page. |
+| Status | Not started |
 
 ## Phase 2 — Core Service Pages
 

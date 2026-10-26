@@ -52,6 +52,19 @@ Agency Back Office
 
 Implement `BreadcrumbList` where breadcrumbs are visible.
 
+## Contact Page Schema
+
+Recommended for `/contact/`:
+
+- `ContactPage` with name, URL, description, and `isPartOf` the WebSite
+- `BreadcrumbList` matching the visible breadcrumb (Home, Contact)
+
+Do not add `contactPoint` until a public contact method is supplied. Do not add `LocalBusiness`, `FAQPage`, or `sameAs`. Render only when the site URL is set.
+
+## Review Schema
+
+Do not add `Review` or `AggregateRating` until real, verified reviews are visible on the page.
+
 ## Course Schema
 
 Use only for confirmed, visible course offerings with accurate course information.

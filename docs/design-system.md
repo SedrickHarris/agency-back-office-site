@@ -93,6 +93,9 @@ Tokens are CSS variables defined in `styles/globals.css`. Do not hardcode hex va
 | `on-dark-muted` | `#C9D4EA` | Secondary text on navy | 12.0:1 on ink |
 | `placeholder` | `#E6EAF0` | Image placeholder fill | 6.7:1 with muted text |
 | `placeholder-line` | `#8D99AB` | Image placeholder dashed outline | decorative |
+| `error` | `#B3261E` | Error text, error rule, invalid border | about 6.5:1 on paper |
+| `field-border` | `#6B7A94` | Field and pill borders | about 4.3:1 on paper (control border target 3:1) |
+| `highlight` | `#D9E5FD` | Annotated example highlight | decorative; ink text on it stays above 4.5:1 |
 
 Ratios are computed WCAG contrast ratios. Re-check before introducing a new text and background pair.
 
@@ -108,8 +111,24 @@ Layout:
 - **Header action:** 2px `accent` outline with accent text that fills with `accent` on hover.
 - **On navy:** primary button with a 1px `accent-on-dark` border.
 - **Secondary:** underlined text link, not a second button. One dominant CTA per view.
-- **Focus:** 2px solid outline with 2px offset on every interactive element. White on navy. Never removed.
+- **Focus:** 2px solid outline with 2px offset on every interactive element. White on navy. Never removed. Form controls, pills, and form buttons use a 3px `accent` outline with 2px offset.
 - Arrows after link text are decorative (`aria-hidden`).
+
+## Form Patterns
+
+Used by conversion pages. All controls are native elements at least 48px tall with 16px text, 4px radius, and a 1px `field-border` border.
+
+- **Label:** above the control, Inter 600 15px. Required fields say "(required)" and optional fields say "(optional)" in text.
+- **Field:** text, tel, email, textarea. Border darkens to `ink` on hover. 3px accent focus ring.
+- **Helper text:** 14px `muted` below the label or control, tied with `aria-describedby`.
+- **Field error:** `error` colored text with an icon under the control, `error` border, `aria-invalid="true"`. Never color alone.
+- **Error summary:** white panel with a 2px `error` top rule, an icon, a heading ("Fix N things ..."), and a list of links to each field. `role="alert"`, receives focus.
+- **Form notice:** same panel treatment for form-level errors (verification, network, server). `role="alert"`.
+- **Success panel:** 2px `ink` top rule, H2, one sentence, two links, a text button. `role="status"`, heading receives focus.
+- **Pill (native radio):** radio input styled as a button. Default: 1px `field-border`, white. Hover: `ink` border, `tint` fill. Focus: 3px accent outline, 2px offset. Selected: `ink` fill, white text, check icon. Wraps with a 12px gap (10px on mobile).
+- **Step indicator:** text "Step N of 3" plus three 4px segments (`rule`, `ink` when reached). Segments are `aria-hidden`.
+- **Back:** underlined accent text button, 48px tall. Not a second primary button.
+- **Annotated example:** `tint` panel with a 1px `rule` border, `highlight` spans with small numbered `ink` badges, and a numbered list of callouts below.
 
 ## Ruled-Line Motif
 

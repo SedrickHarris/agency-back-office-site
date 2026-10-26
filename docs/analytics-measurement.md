@@ -95,6 +95,22 @@ Track conversion by:
 - traffic source
 - device
 
+## Contact Events
+
+Events go through one `trackEvent(name, params)` helper in `lib/analytics.ts`. It does nothing until an analytics tool is chosen. Never send a name, phone number, email address, message text, or any other typed value.
+
+| Event | Fires when | Parameters |
+|---|---|---|
+| `contact_form_view` | Survey first enters the viewport, once per page load | `page_path` |
+| `contact_step_view` | A step is shown, including step 1 on load | `page_path`, `step` |
+| `contact_field_focus` | A text field is focused or a pill group is first used, once per field | `page_path`, `field` |
+| `contact_step_complete` | Next passes validation | `page_path`, `step`, `role` (step 1), `topic` (step 2) |
+| `contact_submit` | Send message passes client validation | `page_path`, `topic`, `role` |
+| `contact_success` | The Function returns ok | `page_path`, `topic`, `role` |
+| `contact_error` | Validation fails or the request fails | `page_path`, `step`, `error_type`, `field_count` |
+
+Funnel: `contact_form_view`, `contact_step_complete` for steps 1 to 3, `contact_success`. Conversion rate is `contact_success` divided by `contact_form_view`. `role` and `topic` are the selected option values only.
+
 ## Naming
 
 Use consistent event naming, for example:

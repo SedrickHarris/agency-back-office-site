@@ -95,6 +95,11 @@ Home → Audiences → Agency Owners → SEO Training
 Resource:
 Home → Resources → Guides → Guide Name
 
+Conversion:
+Home → Contact
+
+Contact and Reviews live in the footer Company group. Contact is not in the primary navigation. Get started is the header action and also appears in the footer.
+
 ## Architecture Rules
 
 - Avoid unnecessary nesting.

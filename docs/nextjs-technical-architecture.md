@@ -153,12 +153,15 @@ Runtime image optimization is unavailable. Use `images: { unoptimized: true }` a
 
 Static export has no API routes, so form handling (contact, get started) cannot use them.
 
-**Pending decision:** form handling approach. Options:
+**Decision (2026-10-25):** form handling uses a Cloudflare Pages Function. See `decisions-change-log.md`, "Contact form handling".
 
-- A third-party form service.
-- A Cloudflare Pages Function. This adds a server runtime for that endpoint, so it must go through the reconsideration rule above first. Verify against official documentation.
-
-Do not choose until the decision is recorded in `decisions-change-log.md`.
+- The site stays a static export. Cloudflare Pages deploys the `out/` directory and also the `functions/` directory at the repository root. `functions/api/contact.ts` serves `/api/contact`. Shared helpers live in `functions/_lib/` (a folder starting with an underscore is not routed).
+- Validation rules live in `shared/contact-schema.ts` with no dependencies, imported by both the client form and the Function.
+- Secrets and variables (names only): `NEXT_PUBLIC_TURNSTILE_SITE_KEY` (public, inlined at build), `TURNSTILE_SECRET_KEY`, `EMAIL_API_KEY`, `CONTACT_TO_EMAIL`, `CONTACT_FROM_EMAIL`. Set secrets in the Pages project settings. Locally, copy `.dev.vars.example` to `.dev.vars` (git-ignored).
+- The email provider is not chosen. `functions/_lib/send-email.ts` is the only file that changes when it is.
+- Local testing: `npm run build`, then `npx wrangler pages dev out` serves the static output and the Function together. Use Cloudflare's published Turnstile test keys locally.
+- `public/_headers` applies to static assets only, not to Function responses. Set headers on the Function response in code.
+- If a Content-Security-Policy is added later, Turnstile needs `script-src https://challenges.cloudflare.com`, `frame-src https://challenges.cloudflare.com`, and `connect-src 'self'` for `/api/contact`. No CSP is set today.
 
 ## Sitemaps and Robots
 

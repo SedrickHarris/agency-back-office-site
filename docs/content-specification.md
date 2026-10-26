@@ -83,6 +83,39 @@ Must identify:
 - canonical service link
 - next step
 
+## Conversion Page (Survey)
+
+Used by `/contact/`. Reusable for `/get-started/`.
+
+Must identify:
+- route, parent, canonical
+- one job and one dominant CTA (the form submit)
+- survey steps, fields, rules, and error text (one source of truth shared by client and server)
+- states: idle, step error, sending, verification error, network error, server error, success, JavaScript off
+- supporting sections that reduce effort (what to write about, an annotated example, alternatives)
+- a secondary text link to the neighbouring conversion page
+- analytics events with no typed values
+- schema (ContactPage and BreadcrumbList only unless a public contact method exists)
+
+Rules:
+- Do not show an email address, phone number, hours, or response-time statement that has not been supplied.
+- No FAQ, proof, or image placeholders unless verified content exists.
+
+## Legal Page
+
+Used by `/privacy/` and `/terms/`.
+
+Must identify:
+- route and parent (Home)
+- effective date and last reviewed date, visible
+- plain-language sections with descriptive H2s
+- what data is collected, why, how long it is kept, and how to ask about it, matching what the forms collect
+- a text link back to `/contact/`
+
+Rules:
+- Content comes from the owner or counsel. Do not generate legal claims.
+- Robots and schema follow the global launch gate. Breadcrumb only.
+
 ## Core Page: Home
 
 Visual reference: `docs/design-reference/home-design-reference.html` (approved design). Copy is approved and lives in `data/home.ts`.
@@ -124,7 +157,7 @@ Visual reference: `docs/design-reference/home-design-reference.html` (approved d
 - `/services/`, `/audiences/`, `/training/`, `/training/live/`, `/training/sessions/`, `/resources/`
 - priority service pages and priority audience pages (see `master-page-build-list.md`)
 - `/about/`, `/contact/`, `/get-started/`
-- legal pages (`/privacy-policy/`, `/terms/`) in the footer once they exist
+- legal pages (`/privacy/`, `/terms/`) in the footer once they exist
 
 Links to routes that do not exist yet render as plain text (marked `data-unbuilt-href`) until the page is built. Never ship `href="#"`.
 

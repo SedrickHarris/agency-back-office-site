@@ -76,3 +76,13 @@ When a route changes:
 5. document the change in `decisions-change-log.md`.
 
 Avoid redirect chains.
+
+## Legal and Trust Routes
+
+- `/privacy/` - privacy page (replaces `/privacy-policy/`)
+- `/terms/` - terms
+- `/reviews/` - real, verified reviews only; deferred until they exist
+
+## Non-Page Endpoints
+
+- `/api/contact` is a Cloudflare Pages Function, not a page. It is never listed in `sitemap.ts`, never linked, and not a crawlable page.

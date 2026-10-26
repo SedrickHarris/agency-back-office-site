@@ -481,6 +481,140 @@ Map `--font-manrope` / `--font-inter` to heading and body styles in global style
 
 ---
 
+### 2026-10-25 - Contact build: recorded foundations
+
+**Area:** Architecture / SEO / Technical
+
+**Decision:**
+Consolidated record of approved foundations the Contact build depends on. Each is also recorded in its own entry where one exists.
+
+- **Online-only and Organization schema.** No GBP listing, no "near me" targeting, no street address. Use `Organization`, never `LocalBusiness` (see "GBP/local intent scope - online-only").
+- **Split crawler policy.** Search and retrieval bots are allowed on public pages. AI training bots are limited to public educational paths (see "Crawler Access Policy for Search Bots" and "AI crawler policy - split by section").
+- **noindex and site-URL rule.** Pages are `noindex`, canonicals are omitted, JSON-LD is not rendered, and the sitemap is empty until `NEXT_PUBLIC_SITE_URL` is set. `NEXT_PUBLIC_SITE_URL` stays unset until launch.
+- **Static export on Cloudflare Pages.** `output: 'export'`, `trailingSlash: true`, redirects and headers in `public/_redirects` and `public/_headers` (see "Rendering and hosting").
+- **Main-only commits.** Work is committed directly to `main`. No branches or pull requests (see "Git workflow").
+- **No response-time promises.** No page states or implies how fast a reply, call, or enrollment will happen.
+- **Hyphens rule.** Copy uses hyphens, never em dashes. Acronyms are defined on first use.
+
+**Reason:**
+Keeps the Contact build and later conversion pages consistent with decisions already made, and records the two rules (no response-time promises, hyphens) that had no entry.
+
+**Affected Files/Routes:**
+All pages. `docs/contact-page-spec.md`.
+
+**Follow-Up:**
+None.
+
+---
+
+### 2026-10-25 - Contact form handling - Cloudflare Pages Function with Turnstile
+
+**Area:** Technical
+
+**Decision:**
+The Contact form posts JSON to a Cloudflare Pages Function at `/api/contact` (`functions/api/contact.ts`). Spam protection is Cloudflare Turnstile in managed mode plus a hidden honeypot field named `website`. The Function validates input, verifies the Turnstile token, and sends one email through a single `sendEmail` helper in `functions/_lib/`. The email provider is not chosen. `sendEmail` returns the `server` error code until a provider and its secrets are configured. Secret and variable names: `NEXT_PUBLIC_TURNSTILE_SITE_KEY`, `TURNSTILE_SECRET_KEY`, `EMAIL_API_KEY`, `CONTACT_TO_EMAIL`, `CONTACT_FROM_EMAIL`.
+
+**Reason:**
+The static export has no API routes. A Pages Function adds a server runtime for this one endpoint only, which is the reconsideration path named in `nextjs-technical-architecture.md`. The rest of the site stays a static export.
+
+**Affected Files/Routes:**
+`functions/`, `shared/contact-schema.ts`, `/contact/`, `/api/contact` (non-page endpoint, excluded from the sitemap), `docs/nextjs-technical-architecture.md`.
+
+**Follow-Up:**
+Choose the email provider and set secrets in Cloudflare Pages. Create the Turnstile widget and set the site key and secret. Reuse the Function helpers for Get started.
+
+---
+
+### 2026-10-25 - Privacy route is /privacy/
+
+**Area:** Architecture
+
+**Decision:**
+The privacy page route is `/privacy/`, replacing `/privacy-policy/` in the docs.
+
+**Reason:**
+Shorter, matches `/terms/`, and avoids a redundant word.
+
+**Affected Files/Routes:**
+`docs/master-page-build-list.md`, `docs/content-specification.md`, `docs/url-routing-strategy.md`.
+
+**Follow-Up:**
+Write the privacy page. It must say that submitted details are used to reply and cover phone number collection. Until it exists, the Contact form's "privacy page" text is not a link and the page is a launch blocker.
+
+---
+
+### 2026-10-25 - Contact vs Get started
+
+**Area:** Conversion
+
+**Decision:**
+Contact answers questions and inquiries. Get started is the enroll or membership path once terms are confirmed. Contact links to Get started as a secondary text link, never a button. Get started links back to Contact for visitors with a question first.
+
+**Reason:**
+Two high-intent pages with one job each avoid competing CTAs and keyword cannibalization.
+
+**Affected Files/Routes:**
+`/contact/`, `/get-started/`, `docs/conversion-architecture.md`.
+
+**Follow-Up:**
+None.
+
+---
+
+### 2026-10-25 - Contact survey format and phone number collection
+
+**Area:** Conversion / Technical
+
+**Decision:**
+The Contact form is a three-step survey: step 1 role pills (optional), step 2 topic pills (required) and message (required, 10 to 2,000 characters), step 3 full name, phone number, and email (all required) plus the Turnstile check. Nothing advances automatically and Back keeps every answer. Phone number is collected but never displayed anywhere. No email address, phone number, hours, or response-time statement is shown on the page.
+
+**Reason:**
+A short survey lowers effort per step and gives replies useful context (role, topic). The form is the only channel.
+
+**Affected Files/Routes:**
+`/contact/`, `functions/api/contact.ts`, `shared/contact-schema.ts`, `docs/contact-page-spec.md`.
+
+**Follow-Up:**
+Owner to confirm consent wording for calling or texting. The privacy line does not promise a call or text.
+
+---
+
+### 2026-10-25 - Reviews link in the footer
+
+**Area:** Trust / Architecture
+
+**Decision:**
+Add "Reviews" (`/reviews/`) to the footer Company group, after About. It renders as plain text until the page exists. The page may show only real, verified reviews. No `Review` or `AggregateRating` schema until real reviews are on the page.
+
+**Reason:**
+Reserves the trust route without inventing proof.
+
+**Affected Files/Routes:**
+`components/layout/Footer.tsx`, `data/home.ts`, `/reviews/`, `docs/schema-entity-strategy.md`.
+
+**Follow-Up:**
+Build `/reviews/` only when verified reviews exist.
+
+---
+
+### 2026-10-25 - Contact page spec approved
+
+**Area:** Content / Design
+
+**Decision:**
+`docs/contact-page-spec.md` is the approved spec and copy for `/contact/`. The visual reference is `docs/design-reference/contact-design-reference.html`. The page registry is `docs/master-page-build-list.md`. `ABO-Site-Page-Build-List.xlsx` is a tracker and is corrected to match.
+
+**Reason:**
+Single approved source for the build.
+
+**Affected Files/Routes:**
+`/contact/`.
+
+**Follow-Up:**
+Owner corrects the spreadsheet (see the Contact build report).
+
+---
+
 ### 2026-08-23 — Matrix Quality Rule
 
 **Area:** Content

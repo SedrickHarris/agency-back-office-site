@@ -47,6 +47,19 @@ CTAs:
 - contact
 - start training
 
+## Contact vs Get started
+
+| Page | Job | Visitor |
+|---|---|---|
+| `/contact/` | Questions and inquiries about training | Not sure yet, or wants to ask something |
+| `/get-started/` | Enroll or membership path once terms are confirmed | Knows they want training |
+
+Cross-link rule:
+- Contact links to Get started as a secondary text link, never a button.
+- Get started links to Contact as a text link ("Have a question first? Contact us").
+- Each page keeps one dominant CTA. The two never appear as competing buttons in one viewport.
+- Contact is not in the primary navigation. It lives in the footer.
+
 ## CTA Rules
 
 - Match CTA to page intent.

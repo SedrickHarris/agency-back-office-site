@@ -73,3 +73,20 @@
 - [ ] CTA wording is specific.
 - [ ] High-intent pages include necessary objection handling.
 - [ ] Analytics event exists for key conversion actions.
+
+## Forms
+
+- [ ] Every control has a visible label. Each step is a fieldset with a legend.
+- [ ] Errors are tied to inputs with `aria-invalid` and `aria-describedby`. The error summary has `role="alert"` and its links jump to fields.
+- [ ] Errors never rely on color alone.
+- [ ] The honeypot is hidden from assistive technology and the tab order.
+- [ ] Turnstile sits in reading order before the submit button and fits 320px.
+- [ ] Pills work by keyboard (arrow keys, Space) and show a visible focus ring.
+- [ ] Focus moves to the new step's question on step change. A hidden live line announces "Step N of 3".
+- [ ] Back keeps every answer. Nothing advances automatically.
+- [ ] Phone validation: 9 digits fails, 10 to 15 passes, 16 fails.
+- [ ] Success and error states (validation, verification, network, server) all show and keep answers.
+- [ ] No typed values (name, phone, email, message) are sent to analytics.
+- [ ] No email address, phone number, hours, or response-time statement appears on the page.
+- [ ] The page is `noindex` while `NEXT_PUBLIC_SITE_URL` is unset, with no canonical or JSON-LD.
+- [ ] `/api/contact` is not in the sitemap.
