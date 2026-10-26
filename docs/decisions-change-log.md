@@ -45,6 +45,150 @@ Use service pages, audience pages, and audience + service pages, supported by tr
 **Decision:**  
 Use `/audiences/{audience-slug}/{service-slug}/`.
 
+### 2026-10-25 - Brand, logo files, and color tokens
+
+**Area:** Design
+
+**Decision:**  
+Use the logo pack in `public/brand/logos/` as the official brand assets (horizontal, horizontal dark, stacked, icon). Replace the earlier provisional palette with the approved tokens: paper `#FFFFFF`, tint `#EEF3FC`, ink `#04153A`, muted `#425068`, accent `#0360FC`, accent-hover `#024BC9`, accent-on-dark `#7BA7FF`, rule `#D2DAE8`. Colors are CSS variables, never hardcoded in components.
+
+**Reason:**  
+The approved home page design uses these assets and colors. Contrast ratios were computed and meet 4.5:1 for text pairs.
+
+**Affected Files/Routes:**  
+`docs/design-system.md`, `styles/globals.css`, `public/brand/logos/`, `components/ui/Logo.tsx`.
+
+**Follow-Up:**  
+Owner to supply the logo clear-space rule, minimum sizes, and an SVG master if one exists.
+
+---
+
+### 2026-10-25 - Motion added (reverses no scroll-triggered animation)
+
+**Area:** Design
+
+**Decision:**  
+Add restrained, CSS-only motion: hero load entrance, scroll-driven reveals inside `@supports (animation-timeline: view())`, card lift on hover and focus-within, arrow nudge, audience row shift, and FAQ height transition inside `@supports (interpolate-size: allow-keywords)`. Everything sits inside `prefers-reduced-motion: no-preference`, animates `transform` and `opacity` only, and uses no JavaScript. This reverses the earlier "no scroll-triggered animation" guidance.
+
+**Reason:**  
+The approved design includes this motion. It is an enhancement: all content is visible without it.
+
+**Affected Files/Routes:**  
+`docs/design-system.md` (Motion), `docs/qa-checklist.md` (Motion), `styles/globals.css`.
+
+**Follow-Up:**  
+Verify with reduced motion on, and in a browser without scroll-driven animation support.
+
+---
+
+### 2026-10-25 - Icons - functional only
+
+**Area:** Design
+
+**Decision:**  
+Use a small inline SVG icon set (24px grid, 1.75px stroke, `currentColor`, `aria-hidden`) only in the resources table, training formats, the process loop bar, and menu, arrow, external, and download markers. No icon library and no decorative icons.
+
+**Reason:**  
+Keeps icons functional and avoids the arbitrary icon collections the design system warns against.
+
+**Affected Files/Routes:**  
+`docs/design-system.md` (Icons), `components/ui/Icon.tsx`.
+
+**Follow-Up:**  
+None.
+
+---
+
+### 2026-10-25 - Cards and image placeholders (exceptions to card guidance)
+
+**Area:** Design
+
+**Decision:**  
+Allow bordered cards (1px rule, 4px radius, no shadow) only for service topic cards and definition cards, each with an image slot. Use a reusable image placeholder (visible label, fixed aspect ratio, light and dark variants) including a dark 4:3 placeholder in the closing band. No stock photography.
+
+**Reason:**  
+The approved design reserves slots for real screenshots and diagrams. The earlier guidance discouraged repeated card grids, so the exception is limited to these two uses.
+
+**Affected Files/Routes:**  
+`docs/design-system.md` (Teaching Visuals), `components/ui/ImagePlaceholder.tsx`.
+
+**Follow-Up:**  
+Replace each placeholder with a real screenshot or diagram. Placeholders must not ship to production.
+
+---
+
+### 2026-10-25 - Typography update - buttons use Manrope 700
+
+**Area:** Design
+
+**Decision:**  
+Buttons use Manrope 700 (previously Inter 600) and navigation uses Inter. Manrope loads at weights 500-800 and Inter at 400-600.
+
+**Reason:**  
+Matches the approved home page design.
+
+**Affected Files/Routes:**  
+`docs/design-system.md` (Typography), `app/layout.tsx`.
+
+**Follow-Up:**  
+None.
+
+---
+
+### 2026-10-25 - Home page FAQ expanded to 8 questions
+
+**Area:** Content
+
+**Decision:**  
+The home page FAQ has 8 questions in two columns ("About the training" and "Topics and expectations"), replacing the earlier 5. The added questions cover where to start, the difference between SEO and AEO, and how long SEO takes.
+
+**Reason:**  
+The approved design covers more of the questions visitors ask. Answers avoid guarantees and invented claims.
+
+**Affected Files/Routes:**  
+`docs/content-specification.md`, `data/home.ts`.
+
+**Follow-Up:**  
+None. `FAQPage` schema is still not used on the home page.
+
+---
+
+### 2026-10-25 - Home page proof section omitted until verified
+
+**Area:** Content / Conversion
+
+**Decision:**  
+The proof section is omitted from the home page. `data/proof.ts` stays empty until a verified instructor bio and testimonials with permission to publish are supplied.
+
+**Reason:**  
+No verified proof content exists, and nothing may be invented.
+
+**Affected Files/Routes:**  
+`docs/content-specification.md`, `data/proof.ts`, `components/content/ProofSection.tsx`.
+
+**Follow-Up:**  
+Owner to supply the bio and testimonials.
+
+---
+
+### 2026-10-25 - Unbuilt links render as text; resources heading drops the free claim
+
+**Area:** Content / Technical
+
+**Decision:**  
+Links to routes that do not exist yet render as plain text marked `data-unbuilt-href`, and no `href="#"` ships. The resources section heading is "Resources" with no "free" claim until that is confirmed.
+
+**Reason:**  
+Avoids 404 links while most pages are unbuilt, and avoids an unconfirmed claim.
+
+**Affected Files/Routes:**  
+`lib/routing/routes.ts`, `components/ui/SiteLink.tsx`, `scripts/check-home-links.mjs`, `data/home.ts`.
+
+**Follow-Up:**  
+Add each route to `lib/routing/routes.ts` when its page is built. Restore "Free resources" only after the owner confirms the resources are free.
+
+---
+
 ### 2026-10-25 - Home page CTAs
 
 **Area:** Conversion

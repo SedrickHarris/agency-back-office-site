@@ -58,6 +58,15 @@
 - [ ] Layout shift is minimized.
 - [ ] Fonts are loaded efficiently.
 
+## Motion
+
+- [ ] Reduced motion on: the page is fully visible and usable.
+- [ ] In a browser without scroll-driven animation support, all content is visible.
+- [ ] Only `transform` and `opacity` are animated. No layout shift from animation.
+- [ ] No JavaScript is used for motion.
+- [ ] Hover and `focus-within` effects have a keyboard focus equivalent.
+- [ ] FAQ open and close works with a keyboard and without animation support.
+
 ## Conversion
 
 - [ ] Primary CTA is visible.

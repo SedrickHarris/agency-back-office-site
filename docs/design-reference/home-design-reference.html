@@ -1,0 +1,611 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Agency Back Office Home</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@500;600;700;800&display=swap">
+<style>
+body{margin:0}
+:root{--paper:#FFFFFF;--tint:#EEF3FC;--ink:#04153A;--muted:#425068;--rule:#D2DAE8;--accent:#0360FC;--dark:#04153A}
+.page{background:var(--paper);color:var(--ink);font-family:'Inter',system-ui,sans-serif;font-size:1.0625rem;line-height:1.65}
+.page *{box-sizing:border-box}
+.page h1,.page h2,.page h3{font-family:'Manrope',system-ui,sans-serif;margin:0;color:inherit}
+.page p{margin:0}
+.page ul,.page ol,.page dl,.page dd{margin:0;padding:0}
+.page ul,.page ol{list-style:none}
+.page a{color:var(--accent);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+.page a:hover{text-decoration-thickness:2px}
+.page a:focus-visible,.page summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.page .on-dark a:focus-visible{outline-color:#FFFFFF}
+.skip{position:absolute;left:-9999px;top:8px;background:var(--ink);color:#fff!important;padding:8px 16px;z-index:10}
+.skip:focus{left:8px}
+.wrap{max-width:1200px;margin:0 auto;padding-inline:32px}
+.sec{padding-block:96px}
+.eyebrow{font-family:'Manrope',system-ui,sans-serif;font-weight:600;font-size:.8125rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:16px}
+.h2{font-size:clamp(1.75rem,1.4rem + 1.4vw,2.25rem);line-height:1.2;font-weight:700}
+.h3{font-size:1.25rem;line-height:1.3;font-weight:600}
+.small{font-size:.875rem;line-height:1.5;color:var(--muted)}
+.prose{max-width:68ch}
+.muted{color:var(--muted)}
+.rule-top{border-top:1px solid var(--rule)}
+.arrow{margin-left:6px;text-decoration:none;display:inline-block}
+
+/* header */
+.hdr{border-bottom:1px solid var(--rule)}
+.hdr .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;padding-block:20px;flex-wrap:wrap}
+.brand{font-family:'Manrope',system-ui,sans-serif;font-weight:800;font-size:1.125rem;letter-spacing:-.01em;color:var(--ink)!important;text-decoration:none!important}
+.nav{display:flex;gap:28px;flex-wrap:wrap;align-items:center;font-size:.9375rem}
+.nav a{color:var(--ink);text-decoration:none}
+.nav a:hover{text-decoration:underline}
+.nav .cta{border:2px solid var(--accent);color:var(--accent);padding:8px 16px;border-radius:4px;font-weight:700}
+.nav .cta:hover{background:var(--accent);color:#fff;text-decoration:none}
+
+/* brand and icons */
+.brand{display:inline-flex;align-items:center;text-decoration:none!important}
+.logo-h{display:block;height:64px;width:auto}
+.logo-i{display:block;height:36px;width:auto}
+.logo-band{display:block;height:64px;width:auto;margin-bottom:24px}
+.ico{width:22px;height:22px;flex:none;fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round;color:var(--accent)}
+.ico-row{display:inline-flex;align-items:center;gap:10px}
+.ftr-brand{display:inline-flex;align-items:center;gap:12px;flex-wrap:wrap}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 24px;background:var(--accent);color:#fff!important;font-family:'Manrope',system-ui,sans-serif;font-weight:700;font-size:1rem;border-radius:4px;text-decoration:none!important}
+.btn:hover{background:#024BC9}
+.band .btn{background:var(--accent)}
+.btn.light{background:#FFFFFF;color:var(--ink)!important}
+.btn.light:hover{background:#fff}
+
+/* hero */
+.hero{padding-top:72px;padding-bottom:88px}
+.hero-grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:72px;align-items:start}
+.h1{font-size:clamp(2.25rem,1.6rem + 2.6vw,3.5rem);line-height:1.1;font-weight:700;letter-spacing:-.02em;max-width:16em}
+.lead{font-size:1.25rem;line-height:1.55;border-left:2px solid var(--accent);padding-left:20px;margin-top:28px;max-width:34em}
+.support{margin-top:20px;color:var(--muted);max-width:34em}
+.cta-row{display:flex;align-items:center;gap:28px;margin-top:36px;flex-wrap:wrap}
+.cta-row .sec-link{font-weight:600}
+.diagram{border:1px solid var(--ink);border-radius:4px;padding:28px;background:var(--paper)}
+.diagram .dtitle{font-family:'Manrope',system-ui,sans-serif;font-weight:700;font-size:1rem;line-height:1.35;padding-bottom:16px;border-bottom:1px solid var(--rule);margin-bottom:24px}
+.flow li{position:relative;padding-left:56px;padding-bottom:26px}
+.flow li:last-child{padding-bottom:0}
+.flow li::before{content:"";position:absolute;left:17px;top:38px;bottom:2px;width:2px;background:var(--ink)}
+.flow li:last-child::before{display:none}
+.mark{position:absolute;left:0;top:0;width:36px;height:36px;border:2px solid var(--ink);border-radius:50%;display:grid;place-items:center;font-family:'Manrope',system-ui,sans-serif;font-weight:700;font-size:.9375rem;background:var(--paper);z-index:1}
+.flow h3{font-size:1.0625rem;line-height:1.3;font-weight:600;padding-top:5px}
+.flow p{font-size:.9375rem;line-height:1.5;color:var(--muted);margin-top:4px}
+.flow .ann{font-family:'Manrope',system-ui,sans-serif;font-weight:700;color:var(--accent)}
+.diagram figcaption{margin-top:24px;padding-top:16px;border-top:1px solid var(--rule)}
+
+/* services */
+.svc-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:32px}
+.svc-aside{grid-column:1 / span 3}
+.svc-aside .inner{position:sticky;top:32px}
+.svc-aside p{margin-top:16px;color:var(--muted);font-size:1rem;line-height:1.6}
+.svc-main{grid-column:4 / span 9;display:flex;flex-direction:column;gap:48px}
+.group-label{font-family:'Manrope',system-ui,sans-serif;font-weight:600;font-size:.8125rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);padding-bottom:12px;border-bottom:2px solid var(--ink)}
+.topics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:40px}
+.topics li{padding-block:20px;border-bottom:1px solid var(--rule)}
+.topics .h3 a{color:var(--ink)}
+.topics.cards{column-gap:24px;row-gap:24px}
+.topics.cards li{padding:0;border:1px solid var(--rule);border-radius:4px;background:var(--paper);display:flex;flex-direction:column;overflow:hidden}
+.ph{aspect-ratio:21/9;background:#E6EAF0;border-bottom:1px dashed #8D99AB;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;text-align:center;padding:16px;color:var(--muted);font-family:'Manrope',system-ui,sans-serif;font-weight:600;font-size:.8125rem;letter-spacing:.06em;text-transform:uppercase}
+.ph small{font-family:'Inter',system-ui,sans-serif;font-weight:400;font-size:.75rem;letter-spacing:0;text-transform:none}
+.card-body{padding:20px 20px 24px;display:flex;flex-direction:column;flex:1}
+.topics p{font-size:.9375rem;line-height:1.55;color:var(--muted);margin-top:6px}
+.more{padding-top:8px}
+.more ul{display:flex;flex-wrap:wrap;gap:8px 28px;margin-top:12px;font-size:.9375rem}
+.all-link{font-weight:600;margin-top:4px}
+
+/* process */
+.process{border-top:1px solid var(--rule)}
+.proc-head{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px 32px;align-items:end}
+.proc-head .h2{grid-column:1 / span 6}
+.proc-head p{grid-column:7 / span 6;color:var(--muted)}
+.proc{width:100%;border-collapse:collapse;margin-top:40px}
+.proc caption{position:absolute;left:-9999px}
+.proc thead th{font-family:'Manrope',system-ui,sans-serif;font-weight:600;font-size:.8125rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);text-align:left;padding:0 24px 12px 0;border-bottom:2px solid var(--ink)}
+.proc tbody th{width:26%;text-align:left;vertical-align:top;padding:28px 24px 28px 0;border-bottom:1px solid var(--rule);font-weight:400}
+.proc td{vertical-align:top;padding:28px 24px 28px 0;border-bottom:1px solid var(--rule)}
+.proc td:nth-child(2){width:40%}
+.proc td:nth-child(3){width:34%}
+.num{display:block;font-family:'Manrope',system-ui,sans-serif;font-weight:800;font-size:2.5rem;line-height:1;letter-spacing:-.02em;margin-bottom:10px}
+.stage{font-family:'Manrope',system-ui,sans-serif;font-weight:700;font-size:1.25rem;line-height:1.3}
+.proc .ex{display:block;margin-top:12px;color:var(--muted);font-size:.9375rem;line-height:1.55}
+.proc .ex b{font-family:'Manrope',system-ui,sans-serif;font-weight:700;color:var(--ink)}
+.loopbar{display:flex;align-items:center;gap:16px;margin-top:32px;border:2px solid var(--ink);border-radius:4px;padding:16px 24px;font-family:'Manrope',system-ui,sans-serif;font-weight:700;font-size:1.0625rem;line-height:1.4;color:var(--ink)}
+.loopbar svg{flex:none}
+
+/* audience */
+.aud-head{max-width:40rem}
+.aud-head p{margin-top:16px;color:var(--muted)}
+.rows{margin-top:48px;border-top:2px solid var(--ink)}
+.rows li{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;align-items:center;padding-block:24px;border-bottom:1px solid var(--rule)}
+.rows li:hover{background:var(--tint)}
+.rows .stmt{grid-column:1 / span 8;font-family:'Manrope',system-ui,sans-serif;font-weight:600;font-size:1.25rem;line-height:1.4}
+.rows .go{grid-column:9 / span 4;text-align:right;font-weight:600;font-size:1rem}
+.rows li{padding-inline:12px;margin-inline:-12px}
+
+/* definitions */
+.defs{background:var(--tint)}
+.defs-head{display:flex;justify-content:space-between;align-items:baseline;gap:24px;flex-wrap:wrap}
+.def-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:24px;row-gap:24px;margin-top:48px}
+.def{border:1px solid var(--rule);border-radius:4px;background:var(--paper);display:flex;flex-direction:column;overflow:hidden}
+.def .card-body{padding:24px 28px 28px}
+.def h3{font-size:1.5rem;line-height:1.2;font-weight:700;margin-bottom:12px}
+.def p{max-width:60ch;font-size:1.0625rem}
+.def .lnk{display:inline-block;margin-top:14px;font-weight:600}
+
+/* delivery */
+.del-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:48px 32px}
+.del-text{grid-column:1 / span 5}
+.del-text p{margin-top:20px;color:var(--muted)}
+.del-text .all{display:inline-block;margin-top:24px;font-weight:600}
+.formats{grid-column:6 / span 7;border-top:2px solid var(--ink)}
+.formats div{padding-block:24px;border-bottom:1px solid var(--rule)}
+.formats dt a{color:var(--ink)}
+.formats dd{margin-top:6px;color:var(--muted);font-size:1rem}
+
+/* resources */
+.res-head p{margin-top:16px;color:var(--muted)}
+.res{width:100%;border-collapse:collapse;margin-top:48px}
+.res caption{position:absolute;left:-9999px}
+.res th{font-family:'Manrope',system-ui,sans-serif;font-weight:600;font-size:.8125rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);text-align:left;padding:0 12px 12px 0;border-bottom:2px solid var(--ink)}
+.res td{padding:20px 12px 20px 0;border-bottom:1px solid var(--rule);vertical-align:top}
+.res td:first-child{font-family:'Manrope',system-ui,sans-serif;font-weight:700;width:22%}
+.res td:nth-child(2){width:50%;color:var(--muted)}
+.res td:last-child{width:28%;font-weight:600}
+.res-all{display:inline-block;margin-top:24px;font-weight:600}
+
+/* faq */
+.faq-wrap .h2{margin-bottom:40px}
+.faq-cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:56px;align-items:start}
+.faq-col{border-top:2px solid var(--ink)}
+.faq-label{font-family:'Manrope',system-ui,sans-serif;font-weight:600;font-size:.8125rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);padding:14px 0 0}
+details.q{border-bottom:1px solid var(--rule)}
+details.q .ans a{color:var(--accent)}
+details.q summary{list-style:none;cursor:pointer;min-height:56px;padding:16px 40px 16px 0;font-family:'Manrope',system-ui,sans-serif;font-weight:600;font-size:1.25rem;line-height:1.3;position:relative;display:flex;align-items:center}
+details.q summary::-webkit-details-marker{display:none}
+details.q summary::after{content:"+";position:absolute;right:4px;top:50%;transform:translateY(-50%);font-size:1.5rem;font-weight:500;color:var(--accent)}
+details.q[open] summary::after{content:"\2212"}
+details.q .ans{padding:0 40px 24px 0;color:var(--muted);max-width:68ch}
+
+/* closing band */
+.band{background:var(--dark);color:#FFFFFF}
+.band .wrap{padding-block:80px;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:32px;align-items:center}
+.band .txt{grid-column:1 / span 7}
+.band .media{grid-column:8 / span 5}
+.band .ph-dark{aspect-ratio:4/3;background:#0A2352;border:1px dashed #7BA7FF;border-radius:4px;color:#C9D4EA}
+.band p{margin-top:16px;color:#C9D4EA;font-size:1.25rem;line-height:1.55;max-width:34em}
+.band .act{margin-top:32px}
+
+/* footer */
+.ftr{border-top:1px solid var(--rule)}
+.ftr .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;padding-block:32px;font-size:.875rem;color:var(--muted)}
+.ftr ul{display:flex;gap:24px;flex-wrap:wrap}
+
+@media (max-width:980px){
+  .hero-grid{grid-template-columns:1fr;gap:48px}
+  .svc-aside,.svc-main,.del-text,.formats{grid-column:1 / -1}
+  .svc-aside .inner{position:static}
+  .band .txt,.band .media{grid-column:1 / -1;text-align:left}
+  .proc-head .h2,.proc-head p{grid-column:1 / -1}
+}
+@media (max-width:720px){
+  .wrap{padding-inline:20px}
+  .sec{padding-block:64px}
+  .hero{padding-top:40px;padding-bottom:56px}
+  .hdr .wrap{padding-block:12px}
+  .logo-h{height:48px}
+  .nav{gap:8px 20px;font-size:.9375rem}
+  .cta-row{flex-direction:column;align-items:stretch;gap:20px}
+  .cta-row .btn{width:100%}
+  .cta-row .sec-link{text-align:left}
+  .diagram{padding:20px}
+  .topics{grid-template-columns:1fr}
+  .proc thead{position:absolute;left:-9999px}
+  .proc,.proc tbody,.proc tr,.proc th,.proc td{display:block;width:100%}
+  .proc tr{padding:24px 0;border-bottom:1px solid var(--rule)}
+  .proc tbody th,.proc td,.proc td:nth-child(2),.proc td:nth-child(3){width:100%;border:0;padding:0 0 14px}
+  .proc td::before{content:attr(data-label);display:block;font-family:'Manrope',system-ui,sans-serif;font-weight:600;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+  .loopbar{padding:14px 16px}
+  .faq-cols{grid-template-columns:1fr}
+  .faq-col + .faq-col{border-top:0;margin-top:32px}
+  .faq-col + .faq-col .faq-label{border-top:2px solid var(--ink);padding-top:14px}
+  .rows li{grid-template-columns:1fr;gap:8px;padding-block:20px}
+  .rows .stmt,.rows .go{grid-column:1 / -1;text-align:left}
+  .def-grid{grid-template-columns:1fr}
+  .def .card-body{padding:20px 20px 24px}
+  .res thead{position:absolute;left:-9999px}
+  .res,.res tbody,.res tr,.res td{display:block;width:100%}
+  .res tr{padding:20px 0;border-bottom:1px solid var(--rule)}
+  .res td,.res td:first-child,.res td:nth-child(2),.res td:last-child{width:100%;border:0;padding:0 0 6px}
+  .band .wrap{padding-block:56px}
+  .band .btn{width:100%}
+}
+/* Motion: transform and opacity only, opt-in via no-preference. Everything is visible by default. */
+@media (prefers-reduced-motion:no-preference){
+  @keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+  @keyframes reveal{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+
+  /* 1. Hero entrance, plays once on load */
+  .hero .eyebrow,.hero .h1,.hero .lead,.hero .support,.hero .cta-row{animation:rise .6s ease-out backwards}
+  .hero .h1{animation-delay:.08s}
+  .hero .lead{animation-delay:.16s}
+  .hero .support{animation-delay:.24s}
+  .hero .cta-row{animation-delay:.32s}
+  .flow li{animation:rise .5s ease-out backwards}
+  .flow li:nth-child(1){animation-delay:.3s}
+  .flow li:nth-child(2){animation-delay:.45s}
+  .flow li:nth-child(3){animation-delay:.6s}
+  .flow li:nth-child(4){animation-delay:.75s}
+  .flow li:nth-child(5){animation-delay:.9s}
+
+  /* 2. Scroll reveals, CSS only, progressive enhancement */
+  @supports (animation-timeline:view()){
+    .sec .h2,.topics.cards li,.def,.rows li,.proc tbody tr,.formats > div,.res tbody tr,.loopbar{
+      animation:reveal linear backwards;
+      animation-timeline:view();
+      animation-range:entry 0% entry 35%;
+    }
+    .topics.cards li:nth-child(even),.def:nth-child(even){animation-range:entry 8% entry 43%}
+  }
+
+  /* 3. Cards and images */
+  .topics.cards li,.def{transition:transform .2s ease-out,border-color .2s}
+  .topics.cards li:hover,.topics.cards li:focus-within,.def:hover,.def:focus-within{transform:translateY(-4px);border-color:var(--ink)}
+  .ph img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .5s ease-out}
+  .topics.cards li:hover .ph img,.def:hover .ph img{transform:scale(1.04)}
+
+  /* 4. Link arrows and audience rows */
+  .arrow{transition:transform .2s ease-out}
+  a:hover .arrow,a:focus-visible .arrow{transform:translateX(4px)}
+  .rows li{transition:background-color .2s}
+  .rows .stmt{transition:transform .2s ease-out}
+  .rows li:hover .stmt{transform:translateX(6px)}
+
+  /* 7. FAQ open and close, Chromium only, others snap */
+  @supports (interpolate-size:allow-keywords){
+    :root{interpolate-size:allow-keywords}
+    details.q::details-content{height:0;overflow:hidden;transition:height .25s ease-out,content-visibility .25s allow-discrete}
+    details.q[open]::details-content{height:auto}
+  }
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</helmet>
+
+<div class="page">
+<a class="skip" href="#main">Skip to main content</a>
+
+<header class="hdr">
+  <div class="wrap">
+    <a class="brand" href="#"><img class="logo-h" src="/_blob/7a044db0a43ce2f5fc74e6eae2e8b937" alt="Agency Back Office - Practical Agency Training" width="172" height="64"></a>
+    <nav class="nav" aria-label="Primary">
+      <a href="#">Training</a>
+      <a href="#">Topics</a>
+      <a href="#">Who We Help</a>
+      <a href="#">Resources</a>
+      <a href="#">About</a>
+      <a class="cta" href="#">Get Started</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- 1. HERO -->
+<section class="hero" aria-labelledby="h-hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">Online training for agencies and marketers</p>
+      <h1 id="h-hero" class="h1">Practical digital marketing training for people who deliver client work</h1>
+      <p class="lead">Agency Back Office is an online training company that teaches agency owners, marketers, and consultants the practical systems behind search engine optimization (SEO), reputation management, automation, and agency operations.</p>
+      <p class="support">Learn the work, build repeatable systems, and apply them to real client projects.</p>
+      <div class="cta-row">
+        <a class="btn" href="#">Explore the training<span class="arrow" aria-hidden="true">&rarr;</span></a>
+        <a class="sec-link" href="#">Browse training topics</a>
+      </div>
+    </div>
+    <figure class="diagram" style="margin:0">
+      <p class="dtitle">Example workflow: asking for reviews after a finished job</p>
+      <ol class="flow">
+        <li><span class="mark" aria-hidden="true">1</span><h3>Job marked complete</h3><p><span class="ann">Trigger:</span> a status change in your system starts the workflow.</p></li>
+        <li><span class="mark" aria-hidden="true">2</span><h3>Review request sent</h3><p>A short text or email asks for a review and includes a direct link.</p></li>
+        <li><span class="mark" aria-hidden="true">3</span><h3>One reminder, then stop</h3><p><span class="ann">Timing:</span> a single follow-up avoids over-messaging the customer.</p></li>
+        <li><span class="mark" aria-hidden="true">4</span><h3>New review arrives</h3><p><span class="ann">Review:</span> the right person is notified so nothing sits unseen.</p></li>
+        <li><span class="mark" aria-hidden="true">5</span><h3>Reply published</h3><p>Every review, positive or negative, gets a considered response.</p></li>
+      </ol>
+      <figcaption class="small">Illustrative example of the kind of workflow covered in reputation management training. Not a client result.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- 2. SERVICE TOPICS -->
+<section class="sec rule-top" aria-labelledby="h-topics">
+  <div class="wrap svc-grid">
+    <div class="svc-aside">
+      <div class="inner">
+        <p class="eyebrow" style="margin-bottom:12px">Training topics</p>
+        <h2 id="h-topics" class="h2">What you can learn</h2>
+        <p>Fifteen training topics, grouped by the problem they solve. Each links to a page that explains what the topic is, how agencies use it, and what the training covers.</p>
+      </div>
+    </div>
+    <div class="svc-main">
+      <div>
+        <h3 class="group-label" style="margin-bottom:24px">Search visibility</h3>
+        <ul class="topics cards">
+          <li><div class="ph" role="img" aria-label="Image placeholder for SEO Training">Image placeholder<small>21:9 -SEO workflow screenshot</small></div><div class="card-body"><h4 class="h3" style="margin:0;font-family:'Manrope',system-ui,sans-serif"><a href="#">SEO Training</a></h4><p>Learn keyword research, on-page SEO, technical SEO, and how to run SEO for client websites.</p></div></li>
+          <li><div class="ph" role="img" aria-label="Image placeholder for AEO Training">Image placeholder<small>21:9 -answer structure example</small></div><div class="card-body"><h4 class="h3" style="margin:0;font-family:'Manrope',system-ui,sans-serif"><a href="#">AEO Training</a></h4><p>Learn answer engine optimization (AEO): structuring content for featured snippets, voice search, and artificial intelligence (AI) answers.</p></div></li>
+          <li><div class="ph" role="img" aria-label="Image placeholder for Local SEO Training">Image placeholder<small>21:9 -local search diagram</small></div><div class="card-body"><h4 class="h3" style="margin:0;font-family:'Manrope',system-ui,sans-serif"><a href="#">Local SEO Training</a></h4><p>Learn how local search works and how agencies approach it for clients.</p></div></li>
+          <li><div class="ph" role="img" aria-label="Image placeholder for Google Business Profile Training">Image placeholder<small>21:9 -annotated profile example</small></div><div class="card-body"><h4 class="h3" style="margin:0;font-family:'Manrope',system-ui,sans-serif"><a href="#">Google Business Profile Training</a></h4><p>Learn what a Google Business Profile (GBP) contains and how agencies set up and maintain it.</p></div></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="group-label" style="margin-bottom:24px">Reputation and leads</h3>
+        <ul class="topics cards">
+          <li><div class="ph" role="img" aria-label="Image placeholder for Reputation Management Training">Image placeholder<small>21:9 -review workflow example</small></div><div class="card-body"><h4 class="h3" style="margin:0;font-family:'Manrope',system-ui,sans-serif"><a href="#">Reputation Management Training</a></h4><p>Build review request, response, and monitoring workflows.</p></div></li>
+          <li><div class="ph" role="img" aria-label="Image placeholder for Lead Generation Training">Image placeholder<small>21:9 -lead capture flow</small></div><div class="card-body"><h4 class="h3" style="margin:0;font-family:'Manrope',system-ui,sans-serif"><a href="#">Lead Generation Training</a></h4><p>Learn how agencies attract, capture, and follow up on leads for clients.</p></div></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="group-label" style="margin-bottom:24px">Systems</h3>
+        <ul class="topics cards">
+          <li><div class="ph" role="img" aria-label="Image placeholder for Digital Marketing Training">Image placeholder<small>21:9 -channel map diagram</small></div><div class="card-body"><h4 class="h3" style="margin:0;font-family:'Manrope',system-ui,sans-serif"><a href="#">Digital Marketing Training</a></h4><p>The foundation: how the main channels fit together in client work.</p></div></li>
+          <li><div class="ph" role="img" aria-label="Image placeholder for AI Marketing Training">Image placeholder<small>21:9 -AI workflow with review step</small></div><div class="card-body"><h4 class="h3" style="margin:0;font-family:'Manrope',system-ui,sans-serif"><a href="#">AI Marketing Training</a></h4><p>Use AI tools in marketing workflows, with clear points for human review.</p></div></li>
+          <li><div class="ph" role="img" aria-label="Image placeholder for Marketing Automation Training">Image placeholder<small>21:9 -automation flow screenshot</small></div><div class="card-body"><h4 class="h3" style="margin:0;font-family:'Manrope',system-ui,sans-serif"><a href="#">Marketing Automation Training</a></h4><p>Set up follow-up, lead nurture, and onboarding workflows.</p></div></li>
+          <li><div class="ph" role="img" aria-label="Image placeholder for Agency Operations Training">Image placeholder<small>21:9 -onboarding checklist example</small></div><div class="card-body"><h4 class="h3" style="margin:0;font-family:'Manrope',system-ui,sans-serif"><a href="#">Agency Operations Training</a></h4><p>Build systems for onboarding, delivery, reporting, and client retention.</p></div></li>
+        </ul>
+      </div>
+      <div class="more">
+        <h3 class="group-label" style="border-bottom:1px solid var(--rule)">More topics</h3>
+        <ul>
+          <li><a href="#">Website SEO Training</a></li>
+          <li><a href="#">Content Marketing Training</a></li>
+          <li><a href="#">Conversion Optimization Training</a></li>
+          <li><a href="#">Website Strategy Training</a></li>
+          <li><a href="#">CRM Training</a> <span class="small">(customer relationship management, or CRM, systems)</span></li>
+        </ul>
+        <p class="all-link" style="margin-top:28px"><a href="#">See all training topics<span class="arrow" aria-hidden="true">&rarr;</span></a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. PROCESS -->
+<section class="sec process" aria-labelledby="h-process">
+  <div class="wrap">
+    <div class="proc-head">
+      <h2 id="h-process" class="h2">How the training works</h2>
+      <p>Every topic follows the same four-part path, from understanding a tactic to running it as an ongoing discipline. The examples below use the review-request workflow from the top of this page.</p>
+    </div>
+    <table class="proc">
+      <caption>The four stages of training and what each one produces</caption>
+      <thead><tr><th scope="col">Stage</th><th scope="col">What you do</th><th scope="col">What you leave with</th></tr></thead>
+      <tbody>
+        <tr>
+          <th scope="row"><span class="num" aria-hidden="true">1</span><span class="stage">Learn the work</span></th>
+          <td data-label="What you do">Understand what a tactic is, why it matters, and how it works.<span class="ex"><b>Example:</b> what a review request is, and why the timing of the ask matters.</span></td>
+          <td data-label="What you leave with">Plain-language definitions and a clear picture of how the tactic works.</td>
+        </tr>
+        <tr>
+          <th scope="row"><span class="num" aria-hidden="true">2</span><span class="stage">Build the system</span></th>
+          <td data-label="What you do">Turn that knowledge into a repeatable process your team can follow.<span class="ex"><b>Example:</b> the five-step workflow, from a finished job to a published reply.</span></td>
+          <td data-label="What you leave with">A repeatable process, written down so your team can follow it.</td>
+        </tr>
+        <tr>
+          <th scope="row"><span class="num" aria-hidden="true">3</span><span class="stage">Apply it to clients</span></th>
+          <td data-label="What you do">Connect the process to client delivery, outcomes, and retention.<span class="ex"><b>Example:</b> set the workflow up in a client's system and adjust the message to their business.</span></td>
+          <td data-label="What you leave with">A client-ready version of the process, connected to delivery and retention.</td>
+        </tr>
+        <tr>
+          <th scope="row"><span class="num" aria-hidden="true">4</span><span class="stage">Keep improving</span></th>
+          <td data-label="What you do">Treat SEO, AEO, reputation, content, and automation as ongoing work, not one-time tasks.<span class="ex"><b>Example:</b> check which requests get responses, then adjust the message and timing.</span></td>
+          <td data-label="What you leave with">A review routine for refining the work over time.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="loopbar"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.34-5.66"/><path d="M20 4v4h-4"/></svg><span>Stage 4 leads back to stage 1: improvement feeds the next round of learning.</span></p>
+  </div>
+</section>
+
+<!-- 4. AUDIENCE ROUTER -->
+<section class="sec rule-top" aria-labelledby="h-aud">
+  <div class="wrap">
+    <div class="aud-head">
+      <h2 id="h-aud" class="h2">Which describes you?</h2>
+      <p>Pick the situation closest to yours to see the training that fits.</p>
+    </div>
+    <ul class="rows">
+      <li><p class="stmt">&ldquo;I run an agency and need delivery systems that hold up as we grow.&rdquo;</p><p class="go"><a href="#">Training for agency owners<span class="arrow" aria-hidden="true">&rarr;</span></a></p></li>
+      <li><p class="stmt">&ldquo;I am starting an agency and need to know what to sell and how to fulfill it.&rdquo;</p><p class="go"><a href="#">Training for new agency owners<span class="arrow" aria-hidden="true">&rarr;</span></a></p></li>
+      <li><p class="stmt">&ldquo;We offer several services and want search, reputation, and automation work to follow one process.&rdquo;</p><p class="go"><a href="#">Training for digital marketing agencies<span class="arrow" aria-hidden="true">&rarr;</span></a></p></li>
+      <li><p class="stmt">&ldquo;We do SEO and need to extend into AEO, local search, and structured content.&rdquo;</p><p class="go"><a href="#">Training for SEO agencies<span class="arrow" aria-hidden="true">&rarr;</span></a></p></li>
+      <li><p class="stmt">&ldquo;We build websites and want to offer SEO-informed structure and ongoing services after launch.&rdquo;</p><p class="go"><a href="#">Training for web design agencies<span class="arrow" aria-hidden="true">&rarr;</span></a></p></li>
+      <li><p class="stmt">&ldquo;We build automations and need marketing and search work that brings in clients.&rdquo;</p><p class="go"><a href="#">Training for AI automation agencies<span class="arrow" aria-hidden="true">&rarr;</span></a></p></li>
+      <li><p class="stmt">&ldquo;We run on GoHighLevel and want SEO and Google Business Profile services to go with our CRM and automation work.&rdquo;</p><p class="go"><a href="#">Training for GoHighLevel agencies<span class="arrow" aria-hidden="true">&rarr;</span></a></p></li>
+      <li><p class="stmt">&ldquo;I advise clients and need practical tools to carry out the strategy.&rdquo;</p><p class="go"><a href="#">Training for marketing consultants<span class="arrow" aria-hidden="true">&rarr;</span></a></p></li>
+    </ul>
+    <p style="margin-top:28px;font-weight:600"><a href="#">See all audiences<span class="arrow" aria-hidden="true">&rarr;</span></a></p>
+  </div>
+</section>
+
+<!-- 5. DEFINITIONS -->
+<section class="sec defs" aria-labelledby="h-defs">
+  <div class="wrap">
+    <div class="defs-head">
+      <h2 id="h-defs" class="h2">Core topics, defined</h2>
+      <p class="small">Last reviewed: <time datetime="2026-10-25">October 25, 2026</time></p>
+    </div>
+    <div class="def-grid">
+      <div class="def">
+        <div class="ph" role="img" aria-label="Image placeholder for SEO">Image placeholder<small>21:9 -SEO diagram</small></div>
+        <div class="card-body">
+        <h3>SEO</h3>
+        <p>Search engine optimization (SEO) is the practice of improving a website so search engines can find it, understand it, and show it to people searching for related topics. It covers technical setup, content, site structure, and links. Agencies use SEO to help clients earn more qualified organic visits without paying for each click.</p>
+        <a class="lnk" href="#">SEO training for agencies<span class="arrow" aria-hidden="true">&rarr;</span></a>
+        </div>
+      </div>
+      <div class="def">
+        <div class="ph" role="img" aria-label="Image placeholder for AEO">Image placeholder<small>21:9 -AEO diagram</small></div>
+        <div class="card-body">
+        <h3>AEO</h3>
+        <p>Answer engine optimization (AEO) is the practice of structuring content so search features and AI assistants can pull a clear, accurate answer from it. That means direct answers, defined terms, logical steps, and consistent naming. Agencies use AEO alongside SEO. No method guarantees a page will be quoted or cited.</p>
+        <a class="lnk" href="#">AEO training<span class="arrow" aria-hidden="true">&rarr;</span></a>
+        </div>
+      </div>
+      <div class="def">
+        <div class="ph" role="img" aria-label="Image placeholder for GBP">Image placeholder<small>21:9 -GBP diagram</small></div>
+        <div class="card-body">
+        <h3>GBP</h3>
+        <p>A Google Business Profile (GBP) is the free listing a business manages to control how it appears in Google Search and Maps. It holds details like categories, services, hours, photos, and reviews. Agencies that manage listings for clients use GBP training to learn setup, optimization, and ongoing maintenance.</p>
+        <a class="lnk" href="#">Google Business Profile training<span class="arrow" aria-hidden="true">&rarr;</span></a>
+        </div>
+      </div>
+      <div class="def">
+        <div class="ph" role="img" aria-label="Image placeholder for Local SEO">Image placeholder<small>21:9 -Local SEO diagram</small></div>
+        <div class="card-body">
+        <h3>Local SEO</h3>
+        <p>Local SEO is search engine optimization focused on helping a business appear when people search for services in a specific area. It combines Google Business Profile management, location and service content, directory listings, reviews, and local links. Agencies use it to serve clients that depend on customers in their area.</p>
+        <a class="lnk" href="#">Local SEO training<span class="arrow" aria-hidden="true">&rarr;</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. DELIVERY -->
+<section class="sec" aria-labelledby="h-del">
+  <div class="wrap del-grid">
+    <div class="del-text">
+      <h2 id="h-del" class="h2">How training is delivered</h2>
+      <p>Agency Back Office is an online-only business, and all training is delivered online. These are the formats currently available.</p>
+      <a class="all" href="#">See all training<span class="arrow" aria-hidden="true">&rarr;</span></a>
+    </div>
+    <dl class="formats">
+      <div><dt class="h3"><span class="ico-row"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="2"/><path d="M7.8 7.8a6 6 0 0 0 0 8.4M16.2 7.8a6 6 0 0 1 0 8.4M4.9 4.9a10 10 0 0 0 0 14.2M19.1 4.9a10 10 0 0 1 0 14.2"/></svg><a href="#">Live training</a></span></dt><dd>Training led live and delivered online. Details are on the live training page.</dd></div>
+      <div><dt class="h3"><span class="ico-row"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg><a href="#">Sessions</a></span></dt><dd>Training sessions delivered online. Details are on the sessions page.</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- 7. RESOURCES -->
+<section class="sec rule-top" aria-labelledby="h-res">
+  <div class="wrap">
+    <div class="res-head" style="max-width:40rem">
+      <h2 id="h-res" class="h2">Free resources</h2>
+      <p>Practical references you can use without enrolling in anything.</p>
+    </div>
+    <table class="res">
+      <caption>Free resource hubs</caption>
+      <thead><tr><th scope="col">Resource</th><th scope="col">What it covers</th><th scope="col">Go to</th></tr></thead>
+      <tbody>
+        <tr><td><span class="ico-row"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4H11v15H5.5A1.5 1.5 0 0 0 4 20.5z"/><path d="M20 5.5A1.5 1.5 0 0 0 18.5 4H13v15h5.5a1.5 1.5 0 0 1 1.5 1.5z"/></svg>Guides</span></td><td>Step-by-step implementation guides for each training topic</td><td><a href="#">Read the guides</a></td></tr>
+        <tr><td><span class="ico-row"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6l1.5 1.5L8 5"/><path d="M11 6.5h9"/><path d="M4 12l1.5 1.5L8 11"/><path d="M11 12.5h9"/><path d="M4 18l1.5 1.5L8 17"/><path d="M11 18.5h9"/></svg>Checklists</span></td><td>Execution checklists for audits, setup, and delivery</td><td><a href="#">Use the checklists</a></td></tr>
+        <tr><td><span class="ico-row"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 10h16"/><path d="M10 10v10"/></svg>Templates</span></td><td>Reusable operational and marketing templates</td><td><a href="#">Browse the templates</a></td></tr>
+        <tr><td><span class="ico-row"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/></svg>Glossary</span></td><td>Plain-language definitions of marketing and agency terms</td><td><a href="#">Open the glossary</a></td></tr>
+        <tr><td><span class="ico-row"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.7.4-1 .9-1 1.7"/><path d="M12 17h.01"/></svg>FAQ</span></td><td>Direct answers to common questions</td><td><a href="#">Read the FAQ</a></td></tr>
+        <tr><td><span class="ico-row"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1-4L16 5a2.1 2.1 0 0 1 3 3L8 19z"/><path d="M14 7l3 3"/></svg>Blog</span></td><td>Tutorials, updates, and worked examples</td><td><a href="#">Read the blog</a></td></tr>
+      </tbody>
+    </table>
+    <a class="res-all" href="#">Browse all resources<span class="arrow" aria-hidden="true">&rarr;</span></a>
+  </div>
+</section>
+
+<!-- 8. PROOF: omitted until verified content exists (data/proof.ts is empty) -->
+
+<!-- 9. FAQ -->
+<section class="sec rule-top" aria-labelledby="h-faq">
+  <div class="wrap">
+    <div class="faq-wrap" style="max-width:none">
+      <h2 id="h-faq" class="h2">Frequently asked questions</h2>
+      <div class="faq-cols">
+      <div class="faq-col">
+        <p class="faq-label">About the training</p>
+        <details class="q" open>
+          <summary>What is Agency Back Office?</summary>
+          <p class="ans">Agency Back Office is an online training company that teaches agency owners, marketers, and consultants the practical systems behind digital marketing and agency operations. Training focuses on implementation: workflows, examples, templates, and checklists you can apply to client work.</p>
+        </details>
+        <details class="q">
+          <summary>Who is the training for?</summary>
+          <p class="ans">It is for people who sell or deliver digital marketing services: agency owners, new agency owners, SEO and web design agencies, AI automation and GoHighLevel agencies, marketing consultants, and freelancers. The audience pages show which topics fit each situation.</p>
+        </details>
+        <details class="q">
+          <summary>Where should I start if I'm new?</summary>
+          <p class="ans">Start with <a href="#">Digital Marketing Training</a>, which shows how the main channels fit together in client work, then choose the topic closest to the service you sell or want to add. The <a href="#">new agency owners page</a> explains what to learn next.</p>
+        </details>
+        <details class="q">
+          <summary>Is the training online?</summary>
+          <p class="ans">Yes. Agency Back Office is an online-only business, and training is delivered online. The current formats are live training and sessions.</p>
+        </details>
+      </div>
+      <div class="faq-col">
+        <p class="faq-label">Topics and expectations</p>
+        <details class="q">
+          <summary>What topics does Agency Back Office teach?</summary>
+          <p class="ans">Fifteen topics, including SEO, AEO, Local SEO, Google Business Profile, reputation management, AI marketing, marketing automation, lead generation, and agency operations. The services page lists every topic.</p>
+        </details>
+        <details class="q">
+          <summary>What is the difference between SEO and AEO?</summary>
+          <p class="ans">SEO helps search engines find, understand, and show a website. AEO structures content so search features and AI assistants can pull a clear answer from it. The two overlap, and agencies use them together. See <a href="#">SEO training</a> and <a href="#">AEO training</a>.</p>
+        </details>
+        <details class="q">
+          <summary>How long does SEO take to work?</summary>
+          <p class="ans">It depends on the site, the competition, and where the site starts, and no one can promise a timeline. Search engines decide when and how results change, so honest timelines are estimates, not promises. Tracking progress over time is more reliable than expecting a fixed date.</p>
+        </details>
+        <details class="q">
+          <summary>Can training guarantee rankings or AI citations?</summary>
+          <p class="ans">No. No training or tactic can guarantee rankings, featured snippets, AI answer inclusion, or knowledge panels, because search engines and AI systems make those decisions. Agency Back Office teaches the practices that improve how well a site can be found and understood.</p>
+        </details>
+      </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 10. CLOSING CTA -->
+<section class="band on-dark" aria-labelledby="h-cta">
+  <div class="wrap">
+    <div class="txt">
+      <img class="logo-band" src="/_blob/604be16cc10a894ff9ee69fa628ec3a6" alt="Agency Back Office - Practical Agency Training" width="172" height="64">
+      <h2 id="h-cta" class="h2">Start with the training that fits your work</h2>
+      <p>Pick a topic, choose a format, and apply it to your next client project.</p>
+      <div class="act">
+        <a class="btn" href="#">Explore the training<span class="arrow" aria-hidden="true">&rarr;</span></a>
+      </div>
+    </div>
+    <div class="media">
+      <div class="ph ph-dark" role="img" aria-label="Image placeholder for the closing call to action">Image placeholder<small>4:3 - training session or course preview screenshot</small></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="ftr">
+  <div class="wrap">
+    <p class="ftr-brand"><img class="logo-i" src="/_blob/d59061a974c3d84d3821eef068f97ce7" alt="" width="39" height="36"><span>Agency Back Office. Home content last reviewed <time datetime="2026-10-25">October 25, 2026</time>.</span></p>
+    <ul>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+      <li><a href="#">Get Started</a></li>
+      <li><a href="#">Privacy Policy</a></li>
+      <li><a href="#">Terms</a></li>
+    </ul>
+  </div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":8000}}'>
+class Component extends DCLogic {
+renderVals() {
+return {};
+}
+}
+</script>
+</body>
+</html>

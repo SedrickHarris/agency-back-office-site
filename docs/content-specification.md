@@ -85,51 +85,56 @@ Must identify:
 
 ## Core Page: Home
 
+Visual reference: `docs/design-reference/home-design-reference.html` (approved design). Copy is approved and lives in `data/home.ts`.
+
 | Field | Value |
 |---|---|
-| URL | `/` |
+| Page name | Home |
+| URL and canonical | `/` (canonical resolves through `metadataBase`; omitted until the site URL is set) |
 | Page type | Core page, Phase 1, Critical |
-| Primary intent | Navigational with some commercial investigation |
+| Parent | None (root) |
+| Purpose | Define Agency Back Office, route visitors to the right training topic, audience page, and format |
 | Audience | Agency owners and new agency owners first |
-| Title direction | "Agency Back Office \| Practical Digital Marketing and Agency Training" |
-| Meta description direction | "Practical training in SEO, AEO, Google Business Profile, reputation management, automation, and agency operations for agency owners, marketers, and consultants." |
-| H1 direction | "Practical digital marketing training for people who deliver client work" |
+| Primary intent | Navigational with some commercial investigation |
+| Title tag | "Agency Back Office \| Practical Digital Marketing and Agency Training" |
+| Meta description | "Practical training in SEO, AEO, Google Business Profile, reputation management, automation, and agency operations for agency owners, marketers, and consultants." |
+| H1 | "Practical digital marketing training for people who deliver client work" |
 | Primary CTA | Explore the training (`/training/`) |
 | Secondary CTA | Browse training topics (`/services/`), hero only. "Get started" (`/get-started/`) stays in the header navigation. |
-| Schema | Organization, WebSite, WebPage |
+| Schema | Organization, WebSite, WebPage. Emitted only when the site URL is set. No `FAQPage`, no `Course`, no `sameAs`. |
+| Robots | `noindex` until the launch gate |
+| Visual needs | Annotated process diagram (HTML), process table, image placeholders (topic cards, definition cards, closing band), functional icons |
 | Status | In build |
 
 ### Section Order
 
-1. Hero with a standalone one-sentence entity definition of Agency Back Office
-2. Service topics index - two-column list grouped by theme, not a card grid
-3. Learn / Build / Apply / Improve process diagram
-4. Audience router ("Which describes you?")
-5. Definitions strip - SEO, AEO, GBP, and Local SEO, each linking to its canonical service page
+1. Hero with a standalone one-sentence entity definition and an annotated workflow diagram
+2. Service topics - grouped by theme (Search visibility, Reputation and leads, Systems), topic cards with image placeholders, a "More topics" list, and a link to all topics
+3. Process table - Learn the work, Build the system, Apply it to clients, Keep improving - with a loop bar
+4. Audience router ("Which describes you?") - ruled rows
+5. Definitions - SEO, AEO, GBP, and Local SEO as a 2x2 grid of cards with image placeholders, each linking to its canonical service page, with a visible "last reviewed" date
 6. How training is delivered - names only confirmed formats (currently Live training and Sessions). Courses and workshops are not referenced until confirmed. No pricing, schedule, curriculum, or duration language.
-7. Free resources
-8. Proof - conditional. Renders only from verified data (`data/proof.ts`); the section is omitted when no verified entries exist. Never invent bios, quotes, counts, or ratings.
-9. FAQ of 4-6 questions
-10. Closing CTA band
+7. Resources - a table of resource hubs. The heading and intro do not claim the resources are free until that is confirmed.
+8. Proof - conditional. Renders only from verified data (`data/proof.ts`). Omitted while the data is empty. Never invent bios, quotes, counts, or ratings.
+9. FAQ - 8 questions in two columns on desktop ("About the training" and "Topics and expectations"), one column on mobile, using native `details` and `summary`
+10. Closing band - dark surface. Logo, H2, support line, and the primary CTA on the left. A dark 4:3 image placeholder on the right, stacked below on mobile.
 
 ### Internal-Link Targets
 
-- `/services/`
-- `/audiences/`
-- `/training/`
-- `/resources/`
+- `/services/`, `/audiences/`, `/training/`, `/training/live/`, `/training/sessions/`, `/resources/`
 - priority service pages and priority audience pages (see `master-page-build-list.md`)
-- `/about/`
-- `/contact/`
-- `/get-started/`
+- `/about/`, `/contact/`, `/get-started/`
+- legal pages (`/privacy-policy/`, `/terms/`) in the footer once they exist
+
+Links to routes that do not exist yet render as plain text (marked `data-unbuilt-href`) until the page is built. Never ship `href="#"`.
 
 ### Notes
 
-- Include a visible "last reviewed" date on the definitions strip (see `aeo-ai-search-strategy.md`, Answer Block Standards).
+- Include a visible "last reviewed" date on the definitions grid (see `aeo-ai-search-strategy.md`, Answer Block Standards).
 - The FAQ is visible on the page. `FAQPage` schema is not used on the home page (see `decisions-change-log.md`).
-- The home page stays `noindex` until the launch gate: `NEXT_PUBLIC_SITE_URL` is set, `robots.txt` and page metadata are released together, and all internal links resolve.
+- The home page stays `noindex` until the launch gate: `NEXT_PUBLIC_SITE_URL` is set, `robots.txt` and page metadata are released together, and all internal links resolve. The page is excluded from the sitemap while `noindex`.
 - Do not invent proof, claims, pricing, or student counts.
-- Define acronyms on first use (SEO, AEO, GBP).
+- Define acronyms on first use (SEO, AEO, AI, GBP, CRM).
 
 ## Writing Rules
 

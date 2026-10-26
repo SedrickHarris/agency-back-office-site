@@ -31,6 +31,7 @@
 | Primary CTA | Explore the training (`/training/`) |
 | Secondary CTA | Browse training topics (`/services/`), hero only. "Get started" stays in the header navigation. |
 | Schema | Organization, WebSite, WebPage |
+| Robots | noindex until the launch gate (`NEXT_PUBLIC_SITE_URL` set). Excluded from the sitemap while noindex. |
 | Internal-link targets | `/services/`, `/audiences/`, `/training/`, `/resources/`, priority service and audience pages, `/about/`, `/contact/`, `/get-started/` |
 | Status | In build |
 

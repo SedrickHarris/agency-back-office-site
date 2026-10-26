@@ -14,68 +14,134 @@ Create an authoritative education/practitioner platform that feels human-designe
 - restrained decoration
 - strong mobile usability
 
+## Brand
+
+Official logo files live in `public/brand/logos/`. The artwork is raster only (PNG and WebP). No editable vector master exists. TODO: request an SVG master from the owner.
+
+| Variant | File (WebP in `webp/`, PNG in `png/`) | Use |
+|---|---|---|
+| Horizontal | `agency-back-office-horizontal-transparent` | Header on light surfaces (64px tall desktop, 48px mobile) |
+| Horizontal, dark | `agency-back-office-horizontal-white-mark` | Dark navy surfaces, such as the closing band (64px tall) |
+| Stacked | `agency-back-office-stacked-transparent` | Compact or square placements |
+| Icon | `agency-back-office-icon-transparent` | Footer (36px tall, empty alt text), favicon |
+
+Rules:
+- Use the files as supplied. Do not recolor, stretch, crop, or redraw them.
+- Logo images carry the alt text "Agency Back Office - Practical Agency Training". The icon in the footer is decorative and uses an empty alt.
+- The tagline "Practical Agency Training" is part of the logo artwork. Do not retype it as live text beside the logo.
+- Always set explicit `width` and `height` to prevent layout shift (horizontal: 1370 x 510 source, shown at 172 x 64).
+- TODO (owner to supply): clear-space rule and minimum sizes. No values are assumed here.
+
 ## Typography
 
-Approved font pairing: **Manrope** (display/UI) and **Inter** (text).
+Approved font pairing: **Manrope** (display and UI) and **Inter** (text), loaded once with `next/font` (see `nextjs-technical-architecture.md`, Fonts).
 
 | Role | Font | Weight |
 |---|---|---|
-| Page titles and headings (H1–H6) | Manrope | 600–700 |
-| Navigation | Manrope | 600 |
-| Body copy, forms, tables, course details | Inter | 400–500 |
-| Buttons and labels | Inter | 600 |
+| Page titles and headings (H1-H6), logo wordmark, step numerals | Manrope | 600-800 |
+| Eyebrows, table headers, group labels | Manrope | 600 |
+| Buttons | Manrope | 700 |
+| Body copy, navigation, forms, tables, course details | Inter | 400-600 |
+
+Updated 2026-10-25 to match the approved home page design: buttons use Manrope 700 (previously Inter 600) and navigation uses Inter.
 
 Sizing:
-- Body: approximately 16–18px (1rem–1.125rem), line-height 1.55–1.7.
-- Large headings: tighter line-height (approximately 1.1–1.25), still readable when wrapped on mobile.
-- Use fluid/responsive sizes (for example `clamp()`) so headings scale down on small screens without shrinking body text below 16px.
-- Keep line length readable (approximately 60–75 characters for body copy).
+- Body: 1.0625rem (17px), line-height 1.65.
+- Large headings: tighter line-height (1.1-1.3), still readable when wrapped on mobile.
+- Fluid sizes use `clamp()` so headings scale down on small screens without shrinking body text below 16px.
+- Prose measure: maximum 68ch. Definitions maximum 60ch.
 
 Rules:
 - Use only these two families. Do not add a third typeface.
-- Use only the specified weights to limit font payload.
-- Do not rely on font weight alone to convey meaning; maintain accessible contrast and visible focus states.
-- Set `display: swap` and a system-font fallback so text stays visible while fonts load.
-- Implementation approach is documented in `nextjs-technical-architecture.md` (Fonts).
+- Use only the specified weights to limit font payload: Manrope 500-800, Inter 400-600.
+- Do not rely on font weight alone to convey meaning.
+- `display: swap` with a system-font fallback. No render-blocking external font CSS.
 
 ### Type Scale
 
-Defined as Tailwind theme tokens in `styles/globals.css`.
+Defined in `styles/globals.css`.
 
 | Role | Size | Font and weight | Line-height |
 |---|---|---|---|
 | H1 | `clamp(2.25rem, 1.6rem + 2.6vw, 3.5rem)` | Manrope 700, tracking -0.02em | 1.1 |
 | H2 | `clamp(1.75rem, 1.4rem + 1.4vw, 2.25rem)` | Manrope 700 | 1.2 |
 | H3 | 1.25rem | Manrope 600 | 1.3 |
+| Definition term | 1.5rem | Manrope 700 | 1.2 |
+| Step numeral | 2.5rem | Manrope 800, tracking -0.02em | 1 |
 | Body | 1.0625rem | Inter 400 | 1.65 |
 | Lead paragraph | 1.25rem | Inter 400 | 1.55 |
 | Small / meta | 0.875rem | Inter 400 | 1.5 |
 | Eyebrow | 0.8125rem | Manrope 600, uppercase, tracking 0.08em | 1.4 |
 
-Prose measure: maximum 68ch. Definitions and FAQ answers never exceed 68ch.
+## Color Tokens
 
-## Design Tokens
+Tokens are CSS variables defined in `styles/globals.css`. Do not hardcode hex values in components.
 
-Tokens live in `styles/globals.css` (Tailwind CSS v4 `@theme`). Do not hardcode hex values in components.
+| Token | Value | Use | Contrast |
+|---|---|---|---|
+| `paper` | `#FFFFFF` | Page background | - |
+| `tint` | `#EEF3FC` | Tinted band and row hover | - |
+| `ink` | `#04153A` | Text, rules, dark surface | 17.9:1 on paper |
+| `muted` | `#425068` | Secondary text | 8.1:1 on paper, 7.3:1 on tint |
+| `accent` | `#0360FC` | Primary button fill, links, markers | 5.1:1 on paper, 4.6:1 on tint |
+| `accent-hover` | `#024BC9` | Button hover | 7.4:1 with white text |
+| `accent-on-dark` | `#7BA7FF` | Accent on navy | 7.5:1 on ink |
+| `rule` | `#D2DAE8` | 1px hairline rules | decorative |
+| `ink-raised` | `#0A2352` | Placeholder on navy | - |
+| `on-dark-muted` | `#C9D4EA` | Secondary text on navy | 12.0:1 on ink |
+| `placeholder` | `#E6EAF0` | Image placeholder fill | 6.7:1 with muted text |
+| `placeholder-line` | `#8D99AB` | Image placeholder dashed outline | decorative |
 
-| Token | Value | Use |
-|---|---|---|
-| `ink` | `#0b1a3a` | Text, rules, dark surface |
-| `paper` | `#ffffff` | Page background |
-| `tint` | `#eef3fb` | Tinted band surface (one per page where needed) |
-| `rule` | `#c9d3e6` | 1px hairline rules |
-| `muted` | `#45516a` | Secondary text |
-| `accent` | `#1558d6` | Primary buttons, text links on light surfaces |
-| `accent-strong` | `#0f45a8` | Hover state for accent |
+Ratios are computed WCAG contrast ratios. Re-check before introducing a new text and background pair.
 
-Values are derived from the logo's navy and blue. Check contrast before using a token pair for text.
+Layout:
+- Container: maximum 1200px, 32px gutters (20px at 720px and below).
+- Section padding: 96px desktop, 64px at 720px and below.
+- Breakpoints: 980px and 720px.
+- Borders: 1px rules, maximum radius 4px. Circular step markers are the only exception.
 
-Layout rules:
-- Container: maximum 1200px, 20px gutters (mobile) and 32px (lg and up).
-- Section padding: 64px mobile, 96px desktop.
-- Structure comes from 1px hairline rules. No card shadows, gradients, or icon sets. Maximum border radius 4px (circular step markers are the exception).
-- Focus: 2px solid outline with 2px offset on every interactive element.
-- FAQ and disclosure content uses native `details` and `summary`. No JavaScript is required for content sections.
+## Buttons
+
+- **Primary:** solid `accent` with white text, `accent-hover` on hover, Manrope 700, 48px minimum height, 4px radius.
+- **Header action:** 2px `accent` outline with accent text that fills with `accent` on hover.
+- **On navy:** primary button with a 1px `accent-on-dark` border.
+- **Secondary:** underlined text link, not a second button. One dominant CTA per view.
+- **Focus:** 2px solid outline with 2px offset on every interactive element. White on navy. Never removed.
+- Arrows after link text are decorative (`aria-hidden`).
+
+## Ruled-Line Motif
+
+Structure comes from lines, not boxes. A 2px `ink` rule opens tables, lists, and FAQ columns. 1px `rule` hairlines separate rows. Group labels sit on a 2px rule. Use this motif for lists, tables, and row layouts before reaching for a card.
+
+## Teaching Visuals
+
+- **Annotated process diagram:** semantic HTML (`figure`, `figcaption`, ordered list), not an image. Numbered circular markers on a 2px vertical line. Callouts such as "Trigger", "Timing", and "Review" are part of the step text so they read in order. The caption states when an example is illustrative and not a client result.
+- **Process table:** stage, what you do, what you leave with. On mobile each row restacks as labeled blocks using `data-label`. A loop bar below states that the last stage feeds the first.
+- **Image placeholders:** a fixed aspect ratio, a visible "Image placeholder" label and intended-content note, a dark variant for navy sections, and a prop for swapping in a real image later. No stock photography. Placeholders carry `role="img"` and an `aria-label` that says they are placeholders.
+- **Cards** are used only for topic cards and definition cards that carry an image slot (1px `rule` border, 4px radius, no shadow). Do not use repeated card grids elsewhere.
+
+## Motion
+
+Added 2026-10-25. This supersedes the earlier "no scroll-triggered animation" guidance. Motion is restrained, optional, and CSS only.
+
+- Everything is visible by default. Motion is an enhancement.
+- All motion sits inside `@media (prefers-reduced-motion: no-preference)`.
+- Animate `transform` and `opacity` only. No layout-shifting animation.
+- No JavaScript for motion.
+- Hero load entrance: eyebrow, heading, lead, support text, and CTA row rise in with a stagger. Diagram steps follow. Plays once.
+- Scroll reveals use `animation-timeline: view()` inside `@supports`, with `animation-fill-mode: backwards`. Browsers without support show content normally.
+- Cards lift 4px on hover and `focus-within`. Link arrows nudge 4px. Audience statements shift 6px on row hover.
+- FAQ open and close animate height using `interpolate-size: allow-keywords` inside `@supports`. Other browsers snap.
+- Under `prefers-reduced-motion: reduce`, transitions and animations are disabled.
+
+## Icons
+
+Added 2026-10-25. Icons are functional only.
+
+- Inline SVG on a 24px grid, 1.75px stroke, round caps and joins, `currentColor`, `aria-hidden` by default.
+- Allowed uses: the resources table, training formats, the process loop bar, and menu, arrow, external-link, and download markers.
+- Do not use icons as decoration or build an icon collection. Do not add an icon library.
+- Set: live (broadcast), calendar, book (guides), checklist, template, glossary, help (FAQ), edit (blog), loop, menu, arrow, external, download. Live, calendar, book, checklist, template, glossary, help, edit, and loop come from the approved reference. Menu, arrow, external, and download are drawn in the same style.
 
 ## Avoid Generic AI/SaaS Patterns
 
@@ -126,7 +192,7 @@ Do not repeat the same section pattern throughout a page.
 - descriptive link labels
 - keyboard-accessible navigation
 - meaningful alt text
-- motion kept optional/restrained
+- motion kept optional and restrained (see Motion)
 
 ## Responsive Design
 
