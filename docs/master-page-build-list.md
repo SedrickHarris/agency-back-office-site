@@ -15,6 +15,25 @@
 | Privacy Policy | `/privacy-policy/` | Required |
 | Terms | `/terms/` | Required |
 
+### Home Page Entry
+
+| Field | Value |
+|---|---|
+| URL | `/` |
+| Page type | Core page, Phase 1, Critical |
+| Primary intent | Navigational with some commercial investigation |
+| Audience | Agency owners and new agency owners first |
+| Title direction | "Agency Back Office \| Practical Digital Marketing and Agency Training" |
+| Meta description direction | "Practical training in SEO, AEO, Google Business Profile, reputation management, automation, and agency operations for agency owners, marketers, and consultants." |
+| H1 direction | "Practical digital marketing training for people who deliver client work" |
+| Primary CTA | Explore the training (`/training/`) - pending confirmation |
+| Secondary CTA | Get started (`/get-started/`) - pending confirmation |
+| Schema | Organization, WebSite, WebPage |
+| Internal-link targets | `/services/`, `/audiences/`, `/training/`, `/resources/`, priority service and audience pages, `/about/`, `/contact/`, `/get-started/` |
+| Status | Outline approved, copy not written |
+
+The approved section order is defined in `content-specification.md` (Home Page).
+
 ## Phase 2 — Core Service Pages
 
 - `/services/digital-marketing-training/`

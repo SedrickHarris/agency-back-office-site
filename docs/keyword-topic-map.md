@@ -55,6 +55,8 @@ Supporting topics:
 - reviews
 - local ranking signals
 
+Intent note: targets are educational and agency-practitioner queries. Exclude "near me" and city-modifier local-service queries. The supporting topics above describe what the training teaches, not a local ranking goal for Agency Back Office itself.
+
 ### Reputation Management
 
 Canonical:
@@ -82,6 +84,8 @@ Supporting topics:
 - local backlinks
 - local content
 - local schema
+
+Intent note: targets are educational and agency-practitioner queries. Exclude "near me" and city-modifier local-service queries. The supporting topics above describe what the training teaches, not a local ranking goal for Agency Back Office itself.
 
 ### Marketing Automation
 

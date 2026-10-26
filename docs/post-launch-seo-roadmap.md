@@ -56,6 +56,7 @@ Quarterly:
 - internal-link audit
 - page-pruning/cannibalization review
 - competitor gap review
+- crawler policy review: verify bot names against vendor documentation (formal policy review every six months)
 
 ## Rule
 

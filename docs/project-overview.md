@@ -73,6 +73,8 @@ The website should support visibility across:
 - Perplexity
 - Other LLM-based discovery systems
 
+Local search is a taught subject, not a ranking channel for Agency Back Office itself.
+
 ## Conversion Objectives
 
 Primary visitor actions may include:
