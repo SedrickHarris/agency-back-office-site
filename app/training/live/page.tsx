@@ -1,7 +1,7 @@
 export default function TraininglivePage() {
   return (
-    <main>
+    <div>
       <h1>Placeholder: /training/live/</h1>
-    </main>
+    </div>
   );
 }

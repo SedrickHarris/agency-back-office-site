@@ -1,7 +1,7 @@
 export default function ResourcesfaqPage() {
   return (
-    <main>
+    <div>
       <h1>Placeholder: /resources/faq/</h1>
-    </main>
+    </div>
   );
 }

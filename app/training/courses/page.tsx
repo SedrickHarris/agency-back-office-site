@@ -1,7 +1,7 @@
 export default function TrainingcoursesPage() {
   return (
-    <main>
+    <div>
       <h1>Placeholder: /training/courses/</h1>
-    </main>
+    </div>
   );
 }

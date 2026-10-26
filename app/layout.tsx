@@ -1,4 +1,7 @@
+import type { Metadata } from "next";
 import { Inter, Manrope } from "next/font/google";
+import { siteUrl } from "@/lib/site";
+import "../styles/globals.css";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -14,6 +17,11 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
+export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
+  applicationName: "Agency Back Office",
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -21,7 +29,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${manrope.variable} ${inter.variable}`}>
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <header />
+        <main>{children}</main>
+        <footer />
+      </body>
     </html>
   );
 }

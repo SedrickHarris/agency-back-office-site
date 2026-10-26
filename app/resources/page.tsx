@@ -1,7 +1,7 @@
 export default function ResourcesPage() {
   return (
-    <main>
+    <div>
       <h1>Placeholder: /resources/</h1>
-    </main>
+    </div>
   );
 }

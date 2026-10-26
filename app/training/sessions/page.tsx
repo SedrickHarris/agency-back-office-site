@@ -1,7 +1,7 @@
 export default function TrainingsessionsPage() {
   return (
-    <main>
+    <div>
       <h1>Placeholder: /training/sessions/</h1>
-    </main>
+    </div>
   );
 }

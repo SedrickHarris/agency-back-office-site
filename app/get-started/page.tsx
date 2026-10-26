@@ -1,7 +1,7 @@
 export default function GetstartedPage() {
   return (
-    <main>
+    <div>
       <h1>Placeholder: /get-started/</h1>
-    </main>
+    </div>
   );
 }

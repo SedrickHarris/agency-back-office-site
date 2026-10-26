@@ -1,7 +1,7 @@
 export default function AudiencesPage() {
   return (
-    <main>
+    <div>
       <h1>Placeholder: /audiences/</h1>
-    </main>
+    </div>
   );
 }
