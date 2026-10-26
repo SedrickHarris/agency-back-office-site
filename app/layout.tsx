@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Manrope } from "next/font/google";
+import { Footer } from "@/components/layout/Footer";
+import { Header } from "@/components/layout/Header";
 import { siteUrl } from "@/lib/site";
 import "../styles/globals.css";
 
@@ -30,9 +32,15 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${manrope.variable} ${inter.variable}`}>
       <body className={inter.className}>
-        <header />
-        <main>{children}</main>
-        <footer />
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-paper focus:px-4 focus:py-2"
+        >
+          Skip to main content
+        </a>
+        <Header />
+        <main id="main-content">{children}</main>
+        <Footer />
       </body>
     </html>
   );

@@ -10,6 +10,7 @@
     "build": "next build",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
+    "links:home": "node scripts/check-home-links.mjs",
     "check": "npm run lint && npm run typecheck && npm run build"
   },
   "dependencies": {

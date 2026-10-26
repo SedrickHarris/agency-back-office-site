@@ -1,10 +1,13 @@
 import type { MetadataRoute } from "next";
+import { absoluteUrl, isProductionBuild } from "@/lib/site";
 
 export const dynamic = "force-static";
 
-// Lists only canonical, indexable pages. The home stub is noindex, so the list
-// is empty for now. Populate from data/page-registry.ts using absoluteUrl()
-// from lib/site.ts when real pages are published.
+// Lists only canonical, indexable pages. Pages are indexable only once the
+// site URL is configured (the launch gate), so the list is empty before then.
+// Populate from data/page-registry.ts as more pages are published.
 export default function sitemap(): MetadataRoute.Sitemap {
-  return [];
+  if (!isProductionBuild) return [];
+
+  return [{ url: absoluteUrl("/") }];
 }
