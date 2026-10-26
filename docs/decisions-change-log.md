@@ -45,6 +45,78 @@ Use service pages, audience pages, and audience + service pages, supported by tr
 **Decision:**  
 Use `/audiences/{audience-slug}/{service-slug}/`.
 
+### 2026-10-25 - Internal links do not prefetch
+
+**Area:** Technical
+
+**Decision:**  
+All internal links set `prefetch={false}` (the shared `SiteLink` and `ButtonLink` components and the header links).
+
+**Reason:**  
+In the static export with `trailingSlash: true`, the browser requested prefetch payloads such as `/training/__next.training.__PAGE__.txt?_rsc=...`, but the files are exported under a nested path (`__next.training/__PAGE__.txt`). Each request returned a 404 and logged a console error. Navigation still worked through a normal page load, so disabling prefetch removes the errors at no functional cost.
+
+**Affected Files/Routes:**  
+`components/ui/SiteLink.tsx`, `components/ui/ButtonLink.tsx`, `components/layout/Header.tsx`.
+
+**Follow-Up:**  
+Re-test prefetching after the first Cloudflare deploy or a Next.js upgrade. Remove `prefetch={false}` if exported prefetch payloads resolve.
+
+---
+
+### 2026-10-25 - Home hero spacing fix
+
+**Area:** Design
+
+**Decision:**  
+The hero lead paragraph has a 28px top margin and the support paragraph has 20px. The fix raises specificity (`.page p.lead`, `.page p.support`) because the reset `.page p{margin:0}` was overriding the class margins. Other paragraphs are unchanged.
+
+**Reason:**  
+The design intends these margins. The reset had been hiding them.
+
+**Affected Files/Routes:**  
+`styles/globals.css`, `docs/design-reference/home-design-reference.html`.
+
+**Follow-Up:**  
+The same reset also overrides the eyebrow `margin-bottom` (16px) and the process loop bar `margin-top` (32px). Decide whether to fix those too.
+
+---
+
+### 2026-10-25 - Resources section copy
+
+**Area:** Content
+
+**Decision:**  
+The resources heading is "Resources" and the intro is "Guides, checklists, templates, a glossary, and blog posts that support the training." The page does not imply the resources are free until the owner confirms it. The table caption is "Resource hubs" (the design reference still reads "Free resource hubs").
+
+**Reason:**  
+Whether the resources are free is unconfirmed.
+
+**Affected Files/Routes:**  
+`data/home.ts`, `docs/content-specification.md`, `docs/design-reference/home-design-reference.html`.
+
+**Follow-Up:**  
+Owner to confirm pricing for resources. Update the design reference caption.
+
+---
+
+### 2026-10-25 - Brand masters moved out of public
+
+**Area:** Technical
+
+**Decision:**  
+The full logo masters moved from `public/brand/logos/` to `assets/brand-masters/` so they are not copied into the static export. `public/brand/` keeps only the site-sized derivatives and the Open Graph image, and `app/` keeps the favicon and Apple icon. This supersedes the location in "Brand, logo files, and color tokens".
+
+**Reason:**  
+The masters are large source files (about 4.7 MB) that the site does not use.
+
+**Affected Files/Routes:**  
+`assets/brand-masters/`, `docs/design-system.md`, `components/ui/Logo.tsx`.
+
+**Follow-Up:**  
+Regenerate derivatives from `assets/brand-masters/` if the logo changes.
+
+---
+
 ### 2026-10-25 - Brand, logo files, and color tokens
 
 **Area:** Design

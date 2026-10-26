@@ -114,7 +114,7 @@ Visual reference: `docs/design-reference/home-design-reference.html` (approved d
 4. Audience router ("Which describes you?") - ruled rows
 5. Definitions - SEO, AEO, GBP, and Local SEO as a 2x2 grid of cards with image placeholders, each linking to its canonical service page, with a visible "last reviewed" date
 6. How training is delivered - names only confirmed formats (currently Live training and Sessions). Courses and workshops are not referenced until confirmed. No pricing, schedule, curriculum, or duration language.
-7. Resources - a table of resource hubs. The heading and intro do not claim the resources are free until that is confirmed.
+7. Resources - a table of resource hubs. Heading: "Resources". Intro: "Guides, checklists, templates, a glossary, and blog posts that support the training." Nothing on the page implies the resources are free until the owner confirms it.
 8. Proof - conditional. Renders only from verified data (`data/proof.ts`). Omitted while the data is empty. Never invent bios, quotes, counts, or ratings.
 9. FAQ - 8 questions in two columns on desktop ("About the training" and "Topics and expectations"), one column on mobile, using native `details` and `summary`
 10. Closing band - dark surface. Logo, H2, support line, and the primary CTA on the left. A dark 4:3 image placeholder on the right, stacked below on mobile.

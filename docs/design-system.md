@@ -16,9 +16,11 @@ Create an authoritative education/practitioner platform that feels human-designe
 
 ## Brand
 
-Official logo files live in `public/brand/logos/`. The artwork is raster only (PNG and WebP). No editable vector master exists. TODO: request an SVG master from the owner.
+Official logo masters live in `assets/brand-masters/` (PNG and WebP). They are source files and are not shipped: they sit outside `public/`, so they never reach the exported site. The artwork is raster only. No editable vector master exists. TODO: request an SVG master from the owner.
 
-| Variant | File (WebP in `webp/`, PNG in `png/`) | Use |
+Site-sized derivatives (2x of the displayed size) are generated from the masters and live in `public/brand/`: `logo-horizontal`, `logo-horizontal-dark`, `logo-icon` (WebP for the site, PNG alongside), and `logo-stacked.png`. The favicon and Apple icon are `app/icon.png` and `app/apple-icon.png`. The Open Graph image is `public/brand/og-home.png`. The masters carry a faint near-white haze where they should be transparent, so derivatives are cleaned before use on navy.
+
+| Variant | Master file (in `assets/brand-masters/`) | Use |
 |---|---|---|
 | Horizontal | `agency-back-office-horizontal-transparent` | Header on light surfaces (64px tall desktop, 48px mobile) |
 | Horizontal, dark | `agency-back-office-horizontal-white-mark` | Dark navy surfaces, such as the closing band (64px tall) |
