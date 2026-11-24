@@ -208,6 +208,10 @@ export const definitions = {
     {
       term: "SEO",
       imageNote: "SEO diagram",
+      image: {
+        src: "/images/trainings/webp/agency-back-office-seo-training-organic-search-optimization.webp",
+        alt: "Laptop showing a rising traffic chart beside a site structure diagram, a magnifying glass, and a technical checklist.",
+      },
       body: "Search engine optimization (SEO) is the practice of improving a website so search engines can find it, understand it, and show it to people searching for related topics. It covers technical setup, content, site structure, and links. Agencies use SEO to help clients earn more qualified organic visits without paying for each click.",
       linkLabel: "SEO training for agencies",
       href: "/services/seo-training/",
@@ -215,6 +219,10 @@ export const definitions = {
     {
       term: "AEO",
       imageNote: "AEO diagram",
+      image: {
+        src: "/images/trainings/webp/agency-back-office-aeo-training-featured-snippets-voice-search.webp",
+        alt: "Tablet showing a search result with a highlighted answer, next to a microphone, a voice icon, and a connected-nodes diagram.",
+      },
       body: "Answer engine optimization (AEO) is the practice of structuring content so search features and AI assistants can pull a clear, accurate answer from it. That means direct answers, defined terms, logical steps, and consistent naming. Agencies use AEO alongside SEO. No method guarantees a page will be quoted or cited.",
       linkLabel: "AEO training",
       href: "/services/aeo-training/",
@@ -222,6 +230,10 @@ export const definitions = {
     {
       term: "GBP",
       imageNote: "GBP diagram",
+      image: {
+        src: "/images/trainings/webp/agency-back-office-google-business-profile-training-setup.webp",
+        alt: "Phone showing a business profile with a storefront photo, hours, services, and a star rating, beside a small model storefront.",
+      },
       body: "A Google Business Profile (GBP) is the free listing a business manages to control how it appears in Google Search and Maps. It holds details like categories, services, hours, photos, and reviews. Agencies that manage listings for clients use GBP training to learn setup, optimization, and ongoing maintenance.",
       linkLabel: "Google Business Profile training",
       href: "/services/google-business-profile-training/",
@@ -229,6 +241,10 @@ export const definitions = {
     {
       term: "Local SEO",
       imageNote: "Local SEO diagram",
+      image: {
+        src: "/images/trainings/webp/agency-back-office-local-seo-training-google-business-profile.webp",
+        alt: "Street map with location pins, a phone showing local results, and cards with business icons and a five-star rating.",
+      },
       body: "Local SEO is search engine optimization focused on helping a business appear when people search for services in a specific area. It combines Google Business Profile management, location and service content, directory listings, reviews, and local links. Agencies use it to serve clients that depend on customers in their area.",
       linkLabel: "Local SEO training",
       href: "/services/local-seo-training/",
@@ -403,6 +419,10 @@ export const closingCta = {
     "Pick a topic, choose a format, and apply it to your next client project.",
   cta: { label: "Explore the training", href: "/training/" },
   imageNote: "training session or course preview screenshot",
+  image: {
+    src: "/images/homepage/final-cta/agency-back-office-training-call-to-action-client-project.webp",
+    alt: "Laptop on a desk showing a grid of marketing topic tiles, beside a navy notebook, a pen, and a coffee mug.",
+  },
 };
 
 export const footer = {

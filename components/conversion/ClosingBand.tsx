@@ -23,6 +23,7 @@ export function ClosingBand({ content }: { content: typeof closingCta }) {
             variant="dark"
             subject="the closing call to action"
             note={content.imageNote}
+            image={{ ...content.image, width: 1448, height: 1086 }}
           />
         </div>
       </div>

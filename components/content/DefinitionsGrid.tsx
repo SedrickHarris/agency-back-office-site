@@ -25,7 +25,12 @@ export function DefinitionsGrid({
         <div className="def-grid">
           {content.items.map((item) => (
             <div className="def" key={item.term}>
-              <ImagePlaceholder subject={item.term} note={item.imageNote} />
+              <ImagePlaceholder
+                subject={item.term}
+                note={item.imageNote}
+                aspect="4:3"
+                image={{ ...item.image, width: 1448, height: 1086 }}
+              />
               <div className="card-body">
                 <h3>{item.term}</h3>
                 <p>{item.body}</p>

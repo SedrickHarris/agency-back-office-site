@@ -11,6 +11,8 @@ export type Service = {
   description?: string;
   // Intended content for the topic card image slot (see ImagePlaceholder).
   imageNote?: string;
+  // Real image for the topic card. Falls back to the placeholder when unset.
+  image?: { src: string; alt: string };
 };
 
 export const serviceThemes: Record<ServiceTheme, string> = {
@@ -28,6 +30,10 @@ export const services: Service[] = [
     description:
       "The foundation: how the main channels fit together in client work.",
     imageNote: "channel map diagram",
+    image: {
+      src: "/images/trainings/webp/agency-back-office-digital-marketing-training-channels.webp",
+      alt: "Laptop, phone, and paper cards showing search, email, and analytics icons arranged around a blank center card on a desk.",
+    },
   },
   {
     slug: "seo-training",
@@ -37,6 +43,10 @@ export const services: Service[] = [
     description:
       "Learn keyword research, on-page SEO, technical SEO, and how to run SEO for client websites.",
     imageNote: "SEO workflow screenshot",
+    image: {
+      src: "/images/trainings/webp/agency-back-office-seo-training-keyword-research-client-websites.webp",
+      alt: "Laptop showing a ranking trend chart beside a keyword checklist, a page mockup, and a site structure sketch on a desk.",
+    },
   },
   {
     slug: "aeo-training",
@@ -46,6 +56,10 @@ export const services: Service[] = [
     description:
       "Learn answer engine optimization (AEO): structuring content for featured snippets, voice search, and artificial intelligence (AI) answers.",
     imageNote: "answer structure example",
+    image: {
+      src: "/images/trainings/webp/agency-back-office-aeo-training-answer-engine-optimization.webp",
+      alt: "Paper strip showing a question, answer text, a tag, linked nodes, and a link icon, with a microphone and smart speaker behind it.",
+    },
   },
   {
     slug: "google-business-profile-training",
@@ -55,6 +69,10 @@ export const services: Service[] = [
     description:
       "Learn what a Google Business Profile (GBP) contains and how agencies set up and maintain it.",
     imageNote: "annotated profile example",
+    image: {
+      src: "/images/trainings/webp/agency-back-office-google-business-profile-training.webp",
+      alt: "Laptop and phone showing a business listing with a storefront photo, map pin, action buttons, and star rating.",
+    },
   },
   {
     slug: "reputation-management-training",
@@ -63,6 +81,10 @@ export const services: Service[] = [
     theme: "reputation-leads",
     description: "Build review request, response, and monitoring workflows.",
     imageNote: "review workflow example",
+    image: {
+      src: "/images/trainings/webp/agency-back-office-reputation-management-training-review-workflows.webp",
+      alt: "Phone showing a five-star review beside three cards that show a review request, review monitoring, and a reply.",
+    },
   },
   {
     slug: "local-seo-training",
@@ -72,6 +94,10 @@ export const services: Service[] = [
     description:
       "Learn how local search works and how agencies approach it for clients.",
     imageNote: "local search diagram",
+    image: {
+      src: "/images/trainings/webp/agency-back-office-local-seo-training-local-search.webp",
+      alt: "City map with location pins next to a phone showing a local results list and a star rating card.",
+    },
   },
   {
     slug: "website-seo-training",
@@ -91,6 +117,10 @@ export const services: Service[] = [
     description:
       "Use AI tools in marketing workflows, with clear points for human review.",
     imageNote: "AI workflow with review step",
+    image: {
+      src: "/images/trainings/webp/agency-back-office-ai-marketing-training-human-review-workflows.webp",
+      alt: "Laptop showing a workflow from idea to draft to human review to approval, with a checkmark sign and a marked-up page on the desk.",
+    },
   },
   {
     slug: "marketing-automation-training",
@@ -99,6 +129,10 @@ export const services: Service[] = [
     theme: "systems",
     description: "Set up follow-up, lead nurture, and onboarding workflows.",
     imageNote: "automation flow screenshot",
+    image: {
+      src: "/images/trainings/webp/agency-back-office-marketing-automation-training-follow-up-workflows.webp",
+      alt: "Four connected icon tiles for a contact, an email, a notification, and a folder, with a phone and timer on a white desk.",
+    },
   },
   {
     slug: "lead-generation-training",
@@ -108,6 +142,10 @@ export const services: Service[] = [
     description:
       "Learn how agencies attract, capture, and follow up on leads for clients.",
     imageNote: "lead capture flow",
+    image: {
+      src: "/images/trainings/webp/agency-back-office-lead-generation-training-client-leads.webp",
+      alt: "Laptop showing a funnel leading to a form and a list of leads, with a phone notification and a checklist notebook.",
+    },
   },
   {
     slug: "conversion-optimization-training",
@@ -127,6 +165,10 @@ export const services: Service[] = [
     description:
       "Build systems for onboarding, delivery, reporting, and client retention.",
     imageNote: "onboarding checklist example",
+    image: {
+      src: "/images/trainings/webp/agency-back-office-agency-operations-training-client-workflows.webp",
+      alt: "Board showing a client folder flowing through a checklist, a reporting chart, and a calendar, on a desk with folders.",
+    },
   },
   {
     slug: "crm-training",

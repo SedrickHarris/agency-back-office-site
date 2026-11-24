@@ -31,6 +31,14 @@ export function ServiceIndex({ content }: { content: typeof servicesIndex }) {
                       <ImagePlaceholder
                         subject={service.name}
                         note={service.imageNote ?? "image"}
+                        aspect="4:3"
+                        image={
+                          service.image && {
+                            ...service.image,
+                            width: 1448,
+                            height: 1086,
+                          }
+                        }
                       />
                       <div className="card-body">
                         <h4 className="h3">

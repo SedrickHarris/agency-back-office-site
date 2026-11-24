@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { homeMeta } from "@/data/home";
 
 export const OG_IMAGE = {
-  url: "/brand/og-home.png",
+  url: "/images/brand/logos/png/og-home.png",
   width: 1200,
   height: 630,
   alt: "Agency Back Office - Practical Agency Training",

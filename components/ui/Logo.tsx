@@ -7,21 +7,21 @@ const LOGO_ALT = "Agency Back Office - Practical Agency Training";
 
 const variants = {
   horizontal: {
-    src: "/brand/logo-horizontal.webp",
+    src: "/images/brand/logos/webp/logo-horizontal.webp",
     width: 172,
     height: 64,
     className: "logo-h",
     alt: LOGO_ALT,
   },
   "horizontal-dark": {
-    src: "/brand/logo-horizontal-dark.webp",
+    src: "/images/brand/logos/webp/logo-horizontal-dark.webp",
     width: 172,
     height: 64,
     className: "logo-band",
     alt: LOGO_ALT,
   },
   icon: {
-    src: "/brand/logo-icon.webp",
+    src: "/images/brand/logos/webp/logo-icon.webp",
     width: 39,
     height: 36,
     className: "logo-i",

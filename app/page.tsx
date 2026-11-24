@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: homeMeta.title,
     description: homeMeta.description,
-    images: ["/brand/og-home.png"],
+    images: ["/images/brand/logos/png/og-home.png"],
   },
   robots: pageRobots(),
 };
