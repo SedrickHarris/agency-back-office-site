@@ -137,7 +137,7 @@ Individual course/workshop/session pages may be added as real offerings are conf
 | Robots | noindex until the launch gate. Excluded from the sitemap while noindex. |
 | Internal-link targets | `/training/`, `/training/live/`, `/services/`, `/services/{topicSlug}/`, `/resources/`, `/contact/`, `/get-started/` |
 | Spec | `sessions-page-spec.md` |
-| Status | In build. Ships with no replays until video details are supplied. |
+| Status | In build. Replays are added in `data/replays.ts` as their details are supplied. |
 
 Confirmed delivery formats: Live training (`/training/live/`) and Sessions (`/training/sessions/`). Courses and workshops are not referenced on the home page or listed as available until confirmed.
 

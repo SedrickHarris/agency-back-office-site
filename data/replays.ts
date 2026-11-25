@@ -158,7 +158,35 @@ export function prepareReplays(list: readonly Replay[]): Replay[] {
   return [...list].sort((a, b) => b.recordedOn.localeCompare(a.recordedOn));
 }
 
-// Ships empty until real video details are supplied.
-const entries: Replay[] = [];
+// Real replays only, with details supplied by the owner.
+const entries: Replay[] = [
+  {
+    slug: "lead-gen-site-structure-ai-blog-workflow",
+    title: "Lead Gen Website Structure, AI Blog Workflow and Free SEO Tools",
+    description:
+      "Learn how to structure a client website for lead generation, write AI-assisted blog posts from the owner's own answers, and register a site with free search tools. Recorded live in an Agency Back Office training session.",
+    youtubeId: "FeyC1HuPeqM",
+    recordedOn: "2026-11-22",
+    duration: "PT55M51S",
+    topicSlug: "content-marketing-training",
+    format: "session",
+    poster: {
+      src: "/images/trainings/16x9-webp/agency-back-office-training-video-player-chapter-markers-16x9.webp",
+      alt: "Laptop on a desk showing a video player with chapter markers.",
+      width: 1672,
+      height: 941,
+    },
+    chapters: [
+      { title: "Opening and first questions", startSeconds: 0 },
+      { title: "Moving a client website from Bluehost to Cloudflare", startSeconds: 31 },
+      { title: "A free tool for finding blog topic questions", startSeconds: 517 },
+      { title: "Turning one blog post into social content", startSeconds: 614 },
+      { title: "AI prompts for writing blog posts from the owner's answers", startSeconds: 691 },
+      { title: "Structuring a website for lead generation", startSeconds: 892 },
+      { title: "Registering a site with Google Search Console and other tools", startSeconds: 1644 },
+      { title: "Bing Webmaster Tools and citation services Q&A", startSeconds: 2879 },
+    ],
+  },
+];
 
 export const replays: Replay[] = prepareReplays(entries);

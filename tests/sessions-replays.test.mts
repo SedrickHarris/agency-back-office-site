@@ -2,6 +2,7 @@
 // lib/schema/sessions.ts. Every entry here is synthetic test data. None of it
 // may be copied into data/.
 import assert from "node:assert/strict";
+import { existsSync } from "node:fs";
 import { describe, it } from "node:test";
 import {
   durationSeconds,
@@ -42,8 +43,17 @@ const withField = (field: string, value: unknown) => [
 ];
 
 describe("replay validator", () => {
-  it("ships with an empty library", () => {
-    assert.deepEqual(shippedReplays, []);
+  it("ships only real entries whose posters exist in public/", () => {
+    assert.doesNotThrow(() => validateReplays(shippedReplays));
+    for (const replay of shippedReplays) {
+      assert.doesNotMatch(replay.slug, /^test-|scratch/);
+      if (replay.poster) {
+        assert.ok(
+          existsSync(new URL(`../public${replay.poster.src}`, import.meta.url)),
+          replay.poster.src,
+        );
+      }
+    }
   });
 
   it("accepts 12 complete entries", () => {
