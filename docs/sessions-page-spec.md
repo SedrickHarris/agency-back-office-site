@@ -91,7 +91,7 @@ Follows `design-system.md` unchanged: Manrope for H1-H3, eyebrows and buttons; I
 | Item | Value |
 | --- | --- |
 | Title tag | Session Replays \| Agency Back Office Training (drop the brand if the template appends it) |
-| Meta description | Watch recordings of past Agency Back Office training sessions on SEO, AEO, Google Business Profile, automation, and agency operations. Adjust to the real topics once the 12 are known. |
+| Meta description | Watch recordings of past Agency Back Office training sessions on lead generation, website structure, AI-assisted content and search tools. |
 | H1 | Session replays |
 | Canonical | `/training/sessions/` through the site-URL helper |
 | Robots | `noindex` while site URL unset. After launch `index, follow`, in `sitemap.ts`. |

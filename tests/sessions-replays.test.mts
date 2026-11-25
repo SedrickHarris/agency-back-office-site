@@ -139,6 +139,25 @@ describe("replay validator", () => {
     });
   }
 
+  it("accepts a playY from 0 to 100", () => {
+    for (const value of [0, 39, 39.5, 50, 100]) {
+      assert.doesNotThrow(
+        () => validateReplays(withField("playY", value)),
+        String(value),
+      );
+    }
+  });
+
+  it("rejects an out-of-range or non-numeric playY", () => {
+    for (const value of [-1, -0.1, 100.1, 101, NaN, Infinity, "39", null]) {
+      assert.throws(
+        () => validateReplays(withField("playY", value)),
+        /playY/,
+        String(value),
+      );
+    }
+  });
+
   it("rejects a duplicate slug", () => {
     assert.throws(
       () =>

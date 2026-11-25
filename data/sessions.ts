@@ -7,10 +7,8 @@ export const SESSIONS_PATH = "/training/sessions/";
 export const sessionsMeta = {
   // The root layout has no title template, so the full title is used.
   title: "Session Replays | Agency Back Office Training",
-  // TODO (owner): the spec asks for the topic list to be adjusted to the real
-  // replay topics once they are known.
   description:
-    "Watch recordings of past Agency Back Office training sessions on SEO, AEO, Google Business Profile, automation, and agency operations.",
+    "Watch recordings of past Agency Back Office training sessions on lead generation, website structure, AI-assisted content and search tools.",
 };
 
 export const breadcrumb = [

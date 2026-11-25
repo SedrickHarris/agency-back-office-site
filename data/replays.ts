@@ -35,6 +35,10 @@ export type Replay = {
   topicSlug: string;
   format?: "live" | "session";
   poster?: ReplayPoster;
+  // Vertical position of the play button, as a percentage from the top of the
+  // 16:9 box. Defaults to 50. Set it only when the button would cover
+  // something important in the poster.
+  playY?: number;
   chapters?: ReplayChapter[];
 };
 
@@ -145,6 +149,13 @@ export function validateReplays(list: readonly Replay[]): void {
       fail("malformed format");
     }
     if (replay.poster && !isPoster(replay.poster)) fail("malformed poster");
+    const { playY } = replay;
+    if (
+      playY !== undefined &&
+      !(Number.isFinite(playY) && playY >= 0 && playY <= 100)
+    ) {
+      fail("playY must be a number from 0 to 100");
+    }
     if (replay.chapters && !areChapters(replay.chapters, length as number)) {
       fail("malformed chapters");
     }
@@ -176,6 +187,8 @@ const entries: Replay[] = [
       width: 1672,
       height: 941,
     },
+    // Keeps the button above the chapter markers in this poster.
+    playY: 39,
     chapters: [
       { title: "Opening and first questions", startSeconds: 0 },
       { title: "Moving a client website from Bluehost to Cloudflare", startSeconds: 31 },

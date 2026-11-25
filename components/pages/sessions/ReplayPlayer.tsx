@@ -31,6 +31,8 @@ type Video = {
   // Already formatted for display, for example 42:07.
   duration: string;
   placement: "latest" | "library";
+  // Percentage from the top. Unset keeps the centered default in the CSS.
+  playY?: number;
 };
 
 // run changes on every start, so the iframe reloads and takes focus again.
@@ -190,7 +192,15 @@ export function ReplayScreen({ poster }: { poster: ReactNode }) {
           label={player.name(video.title, video.duration)}
         >
           {poster}
-          <span className="rp-play" aria-hidden="true">
+          <span
+            className="rp-play"
+            aria-hidden="true"
+            style={
+              video.playY === undefined
+                ? undefined
+                : { top: `${video.playY}%` }
+            }
+          >
             <Icon name="play" />
           </span>
           <span className="rp-dur" aria-hidden="true">

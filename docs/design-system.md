@@ -136,7 +136,7 @@ Used by conversion pages. All controls are native elements at least 48px tall wi
 
 Used on `/training/sessions/`. Styles are scoped with the `rp-` prefix.
 
-- **Screen:** a fixed 16:9 box holding the self-hosted poster (or the image placeholder, dark for the latest replay), a circular play marker (64px latest, 48px rows), and the duration in the bottom right corner. The player replaces the poster in the same box, so nothing shifts.
+- **Screen:** a fixed 16:9 box holding the self-hosted poster (or the image placeholder, dark for the latest replay), a circular play marker (64px latest, 48px rows; centered unless the replay sets `playY`, a percentage from the top), and the duration in the bottom right corner. The player replaces the poster in the same box, so nothing shifts.
 - **Library:** a ruled list, not a card grid. Each row has a 320px thumbnail column (240px at 980px) and stacks at 720px and below.
 - **Chapters:** a ruled list labelled "In this replay", under the latest player and under the details in a library row. Rendered only when a replay has chapters.
 - **Focus:** 3px `accent` outline with 2px offset (`accent-on-dark` on navy).

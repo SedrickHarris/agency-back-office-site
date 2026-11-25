@@ -672,6 +672,25 @@ Owner supplies the replay details and posters, and confirms captions and embeddi
 
 ---
 
+### 2026-11-24 - Sessions: play button position and meta description
+
+**Area:** Design / SEO
+
+**Decision:**  
+1. A replay may set `playY` (0 to 100, default 50) in `data/replays.ts` to move its play button vertically, on every screen size, in the latest player and the library. The lead generation replay uses 39 so the button clears the chapter markers in its poster.
+2. The meta description names the first replay's topics: "Watch recordings of past Agency Back Office training sessions on lead generation, website structure, AI-assisted content and search tools." It replaces the spec's earlier topic list.
+
+**Reason:**  
+On phones the centered button covered the poster's chapter markers. A per-replay value leaves other posters centered. The description should match real replay topics.
+
+**Affected Files/Routes:**  
+`/training/sessions/`, `data/replays.ts`, `data/sessions.ts`, `components/pages/sessions/`, `docs/sessions-page-spec.md`, `docs/design-system.md`.
+
+**Follow-Up:**  
+Recheck the description as replays are added.
+
+---
+
 ### 2026-08-23 — Matrix Quality Rule
 
 **Area:** Content

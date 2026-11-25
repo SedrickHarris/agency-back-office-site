@@ -27,6 +27,7 @@ export function ReplaySlot({
       youtubeId={replay.youtubeId}
       duration={formatDuration(replay.duration)}
       placement={placement}
+      playY={replay.playY}
     >
       {children}
     </ReplayProvider>
