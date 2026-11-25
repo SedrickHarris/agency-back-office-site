@@ -113,6 +113,18 @@ Every call is also announced as a `abo:track` window event (`detail.name`, `deta
 
 Funnel: `contact_form_view`, `contact_step_complete` for steps 1 to 3, `contact_success`. Conversion rate is `contact_success` divided by `contact_form_view`. `role` and `topic` are the selected option values only.
 
+## Sessions Events
+
+Added for `/training/sessions/`. They use the same `trackEvent` helper and `abo:track` window event as the Contact events. Values are fixed page data only, never typed or personal values.
+
+| Event | Fires when | Parameters |
+|---|---|---|
+| `replay_play` | A visitor activates a play control: poster, "Watch replay", or a chapter. Choosing "Watch replay" while that replay is already playing only moves focus and sends nothing. Opening the link in a new tab sends nothing. | `page_path`, `replay_slug`, `placement` (`latest` or `library`) |
+| `replay_topic_click` | A topic link is clicked. Fires only once the topic page exists, because an unbuilt route renders as text. | `page_path`, `replay_slug`, `topic` (topic slug) |
+| `sessions_cta_click` | The page's Get started button or a Live training link is clicked. Header and footer links are not counted. | `page_path`, `target` (the link path) |
+
+Video completion is not tracked: it needs the YouTube IFrame API, a second third-party script. Decide that separately.
+
 ## Naming
 
 Use consistent event naming, for example:

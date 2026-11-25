@@ -119,6 +119,26 @@ Do not automatically publish the complete theoretical matrix.
 
 Individual course/workshop/session pages may be added as real offerings are confirmed.
 
+`/training/sessions/` holds the session replay library.
+
+### Sessions Page Entry
+
+| Field | Value |
+|---|---|
+| URL | `/training/sessions/` |
+| Page type | Training delivery, Phase 7: session replay library |
+| Parent | `/training/` |
+| Canonical | `/training/sessions/` (from the site-URL helper; omitted while the site URL is unset) |
+| Primary topic | Replays of past Agency Back Office sessions. Topic keywords stay on `/services/` pages. |
+| Audience | Agency owners, marketers, consultants, freelancers |
+| Primary CTA | Get started (closing band) |
+| Secondary CTA | Text links to `/training/live/`, topic pages, and `/contact/` |
+| Schema | CollectionPage, BreadcrumbList, VideoObject. No FAQPage, Course, Review, or sameAs. |
+| Robots | noindex until the launch gate. Excluded from the sitemap while noindex. |
+| Internal-link targets | `/training/`, `/training/live/`, `/services/`, `/services/{topicSlug}/`, `/resources/`, `/contact/`, `/get-started/` |
+| Spec | `sessions-page-spec.md` |
+| Status | In build. Ships with no replays until video details are supplied. |
+
 Confirmed delivery formats: Live training (`/training/live/`) and Sessions (`/training/sessions/`). Courses and workshops are not referenced on the home page or listed as available until confirmed.
 
 ## Phase 8 — Resource Hubs

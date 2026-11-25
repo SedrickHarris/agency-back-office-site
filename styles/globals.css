@@ -2008,3 +2008,352 @@ details.q .ans {
   margin-top: 4px;
   padding-left: 0;
 }
+
+/* ---------- sessions page ---------- */
+/* Selectors start with .rp-page so they out-specify the `.page p { margin: 0 }`
+   reset. Colors come from the tokens above, never hex. No motion is added. */
+.ph.ratio-16-9 {
+  aspect-ratio: 16 / 9;
+}
+/* The header is shared, so the current section is marked from here. */
+.page:has(.rp-page) .nav a[href="/training/"],
+.page:has(.rp-page) .menu a[href="/training/"] {
+  font-weight: 600;
+}
+
+.rp-page .rp-crumbs {
+  padding-top: 24px;
+}
+.rp-page .rp-top {
+  padding-top: 32px;
+  padding-bottom: 80px;
+}
+.rp-page .rp-split {
+  display: grid;
+  grid-template-columns: minmax(0, 4fr) minmax(0, 8fr);
+  column-gap: 56px;
+  align-items: start;
+}
+.rp-page .rp-col {
+  border-top: 2px solid var(--color-ink);
+  padding-top: 20px;
+}
+/* Restore the eyebrow spacing the `.page p` reset removes. */
+.rp-page p.eyebrow {
+  margin-bottom: 16px;
+}
+.rp-page p.rp-lead {
+  margin-top: 20px;
+  font-size: 1.25rem;
+  line-height: 1.55;
+  color: var(--color-muted);
+  max-width: 44ch;
+}
+.rp-page p.rp-support {
+  margin-top: 16px;
+  color: var(--color-muted);
+  max-width: 44ch;
+}
+.rp-page p.rp-live {
+  margin-top: 20px;
+  font-weight: 600;
+}
+/* A 48px hit area for a standalone text link without moving the layout. */
+.rp-page a.rp-tap {
+  display: inline-block;
+  padding-block: 12px;
+  margin-block: -12px;
+}
+.rp-page p.rp-latest-label {
+  margin: 20px 0 6px;
+}
+.rp-page .rp-latest,
+.rp-page .rp-row {
+  scroll-margin-top: 24px;
+}
+.rp-page p.rp-meta {
+  margin-top: 8px;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--color-muted);
+}
+.rp-page p.rp-desc {
+  margin-top: 12px;
+  max-width: 60ch;
+  color: var(--color-muted);
+}
+.rp-page p.rp-topic {
+  margin-top: 16px;
+  font-weight: 600;
+}
+
+/* player: a fixed 16:9 box, so nothing shifts when the iframe replaces the
+   poster */
+.rp-page .rp-screen {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 4px;
+}
+.rp-page .rp-screen iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 4px;
+}
+.rp-page .rp-screen:focus-within:has(iframe) {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 2px;
+}
+.rp-page a.rp-facade {
+  position: absolute;
+  inset: 0;
+  display: block;
+  border-radius: 4px;
+  text-decoration: none;
+  cursor: pointer;
+}
+.rp-page .rp-facade .ph {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border: 1px dashed var(--color-placeholder-line);
+  border-radius: 4px;
+}
+.rp-page .rp-facade .ph-dark {
+  border-color: var(--color-accent-on-dark);
+}
+/* Placeholder text sits in the corners, clear of the play marker. */
+.rp-page .rp-facade .ph:not(:has(img)) {
+  align-items: flex-start;
+  justify-content: space-between;
+  text-align: left;
+  padding: 10px 12px;
+}
+.rp-page .rp-facade .ph small {
+  padding-right: 72px;
+}
+.rp-page .rp-facade .ph:has(img) {
+  padding: 0;
+  border: 0;
+}
+.rp-page .rp-facade .ph img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.rp-page .rp-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  background: var(--color-accent);
+}
+.rp-page .rp-play .ico {
+  width: 22px;
+  height: 22px;
+  color: #ffffff;
+}
+.rp-page .rp-latest .rp-play {
+  width: 64px;
+  height: 64px;
+}
+.rp-page .rp-latest .rp-play .ico {
+  width: 28px;
+  height: 28px;
+}
+.rp-page .rp-facade:hover .rp-play {
+  background: var(--color-accent-hover);
+}
+.rp-page .rp-dur {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  padding: 2px 8px;
+  border-radius: 2px;
+  background: var(--color-ink);
+  color: #ffffff;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+/* chapters: a ruled list under the player */
+.rp-page .rp-chapters {
+  margin-top: 16px;
+}
+.rp-page p.rp-chapters-label {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.8125rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--color-ink);
+}
+.rp-page .rp-chapters li {
+  border-bottom: 1px solid var(--color-rule);
+}
+.rp-page a.rp-chapter {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-height: 48px;
+  padding-block: 8px;
+  color: var(--color-ink);
+  font-size: 1rem;
+  line-height: 1.4;
+  text-decoration: none;
+  cursor: pointer;
+}
+.rp-page a.rp-chapter:hover {
+  background: var(--color-tint);
+}
+.rp-page .rp-chapter-time {
+  flex: none;
+  min-width: 7ch;
+  color: var(--color-accent);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+/* library: a ruled list */
+.rp-page .rp-library {
+  padding-bottom: 96px;
+}
+.rp-page .rp-library-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 16px;
+  border-top: 2px solid var(--color-ink);
+  padding-top: 24px;
+}
+.rp-page .rp-rows {
+  margin-top: 20px;
+}
+.rp-page .rp-row {
+  display: grid;
+  grid-template-columns: 320px minmax(0, 1fr);
+  column-gap: 32px;
+  align-items: start;
+  padding-block: 28px;
+  border-top: 1px solid var(--color-rule);
+}
+.rp-page .rp-row:last-child {
+  border-bottom: 1px solid var(--color-rule);
+}
+.rp-page .rp-title {
+  font-size: 1.375rem;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  overflow-wrap: anywhere;
+}
+.rp-page .rp-row p.rp-desc {
+  margin-top: 10px;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+.rp-page a.rp-watch {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 48px;
+  margin-top: 12px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.9375rem;
+  cursor: pointer;
+}
+.rp-page .rp-watch .ico {
+  width: 18px;
+  height: 18px;
+  color: currentColor;
+}
+
+/* keep learning and questions: heading at 4/12, ruled list at 8/12 */
+.rp-page .rp-keep {
+  background: var(--color-tint);
+  border-block: 1px solid var(--color-rule);
+}
+.rp-page .rp-keep .wrap {
+  padding-block: 64px;
+}
+.rp-page .rp-keep-list {
+  border-top: 2px solid var(--color-ink);
+}
+.rp-page .rp-keep-list li {
+  padding-block: 12px 18px;
+  border-bottom: 1px solid var(--color-rule);
+}
+.rp-page .rp-keep-list a,
+.rp-page .rp-keep-list .unbuilt {
+  display: inline-flex;
+  align-items: center;
+  min-height: 48px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.125rem;
+}
+.rp-page .rp-keep-list p {
+  color: var(--color-muted);
+}
+.rp-page .rp-faq .wrap {
+  padding-block: 96px;
+}
+.rp-page .rp-faq-list {
+  border-top: 2px solid var(--color-ink);
+}
+
+/* focus: 3px accent outline, 2px offset */
+.rp-page a:focus-visible,
+.rp-page summary:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 2px;
+}
+.rp-page .on-dark a:focus-visible {
+  outline: 3px solid var(--color-accent-on-dark);
+}
+
+@media (max-width: 980px) {
+  .rp-page .rp-row {
+    grid-template-columns: 240px minmax(0, 1fr);
+    column-gap: 24px;
+  }
+}
+@media (max-width: 720px) {
+  .rp-page .rp-split {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 24px;
+  }
+  /* One column: the shared band's 11 grid gaps are wider than a 320px
+     screen. */
+  .rp-page .band .wrap {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .rp-page .rp-top,
+  .rp-page .rp-library {
+    padding-bottom: 64px;
+  }
+  .rp-page .rp-faq .wrap {
+    padding-block: 64px;
+  }
+  .rp-page .rp-row {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 16px;
+    padding-block: 24px;
+  }
+}

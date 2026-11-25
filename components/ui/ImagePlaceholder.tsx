@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-type Aspect = "21:9" | "4:3";
+type Aspect = "21:9" | "16:9" | "4:3";
 
 type RealImage = { src: string; alt: string; width: number; height: number };
 
@@ -12,6 +12,7 @@ export function ImagePlaceholder({
   subject,
   variant = "light",
   image,
+  eager = false,
 }: {
   aspect?: Aspect;
   // Intended content, shown under the label.
@@ -20,11 +21,14 @@ export function ImagePlaceholder({
   subject: string;
   variant?: "light" | "dark";
   image?: RealImage;
+  // Set for an image that is likely to be in the first view.
+  eager?: boolean;
 }) {
   const classes = [
     "ph",
     variant === "dark" ? "ph-dark" : "",
     aspect === "4:3" ? "ratio-4-3" : "",
+    aspect === "16:9" ? "ratio-16-9" : "",
   ]
     .filter(Boolean)
     .join(" ");
@@ -37,6 +41,7 @@ export function ImagePlaceholder({
           alt={image.alt}
           width={image.width}
           height={image.height}
+          loading={eager ? "eager" : undefined}
         />
       </div>
     );

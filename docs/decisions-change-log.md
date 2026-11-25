@@ -635,6 +635,43 @@ Attach the analytics tool inside `trackEvent` when chosen.
 
 ---
 
+### 2026-11-24 - Sessions replay library
+
+**Area:** Content / Design / Technical
+
+**Decision:**  
+`docs/sessions-page-spec.md` is the spec and copy for `/training/sessions/`, with `docs/design-reference/sessions-design-reference.html` as the visual reference. Both files are still labelled "Proposed, not yet approved"; the owner's build instruction named them as approved.
+
+1. The route is the existing `/training/sessions/`. No routing change.
+2. Video is hosted on YouTube behind a facade: a self-hosted poster and a link to the watch page. The `youtube-nocookie.com` iframe loads only on click. No YouTube request happens before that, and the IFrame API is not loaded.
+3. The page is public and indexable after the launch gate, with no sign-in.
+4. Posters are self-hosted in `public/`. No `i.ytimg.com` thumbnails.
+5. No per-replay pages at launch. Each replay has an anchor (`#{slug}`).
+6. Optional chapters are in v1. This replaces the spec data table's "Phase 2" for `chapters`. `transcriptUrl` is not built.
+7. A filled play icon joins the icon set, for play controls only.
+8. Replay titles use a new 1.375rem Manrope 700 size.
+9. The library ships empty and shows "New replays will be added here." The "Newest first" support line and "More replays" are hidden until there is data.
+
+Build choices the spec did not cover:
+
+- All client JavaScript is in `components/pages/sessions/ReplayPlayer.tsx`: the player parts and one click listener for `replay_topic_click` and `sessions_cta_click`.
+- Without JavaScript, a chapter is a link to that time on YouTube.
+- "Session replays" is the first footer link. The `/training/` hub and service pages are not built yet.
+- The header marks Training with weight only, through CSS. It sets no `aria-current`.
+- `ClosingBand` takes an optional image and logo, and its button uses `SiteLink`. The Home page output is unchanged.
+- At 720px and below, the Sessions closing band is one column, which stops a horizontal scroll at 320px.
+
+**Reason:**  
+One page where visitors can watch past sessions, without third-party requests until they choose to play one, and without thin pages or invented video details.
+
+**Affected Files/Routes:**  
+`/training/sessions/`, `data/replays.ts`, `data/sessions.ts`, `lib/schema/sessions.ts`, `lib/analytics.ts`, `components/pages/sessions/`, `components/conversion/ClosingBand.tsx`, `components/ui/Icon.tsx`, `components/ui/ImagePlaceholder.tsx`, `data/home.ts`, `app/sitemap.ts`, `styles/globals.css`, `docs/design-system.md`, `docs/analytics-measurement.md`, `docs/schema-entity-strategy.md`, `docs/master-page-build-list.md`.
+
+**Follow-Up:**  
+Owner supplies the replay details and posters, and confirms captions and embedding on each video. Check the meta description's topic list against the real replays. Add "Session replays" links on the `/training/` hub and matching service pages when they are built. The Home page also scrolls sideways at 320px (the same grid gap cause, among others) and is not changed here.
+
+---
+
 ### 2026-08-23 — Matrix Quality Rule
 
 **Area:** Content

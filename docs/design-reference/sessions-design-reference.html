@@ -1,0 +1,346 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Sessions page design reference</title><style>body{margin:0;font:16px Inter,system-ui,sans-serif;background:#EEF3FC;color:#04153A;padding:24px}h1{font-size:20px}h2{font-size:15px;margin:32px 0 8px}iframe{border:1px solid #D2DAE8;background:#fff;display:block;max-width:100%}</style></head><body><h1>Sessions page (/training/sessions/) - design reference</h1><p>Proposed design, not yet approved. Each board is a self-contained render. All titles, dates, durations and descriptions are placeholders to be replaced with real video data. Links point nowhere on purpose.</p>
+<h2>Desktop (1440px)</h2><iframe title="Desktop (1440px)" width="1440" height="3500" srcdoc="&lt;!doctype html&gt;&lt;html lang=&quot;en&quot;&gt;&lt;head&gt;&lt;meta charset=&quot;utf-8&quot;&gt;&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1&quot;&gt;
+&lt;link href=&quot;https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@600;700;800&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;style&gt;
+*{box-sizing:border-box}
+body{margin:0;font-family:&#x27;Inter&#x27;,system-ui,sans-serif;color:#04153A;background:#FFFFFF;font-size:17px;line-height:1.65}
+h1,h2,h3,p,ol,ul{margin:0;padding:0}
+a{color:#0360FC} a:hover{color:#024BC9}
+.hd{font-family:&#x27;Manrope&#x27;,system-ui,sans-serif}
+.label{font:600 13px/1.4 &#x27;Manrope&#x27;,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#425068}
+.wrap{max-width:1200px;margin:0 auto;padding:0 32px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 28px;background:#0360FC;color:#fff;font:700 16px &#x27;Manrope&#x27;,sans-serif;border:2px solid #0360FC;border-radius:4px;text-decoration:none}
+.btn:hover{background:#024BC9;border-color:#024BC9;color:#fff}
+.btn-out{display:inline-flex;align-items:center;min-height:44px;padding:0 20px;color:#0360FC;font:700 15px &#x27;Manrope&#x27;,sans-serif;border:2px solid #0360FC;border-radius:4px;text-decoration:none}
+.navlink{color:#04153A;text-decoration:none;font-weight:500;font-size:15px}
+.meta{font-size:14px;line-height:1.5;color:#425068}
+.ph{position:relative;aspect-ratio:16/9;background:#E6EAF0;border:1px dashed #8D99AB;border-radius:4px;display:flex;align-items:center;justify-content:center;color:#425068;overflow:hidden}
+.ph.dk{background:#0A2352;border-color:#7BA7FF;color:#C9D4EA}
+.ph .note{position:absolute;left:12px;bottom:10px;right:12px;font-size:13px;line-height:1.4}
+.ph .tag{position:absolute;left:12px;top:10px;font:600 12px &#x27;Manrope&#x27;,sans-serif;letter-spacing:.08em;text-transform:uppercase}
+.play{width:64px;height:64px;border-radius:50%;background:#0360FC;color:#fff;border:2px solid #fff;display:flex;align-items:center;justify-content:center}
+.play.sm{width:48px;height:48px}
+.dur{position:absolute;right:10px;bottom:10px;background:#04153A;color:#fff;font:600 13px &#x27;Inter&#x27;,sans-serif;padding:2px 8px;border-radius:2px}
+.row{display:grid;grid-template-columns:320px minmax(0,1fr);column-gap:32px;padding:28px 0;border-top:1px solid #D2DAE8;align-items:start}
+.row:last-child{border-bottom:1px solid #D2DAE8}
+.row h3{font:700 22px/1.25 &#x27;Manrope&#x27;,sans-serif;letter-spacing:-.01em;margin-top:6px}
+.row p.d{margin-top:10px;max-width:60ch;color:#425068;font-size:16px;line-height:1.6}
+.wl{display:inline-flex;align-items:center;gap:8px;margin-top:14px;min-height:44px;font:700 15px &#x27;Manrope&#x27;,sans-serif;color:#0360FC;text-decoration:underline}
+.qa{border-top:1px solid #D2DAE8;padding:18px 0}
+.qa summary{font:700 18px/1.35 &#x27;Manrope&#x27;,sans-serif;cursor:pointer;min-height:44px}
+.qa p{margin-top:10px;max-width:60ch;color:#425068}
+a:focus-visible,summary:focus-visible{outline:3px solid #0360FC;outline-offset:2px}
+.note-board{background:#EEF3FC;border:1px solid #D2DAE8;border-radius:4px;padding:14px 18px;margin:8px 0;font-size:14px;color:#425068}
+@media (max-width:980px){.row{grid-template-columns:240px minmax(0,1fr);column-gap:24px}}
+@media (max-width:720px){
+ .wrap{padding:0 20px}
+ .row{grid-template-columns:1fr;row-gap:16px;padding:24px 0}
+ .g2,.g3{grid-template-columns:1fr !important;row-gap:24px !important}
+ .sec{padding-top:64px !important;padding-bottom:64px !important}
+ nav.pri{display:none !important}
+ .menu{display:flex !important}
+ h1.hd{font-size:36px !important}
+}
+.menu{display:none;width:48px;height:48px;border:1px solid #6B7A94;border-radius:4px;align-items:center;justify-content:center}
+&lt;/style&gt;&lt;/head&gt;&lt;body&gt;
+&lt;header style=&quot;border-bottom:1px solid #D2DAE8&quot;&gt;&lt;div class=&quot;wrap&quot; style=&quot;display:flex;align-items:center;justify-content:space-between;height:88px&quot;&gt;
+&lt;a href=&quot;#&quot; aria-label=&quot;Agency Back Office home&quot; style=&quot;display:flex;align-items:center;gap:12px;text-decoration:none;color:#04153A&quot;&gt;
+&lt;span style=&quot;width:40px;height:40px;background:#04153A;border-radius:4px;display:flex;align-items:center;justify-content:center;color:#7BA7FF;font:800 15px &#x27;Manrope&#x27;,sans-serif&quot;&gt;ABO&lt;/span&gt;
+&lt;span class=&quot;hd&quot; style=&quot;font-weight:800;font-size:20px;letter-spacing:-.01em&quot;&gt;Agency Back Office&lt;/span&gt;&lt;/a&gt;
+&lt;nav class=&quot;pri&quot; aria-label=&quot;Primary&quot; style=&quot;display:flex;align-items:center;gap:32px&quot;&gt;
+&lt;a class=&quot;navlink&quot; href=&quot;#&quot; aria-current=&quot;page&quot; style=&quot;font-weight:600&quot;&gt;Training&lt;/a&gt;&lt;a class=&quot;navlink&quot; href=&quot;#&quot;&gt;Topics&lt;/a&gt;&lt;a class=&quot;navlink&quot; href=&quot;#&quot;&gt;Who We Help&lt;/a&gt;&lt;a class=&quot;navlink&quot; href=&quot;#&quot;&gt;Resources&lt;/a&gt;&lt;a class=&quot;navlink&quot; href=&quot;#&quot;&gt;About&lt;/a&gt;&lt;a class=&quot;btn-out&quot; href=&quot;#&quot;&gt;Get Started&lt;/a&gt;&lt;/nav&gt;
+&lt;span class=&quot;menu&quot; aria-label=&quot;Menu&quot;&gt;&lt;svg width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.75&quot; stroke-linecap=&quot;round&quot;&gt;&lt;path d=&quot;M4 7h16M4 12h16M4 17h16&quot;/&gt;&lt;/svg&gt;&lt;/span&gt;
+&lt;/div&gt;&lt;/header&gt;
+&lt;main&gt;
+&lt;div class=&quot;wrap&quot; style=&quot;padding-top:24px&quot;&gt;&lt;nav aria-label=&quot;Breadcrumb&quot; style=&quot;font-size:14px;color:#425068&quot;&gt;&lt;ol style=&quot;list-style:none;display:flex;gap:8px;flex-wrap:wrap&quot;&gt;&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;&lt;li aria-hidden=&quot;true&quot;&gt;/&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Training&lt;/a&gt;&lt;/li&gt;&lt;li aria-hidden=&quot;true&quot;&gt;/&lt;/li&gt;&lt;li aria-current=&quot;page&quot; style=&quot;color:#04153A;font-weight:500&quot;&gt;Sessions&lt;/li&gt;&lt;/ol&gt;&lt;/nav&gt;&lt;/div&gt;
+
+&lt;section class=&quot;wrap sec&quot; style=&quot;padding-top:32px;padding-bottom:80px&quot;&gt;
+&lt;div class=&quot;g2&quot; style=&quot;display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);column-gap:56px;align-items:start&quot;&gt;
+&lt;div style=&quot;border-top:2px solid #04153A;padding-top:20px&quot;&gt;
+&lt;p class=&quot;label&quot;&gt;Sessions&lt;/p&gt;
+&lt;h1 class=&quot;hd&quot; style=&quot;margin-top:16px;font-weight:700;font-size:48px;line-height:1.1;letter-spacing:-.02em&quot;&gt;Session replays&lt;/h1&gt;
+&lt;p style=&quot;margin-top:20px;font-size:20px;line-height:1.55;color:#425068;max-width:44ch&quot;&gt;Watch recordings of past Agency Back Office sessions on your own schedule.&lt;/p&gt;
+&lt;p style=&quot;margin-top:16px;font-size:17px;color:#425068;max-width:44ch&quot;&gt;Newest first. Each one plays on this page, with no sign-in.&lt;/p&gt;
+&lt;p style=&quot;margin-top:20px&quot;&gt;&lt;a href=&quot;#&quot; style=&quot;font-weight:600&quot;&gt;Prefer to learn live? See live training&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div style=&quot;border-top:2px solid #04153A;padding-top:20px&quot;&gt;
+&lt;div class=&quot;ph dk&quot; role=&quot;img&quot; aria-label=&quot;Thumbnail placeholder for the latest replay&quot;&gt;
+&lt;span class=&quot;tag&quot;&gt;Thumbnail placeholder&lt;/span&gt;
+&lt;span class=&quot;play&quot;&gt;&lt;svg width=&quot;28&quot; height=&quot;28&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;currentColor&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M9 6.5v11l9-5.5z&quot;/&gt;&lt;/svg&gt;&lt;/span&gt;
+&lt;span class=&quot;dur&quot;&gt;00:00&lt;/span&gt;
+&lt;span class=&quot;note&quot;&gt;16:9 poster image, self-hosted&lt;/span&gt;&lt;/div&gt;
+&lt;p class=&quot;label&quot; style=&quot;margin-top:20px&quot;&gt;Latest replay&lt;/p&gt;
+&lt;h2 class=&quot;hd&quot; style=&quot;margin-top:6px;font-weight:700;font-size:32px;line-height:1.2;letter-spacing:-.01em&quot;&gt;Latest replay title (to be supplied)&lt;/h2&gt;
+&lt;p class=&quot;meta&quot; style=&quot;margin-top:8px&quot;&gt;Recorded date &amp;middot; Duration &amp;middot; Topic (all to be supplied)&lt;/p&gt;
+&lt;p style=&quot;margin-top:12px;max-width:60ch;color:#425068&quot;&gt;Two or three sentences on what this session covers, who it is for, and what you can do afterward. Supplied with the video.&lt;/p&gt;
+&lt;p style=&quot;margin-top:12px&quot;&gt;&lt;a href=&quot;#&quot; style=&quot;font-weight:600&quot;&gt;Open the topic page&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/section&gt;
+
+&lt;section class=&quot;wrap sec&quot; style=&quot;padding-bottom:96px&quot; aria-labelledby=&quot;lib&quot;&gt;
+&lt;div style=&quot;border-top:2px solid #04153A;padding-top:24px;display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap&quot;&gt;
+&lt;h2 id=&quot;lib&quot; class=&quot;hd&quot; style=&quot;font-weight:700;font-size:36px;line-height:1.2;letter-spacing:-.01em&quot;&gt;More replays&lt;/h2&gt;
+&lt;p class=&quot;meta&quot;&gt;11 more, newest first&lt;/p&gt;&lt;/div&gt;
+&lt;ol style=&quot;margin-top:20px;padding:0&quot;&gt;
+&lt;li class=&quot;row&quot; style=&quot;list-style:none&quot;&gt;
+&lt;div&gt;&lt;div class=&quot;ph&quot; role=&quot;img&quot; aria-label=&quot;Thumbnail placeholder for Replay title 02 (to be supplied)&quot;&gt;
+&lt;span class=&quot;tag&quot;&gt;Thumbnail placeholder&lt;/span&gt;
+&lt;span class=&quot;play sm&quot;&gt;&lt;svg width=&quot;22&quot; height=&quot;22&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;currentColor&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M9 6.5v11l9-5.5z&quot;/&gt;&lt;/svg&gt;&lt;/span&gt;
+&lt;span class=&quot;dur&quot;&gt;00:00&lt;/span&gt;
+&lt;span class=&quot;note&quot;&gt;16:9 poster image, self-hosted&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div&gt;
+&lt;h3 style=&quot;margin-top:0&quot;&gt;Replay title 02 (to be supplied)&lt;/h3&gt;
+&lt;p class=&quot;meta&quot; style=&quot;margin-top:8px&quot;&gt;Recorded date &amp;middot; Duration &amp;middot; Topic (all to be supplied)&lt;/p&gt;
+&lt;p class=&quot;d&quot;&gt;One or two sentences saying what this session covers and who it helps. Supplied with the video.&lt;/p&gt;
+&lt;a class=&quot;wl&quot; href=&quot;#&quot;&gt;&lt;svg width=&quot;18&quot; height=&quot;18&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;currentColor&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M9 6.5v11l9-5.5z&quot;/&gt;&lt;/svg&gt; Watch replay&lt;/a&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li class=&quot;row&quot; style=&quot;list-style:none&quot;&gt;
+&lt;div&gt;&lt;div class=&quot;ph&quot; role=&quot;img&quot; aria-label=&quot;Thumbnail placeholder for Replay title 03 (to be supplied)&quot;&gt;
+&lt;span class=&quot;tag&quot;&gt;Thumbnail placeholder&lt;/span&gt;
+&lt;span class=&quot;play sm&quot;&gt;&lt;svg width=&quot;22&quot; height=&quot;22&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;currentColor&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M9 6.5v11l9-5.5z&quot;/&gt;&lt;/svg&gt;&lt;/span&gt;
+&lt;span class=&quot;dur&quot;&gt;00:00&lt;/span&gt;
+&lt;span class=&quot;note&quot;&gt;16:9 poster image, self-hosted&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div&gt;
+&lt;h3 style=&quot;margin-top:0&quot;&gt;Replay title 03 (to be supplied)&lt;/h3&gt;
+&lt;p class=&quot;meta&quot; style=&quot;margin-top:8px&quot;&gt;Recorded date &amp;middot; Duration &amp;middot; Topic (all to be supplied)&lt;/p&gt;
+&lt;p class=&quot;d&quot;&gt;One or two sentences saying what this session covers and who it helps. Supplied with the video.&lt;/p&gt;
+&lt;a class=&quot;wl&quot; href=&quot;#&quot;&gt;&lt;svg width=&quot;18&quot; height=&quot;18&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;currentColor&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M9 6.5v11l9-5.5z&quot;/&gt;&lt;/svg&gt; Watch replay&lt;/a&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li class=&quot;row&quot; style=&quot;list-style:none&quot;&gt;
+&lt;div&gt;&lt;div class=&quot;ph&quot; role=&quot;img&quot; aria-label=&quot;Thumbnail placeholder for Replay title 04 (to be supplied)&quot;&gt;
+&lt;span class=&quot;tag&quot;&gt;Thumbnail placeholder&lt;/span&gt;
+&lt;span class=&quot;play sm&quot;&gt;&lt;svg width=&quot;22&quot; height=&quot;22&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;currentColor&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M9 6.5v11l9-5.5z&quot;/&gt;&lt;/svg&gt;&lt;/span&gt;
+&lt;span class=&quot;dur&quot;&gt;00:00&lt;/span&gt;
+&lt;span class=&quot;note&quot;&gt;16:9 poster image, self-hosted&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div&gt;
+&lt;h3 style=&quot;margin-top:0&quot;&gt;Replay title 04 (to be supplied)&lt;/h3&gt;
+&lt;p class=&quot;meta&quot; style=&quot;margin-top:8px&quot;&gt;Recorded date &amp;middot; Duration &amp;middot; Topic (all to be supplied)&lt;/p&gt;
+&lt;p class=&quot;d&quot;&gt;One or two sentences saying what this session covers and who it helps. Supplied with the video.&lt;/p&gt;
+&lt;a class=&quot;wl&quot; href=&quot;#&quot;&gt;&lt;svg width=&quot;18&quot; height=&quot;18&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;currentColor&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M9 6.5v11l9-5.5z&quot;/&gt;&lt;/svg&gt; Watch replay&lt;/a&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li class=&quot;row&quot; style=&quot;list-style:none&quot;&gt;
+&lt;div&gt;&lt;div class=&quot;ph&quot; role=&quot;img&quot; aria-label=&quot;Thumbnail placeholder for Replay title 05 (to be supplied)&quot;&gt;
+&lt;span class=&quot;tag&quot;&gt;Thumbnail placeholder&lt;/span&gt;
+&lt;span class=&quot;play sm&quot;&gt;&lt;svg width=&quot;22&quot; height=&quot;22&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;currentColor&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M9 6.5v11l9-5.5z&quot;/&gt;&lt;/svg&gt;&lt;/span&gt;
+&lt;span class=&quot;dur&quot;&gt;00:00&lt;/span&gt;
+&lt;span class=&quot;note&quot;&gt;16:9 poster image, self-hosted&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div&gt;
+&lt;h3 style=&quot;margin-top:0&quot;&gt;Replay title 05 (to be supplied)&lt;/h3&gt;
+&lt;p class=&quot;meta&quot; style=&quot;margin-top:8px&quot;&gt;Recorded date &amp;middot; Duration &amp;middot; Topic (all to be supplied)&lt;/p&gt;
+&lt;p class=&quot;d&quot;&gt;One or two sentences saying what this session covers and who it helps. Supplied with the video.&lt;/p&gt;
+&lt;a class=&quot;wl&quot; href=&quot;#&quot;&gt;&lt;svg width=&quot;18&quot; height=&quot;18&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;currentColor&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M9 6.5v11l9-5.5z&quot;/&gt;&lt;/svg&gt; Watch replay&lt;/a&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li class=&quot;row&quot; style=&quot;list-style:none&quot;&gt;
+&lt;div&gt;&lt;div class=&quot;ph&quot; role=&quot;img&quot; aria-label=&quot;Thumbnail placeholder for Replay title 06 (to be supplied)&quot;&gt;
+&lt;span class=&quot;tag&quot;&gt;Thumbnail placeholder&lt;/span&gt;
+&lt;span class=&quot;play sm&quot;&gt;&lt;svg width=&quot;22&quot; height=&quot;22&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;currentColor&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M9 6.5v11l9-5.5z&quot;/&gt;&lt;/svg&gt;&lt;/span&gt;
+&lt;span class=&quot;dur&quot;&gt;00:00&lt;/span&gt;
+&lt;span class=&quot;note&quot;&gt;16:9 poster image, self-hosted&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div&gt;
+&lt;h3 style=&quot;margin-top:0&quot;&gt;Replay title 06 (to be supplied)&lt;/h3&gt;
+&lt;p class=&quot;meta&quot; style=&quot;margin-top:8px&quot;&gt;Recorded date &amp;middot; Duration &amp;middot; Topic (all to be supplied)&lt;/p&gt;
+&lt;p class=&quot;d&quot;&gt;One or two sentences saying what this session covers and who it helps. Supplied with the video.&lt;/p&gt;
+&lt;a class=&quot;wl&quot; href=&quot;#&quot;&gt;&lt;svg width=&quot;18&quot; height=&quot;18&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;currentColor&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M9 6.5v11l9-5.5z&quot;/&gt;&lt;/svg&gt; Watch replay&lt;/a&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li class=&quot;row&quot; style=&quot;list-style:none&quot;&gt;
+&lt;div&gt;&lt;div class=&quot;ph&quot; role=&quot;img&quot; aria-label=&quot;Thumbnail placeholder for Replay title 07 (to be supplied)&quot;&gt;
+&lt;span class=&quot;tag&quot;&gt;Thumbnail placeholder&lt;/span&gt;
+&lt;span class=&quot;play sm&quot;&gt;&lt;svg width=&quot;22&quot; height=&quot;22&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;currentColor&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M9 6.5v11l9-5.5z&quot;/&gt;&lt;/svg&gt;&lt;/span&gt;
+&lt;span class=&quot;dur&quot;&gt;00:00&lt;/span&gt;
+&lt;span class=&quot;note&quot;&gt;16:9 poster image, self-hosted&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div&gt;
+&lt;h3 style=&quot;margin-top:0&quot;&gt;Replay title 07 (to be supplied)&lt;/h3&gt;
+&lt;p class=&quot;meta&quot; style=&quot;margin-top:8px&quot;&gt;Recorded date &amp;middot; Duration &amp;middot; Topic (all to be supplied)&lt;/p&gt;
+&lt;p class=&quot;d&quot;&gt;One or two sentences saying what this session covers and who it helps. Supplied with the video.&lt;/p&gt;
+&lt;a class=&quot;wl&quot; href=&quot;#&quot;&gt;&lt;svg width=&quot;18&quot; height=&quot;18&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;currentColor&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M9 6.5v11l9-5.5z&quot;/&gt;&lt;/svg&gt; Watch replay&lt;/a&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&quot;note-board&quot;&gt;Board note: rows 7 to 12 repeat this pattern. Real page renders all 11 library rows.&lt;/div&gt;
+&lt;/section&gt;
+
+&lt;section style=&quot;background:#EEF3FC;border-top:1px solid #D2DAE8;border-bottom:1px solid #D2DAE8&quot;&gt;&lt;div class=&quot;wrap sec&quot; style=&quot;padding-top:64px;padding-bottom:64px&quot;&gt;
+&lt;div class=&quot;g3&quot; style=&quot;display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);column-gap:56px&quot;&gt;
+&lt;h2 class=&quot;hd&quot; style=&quot;font-weight:700;font-size:32px;line-height:1.15;letter-spacing:-.01em&quot;&gt;Keep learning&lt;/h2&gt;
+&lt;ul style=&quot;list-style:none&quot;&gt;
+&lt;li class=&quot;qa&quot; style=&quot;border-top:2px solid #04153A&quot;&gt;&lt;a href=&quot;#&quot; style=&quot;font:700 18px &#x27;Manrope&#x27;,sans-serif&quot;&gt;Live training&lt;/a&gt;&lt;p style=&quot;margin-top:4px;color:#425068&quot;&gt;Learn with an instructor in a live format.&lt;/p&gt;&lt;/li&gt;
+&lt;li class=&quot;qa&quot;&gt;&lt;a href=&quot;#&quot; style=&quot;font:700 18px &#x27;Manrope&#x27;,sans-serif&quot;&gt;Browse training topics&lt;/a&gt;&lt;p style=&quot;margin-top:4px;color:#425068&quot;&gt;Find the topic a replay belongs to and what else we teach on it.&lt;/p&gt;&lt;/li&gt;
+&lt;li class=&quot;qa&quot; style=&quot;border-bottom:1px solid #D2DAE8&quot;&gt;&lt;a href=&quot;#&quot; style=&quot;font:700 18px &#x27;Manrope&#x27;,sans-serif&quot;&gt;Read the resources&lt;/a&gt;&lt;p style=&quot;margin-top:4px;color:#425068&quot;&gt;Guides, checklists, and templates that go with the training.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/div&gt;&lt;/div&gt;&lt;/section&gt;
+
+&lt;section class=&quot;wrap sec&quot; style=&quot;padding-top:96px;padding-bottom:96px&quot; aria-labelledby=&quot;faq&quot;&gt;
+&lt;div class=&quot;g3&quot; style=&quot;display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);column-gap:56px&quot;&gt;
+&lt;h2 id=&quot;faq&quot; class=&quot;hd&quot; style=&quot;font-weight:700;font-size:32px;line-height:1.15;letter-spacing:-.01em&quot;&gt;Questions about replays&lt;/h2&gt;
+&lt;div style=&quot;border-top:2px solid #04153A&quot;&gt;
+&lt;details class=&quot;qa&quot; open style=&quot;border-top:0&quot;&gt;&lt;summary&gt;What is a session replay?&lt;/summary&gt;&lt;p&gt;A recording of a past Agency Back Office session, published here so you can watch it later.&lt;/p&gt;&lt;/details&gt;
+&lt;details class=&quot;qa&quot;&gt;&lt;summary&gt;Do I need an account to watch?&lt;/summary&gt;&lt;p&gt;No. Replays on this page play without signing in.&lt;/p&gt;&lt;/details&gt;
+&lt;details class=&quot;qa&quot; style=&quot;border-bottom:1px solid #D2DAE8&quot;&gt;&lt;summary&gt;Can I ask a question about a replay?&lt;/summary&gt;&lt;p&gt;Yes. Use the &lt;a href=&quot;#&quot;&gt;contact page&lt;/a&gt; and name the replay you watched.&lt;/p&gt;&lt;/details&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/section&gt;
+
+&lt;section style=&quot;background:#04153A;color:#fff&quot;&gt;&lt;div class=&quot;wrap sec&quot; style=&quot;padding-top:80px;padding-bottom:80px&quot;&gt;
+&lt;h2 class=&quot;hd&quot; style=&quot;font-weight:700;font-size:36px;line-height:1.15;letter-spacing:-.01em;max-width:20ch;color:#fff&quot;&gt;Ready to go beyond the replays?&lt;/h2&gt;
+&lt;p style=&quot;margin-top:16px;color:#C9D4EA;max-width:50ch&quot;&gt;See how to get started with Agency Back Office training.&lt;/p&gt;
+&lt;p style=&quot;margin-top:28px&quot;&gt;&lt;a class=&quot;btn&quot; href=&quot;#&quot; style=&quot;border-color:#7BA7FF&quot;&gt;Get started&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;/section&gt;
+&lt;/main&gt;
+&lt;footer style=&quot;background:#04153A;border-top:1px solid #0A2352;color:#C9D4EA&quot;&gt;&lt;div class=&quot;wrap&quot; style=&quot;padding-top:28px;padding-bottom:28px;font-size:14px&quot;&gt;Footer reuses the existing component (Company group: About, Reviews, Contact, Get Started).&lt;/div&gt;&lt;/footer&gt;
+&lt;/body&gt;&lt;/html&gt;"></iframe>
+<h2>Mobile (390px)</h2><iframe title="Mobile (390px)" width="390" height="4600" srcdoc="&lt;!doctype html&gt;&lt;html lang=&quot;en&quot;&gt;&lt;head&gt;&lt;meta charset=&quot;utf-8&quot;&gt;&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1&quot;&gt;
+&lt;link href=&quot;https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@600;700;800&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;style&gt;
+*{box-sizing:border-box}
+body{margin:0;font-family:&#x27;Inter&#x27;,system-ui,sans-serif;color:#04153A;background:#FFFFFF;font-size:17px;line-height:1.65}
+h1,h2,h3,p,ol,ul{margin:0;padding:0}
+a{color:#0360FC} a:hover{color:#024BC9}
+.hd{font-family:&#x27;Manrope&#x27;,system-ui,sans-serif}
+.label{font:600 13px/1.4 &#x27;Manrope&#x27;,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#425068}
+.wrap{max-width:1200px;margin:0 auto;padding:0 32px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 28px;background:#0360FC;color:#fff;font:700 16px &#x27;Manrope&#x27;,sans-serif;border:2px solid #0360FC;border-radius:4px;text-decoration:none}
+.btn:hover{background:#024BC9;border-color:#024BC9;color:#fff}
+.btn-out{display:inline-flex;align-items:center;min-height:44px;padding:0 20px;color:#0360FC;font:700 15px &#x27;Manrope&#x27;,sans-serif;border:2px solid #0360FC;border-radius:4px;text-decoration:none}
+.navlink{color:#04153A;text-decoration:none;font-weight:500;font-size:15px}
+.meta{font-size:14px;line-height:1.5;color:#425068}
+.ph{position:relative;aspect-ratio:16/9;background:#E6EAF0;border:1px dashed #8D99AB;border-radius:4px;display:flex;align-items:center;justify-content:center;color:#425068;overflow:hidden}
+.ph.dk{background:#0A2352;border-color:#7BA7FF;color:#C9D4EA}
+.ph .note{position:absolute;left:12px;bottom:10px;right:12px;font-size:13px;line-height:1.4}
+.ph .tag{position:absolute;left:12px;top:10px;font:600 12px &#x27;Manrope&#x27;,sans-serif;letter-spacing:.08em;text-transform:uppercase}
+.play{width:64px;height:64px;border-radius:50%;background:#0360FC;color:#fff;border:2px solid #fff;display:flex;align-items:center;justify-content:center}
+.play.sm{width:48px;height:48px}
+.dur{position:absolute;right:10px;bottom:10px;background:#04153A;color:#fff;font:600 13px &#x27;Inter&#x27;,sans-serif;padding:2px 8px;border-radius:2px}
+.row{display:grid;grid-template-columns:320px minmax(0,1fr);column-gap:32px;padding:28px 0;border-top:1px solid #D2DAE8;align-items:start}
+.row:last-child{border-bottom:1px solid #D2DAE8}
+.row h3{font:700 22px/1.25 &#x27;Manrope&#x27;,sans-serif;letter-spacing:-.01em;margin-top:6px}
+.row p.d{margin-top:10px;max-width:60ch;color:#425068;font-size:16px;line-height:1.6}
+.wl{display:inline-flex;align-items:center;gap:8px;margin-top:14px;min-height:44px;font:700 15px &#x27;Manrope&#x27;,sans-serif;color:#0360FC;text-decoration:underline}
+.qa{border-top:1px solid #D2DAE8;padding:18px 0}
+.qa summary{font:700 18px/1.35 &#x27;Manrope&#x27;,sans-serif;cursor:pointer;min-height:44px}
+.qa p{margin-top:10px;max-width:60ch;color:#425068}
+a:focus-visible,summary:focus-visible{outline:3px solid #0360FC;outline-offset:2px}
+.note-board{background:#EEF3FC;border:1px solid #D2DAE8;border-radius:4px;padding:14px 18px;margin:8px 0;font-size:14px;color:#425068}
+@media (max-width:980px){.row{grid-template-columns:240px minmax(0,1fr);column-gap:24px}}
+@media (max-width:720px){
+ .wrap{padding:0 20px}
+ .row{grid-template-columns:1fr;row-gap:16px;padding:24px 0}
+ .g2,.g3{grid-template-columns:1fr !important;row-gap:24px !important}
+ .sec{padding-top:64px !important;padding-bottom:64px !important}
+ nav.pri{display:none !important}
+ .menu{display:flex !important}
+ h1.hd{font-size:36px !important}
+}
+.menu{display:none;width:48px;height:48px;border:1px solid #6B7A94;border-radius:4px;align-items:center;justify-content:center}
+&lt;/style&gt;&lt;/head&gt;&lt;body&gt;
+&lt;header style=&quot;border-bottom:1px solid #D2DAE8&quot;&gt;&lt;div class=&quot;wrap&quot; style=&quot;display:flex;align-items:center;justify-content:space-between;height:72px&quot;&gt;
+&lt;a href=&quot;#&quot; aria-label=&quot;Agency Back Office home&quot; style=&quot;display:flex;align-items:center;gap:12px;text-decoration:none;color:#04153A&quot;&gt;
+&lt;span style=&quot;width:40px;height:40px;background:#04153A;border-radius:4px;display:flex;align-items:center;justify-content:center;color:#7BA7FF;font:800 15px &#x27;Manrope&#x27;,sans-serif&quot;&gt;ABO&lt;/span&gt;
+&lt;span class=&quot;hd&quot; style=&quot;font-weight:800;font-size:20px;letter-spacing:-.01em&quot;&gt;Agency Back Office&lt;/span&gt;&lt;/a&gt;
+&lt;nav class=&quot;pri&quot; aria-label=&quot;Primary&quot; style=&quot;display:flex;align-items:center;gap:32px&quot;&gt;
+&lt;a class=&quot;navlink&quot; href=&quot;#&quot; aria-current=&quot;page&quot; style=&quot;font-weight:600&quot;&gt;Training&lt;/a&gt;&lt;a class=&quot;navlink&quot; href=&quot;#&quot;&gt;Topics&lt;/a&gt;&lt;a class=&quot;navlink&quot; href=&quot;#&quot;&gt;Who We Help&lt;/a&gt;&lt;a class=&quot;navlink&quot; href=&quot;#&quot;&gt;Resources&lt;/a&gt;&lt;a class=&quot;navlink&quot; href=&quot;#&quot;&gt;About&lt;/a&gt;&lt;a class=&quot;btn-out&quot; href=&quot;#&quot;&gt;Get Started&lt;/a&gt;&lt;/nav&gt;
+&lt;span class=&quot;menu&quot; aria-label=&quot;Menu&quot;&gt;&lt;svg width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.75&quot; stroke-linecap=&quot;round&quot;&gt;&lt;path d=&quot;M4 7h16M4 12h16M4 17h16&quot;/&gt;&lt;/svg&gt;&lt;/span&gt;
+&lt;/div&gt;&lt;/header&gt;
+&lt;main&gt;
+&lt;div class=&quot;wrap&quot; style=&quot;padding-top:24px&quot;&gt;&lt;nav aria-label=&quot;Breadcrumb&quot; style=&quot;font-size:14px;color:#425068&quot;&gt;&lt;ol style=&quot;list-style:none;display:flex;gap:8px;flex-wrap:wrap&quot;&gt;&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;&lt;li aria-hidden=&quot;true&quot;&gt;/&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Training&lt;/a&gt;&lt;/li&gt;&lt;li aria-hidden=&quot;true&quot;&gt;/&lt;/li&gt;&lt;li aria-current=&quot;page&quot; style=&quot;color:#04153A;font-weight:500&quot;&gt;Sessions&lt;/li&gt;&lt;/ol&gt;&lt;/nav&gt;&lt;/div&gt;
+
+&lt;section class=&quot;wrap sec&quot; style=&quot;padding-top:32px;padding-bottom:80px&quot;&gt;
+&lt;div class=&quot;g2&quot; style=&quot;display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);column-gap:56px;align-items:start&quot;&gt;
+&lt;div style=&quot;border-top:2px solid #04153A;padding-top:20px&quot;&gt;
+&lt;p class=&quot;label&quot;&gt;Sessions&lt;/p&gt;
+&lt;h1 class=&quot;hd&quot; style=&quot;margin-top:16px;font-weight:700;font-size:36px;line-height:1.1;letter-spacing:-.02em&quot;&gt;Session replays&lt;/h1&gt;
+&lt;p style=&quot;margin-top:20px;font-size:20px;line-height:1.55;color:#425068;max-width:44ch&quot;&gt;Watch recordings of past Agency Back Office sessions on your own schedule.&lt;/p&gt;
+&lt;p style=&quot;margin-top:16px;font-size:17px;color:#425068;max-width:44ch&quot;&gt;Newest first. Each one plays on this page, with no sign-in.&lt;/p&gt;
+&lt;p style=&quot;margin-top:20px&quot;&gt;&lt;a href=&quot;#&quot; style=&quot;font-weight:600&quot;&gt;Prefer to learn live? See live training&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div style=&quot;border-top:2px solid #04153A;padding-top:20px&quot;&gt;
+&lt;div class=&quot;ph dk&quot; role=&quot;img&quot; aria-label=&quot;Thumbnail placeholder for the latest replay&quot;&gt;
+&lt;span class=&quot;tag&quot;&gt;Thumbnail placeholder&lt;/span&gt;
+&lt;span class=&quot;play&quot;&gt;&lt;svg width=&quot;28&quot; height=&quot;28&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;currentColor&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M9 6.5v11l9-5.5z&quot;/&gt;&lt;/svg&gt;&lt;/span&gt;
+&lt;span class=&quot;dur&quot;&gt;00:00&lt;/span&gt;
+&lt;span class=&quot;note&quot;&gt;16:9 poster image, self-hosted&lt;/span&gt;&lt;/div&gt;
+&lt;p class=&quot;label&quot; style=&quot;margin-top:20px&quot;&gt;Latest replay&lt;/p&gt;
+&lt;h2 class=&quot;hd&quot; style=&quot;margin-top:6px;font-weight:700;font-size:26px;line-height:1.2;letter-spacing:-.01em&quot;&gt;Latest replay title (to be supplied)&lt;/h2&gt;
+&lt;p class=&quot;meta&quot; style=&quot;margin-top:8px&quot;&gt;Recorded date &amp;middot; Duration &amp;middot; Topic (all to be supplied)&lt;/p&gt;
+&lt;p style=&quot;margin-top:12px;max-width:60ch;color:#425068&quot;&gt;Two or three sentences on what this session covers, who it is for, and what you can do afterward. Supplied with the video.&lt;/p&gt;
+&lt;p style=&quot;margin-top:12px&quot;&gt;&lt;a href=&quot;#&quot; style=&quot;font-weight:600&quot;&gt;Open the topic page&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/section&gt;
+
+&lt;section class=&quot;wrap sec&quot; style=&quot;padding-bottom:96px&quot; aria-labelledby=&quot;lib&quot;&gt;
+&lt;div style=&quot;border-top:2px solid #04153A;padding-top:24px;display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap&quot;&gt;
+&lt;h2 id=&quot;lib&quot; class=&quot;hd&quot; style=&quot;font-weight:700;font-size:28px;line-height:1.2;letter-spacing:-.01em&quot;&gt;More replays&lt;/h2&gt;
+&lt;p class=&quot;meta&quot;&gt;11 more, newest first&lt;/p&gt;&lt;/div&gt;
+&lt;ol style=&quot;margin-top:20px;padding:0&quot;&gt;
+&lt;li class=&quot;row&quot; style=&quot;list-style:none&quot;&gt;
+&lt;div&gt;&lt;div class=&quot;ph&quot; role=&quot;img&quot; aria-label=&quot;Thumbnail placeholder for Replay title 02 (to be supplied)&quot;&gt;
+&lt;span class=&quot;tag&quot;&gt;Thumbnail placeholder&lt;/span&gt;
+&lt;span class=&quot;play sm&quot;&gt;&lt;svg width=&quot;22&quot; height=&quot;22&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;currentColor&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M9 6.5v11l9-5.5z&quot;/&gt;&lt;/svg&gt;&lt;/span&gt;
+&lt;span class=&quot;dur&quot;&gt;00:00&lt;/span&gt;
+&lt;span class=&quot;note&quot;&gt;16:9 poster image, self-hosted&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div&gt;
+&lt;h3 style=&quot;margin-top:0&quot;&gt;Replay title 02 (to be supplied)&lt;/h3&gt;
+&lt;p class=&quot;meta&quot; style=&quot;margin-top:8px&quot;&gt;Recorded date &amp;middot; Duration &amp;middot; Topic (all to be supplied)&lt;/p&gt;
+&lt;p class=&quot;d&quot;&gt;One or two sentences saying what this session covers and who it helps. Supplied with the video.&lt;/p&gt;
+&lt;a class=&quot;wl&quot; href=&quot;#&quot;&gt;&lt;svg width=&quot;18&quot; height=&quot;18&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;currentColor&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M9 6.5v11l9-5.5z&quot;/&gt;&lt;/svg&gt; Watch replay&lt;/a&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li class=&quot;row&quot; style=&quot;list-style:none&quot;&gt;
+&lt;div&gt;&lt;div class=&quot;ph&quot; role=&quot;img&quot; aria-label=&quot;Thumbnail placeholder for Replay title 03 (to be supplied)&quot;&gt;
+&lt;span class=&quot;tag&quot;&gt;Thumbnail placeholder&lt;/span&gt;
+&lt;span class=&quot;play sm&quot;&gt;&lt;svg width=&quot;22&quot; height=&quot;22&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;currentColor&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M9 6.5v11l9-5.5z&quot;/&gt;&lt;/svg&gt;&lt;/span&gt;
+&lt;span class=&quot;dur&quot;&gt;00:00&lt;/span&gt;
+&lt;span class=&quot;note&quot;&gt;16:9 poster image, self-hosted&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div&gt;
+&lt;h3 style=&quot;margin-top:0&quot;&gt;Replay title 03 (to be supplied)&lt;/h3&gt;
+&lt;p class=&quot;meta&quot; style=&quot;margin-top:8px&quot;&gt;Recorded date &amp;middot; Duration &amp;middot; Topic (all to be supplied)&lt;/p&gt;
+&lt;p class=&quot;d&quot;&gt;One or two sentences saying what this session covers and who it helps. Supplied with the video.&lt;/p&gt;
+&lt;a class=&quot;wl&quot; href=&quot;#&quot;&gt;&lt;svg width=&quot;18&quot; height=&quot;18&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;currentColor&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M9 6.5v11l9-5.5z&quot;/&gt;&lt;/svg&gt; Watch replay&lt;/a&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li class=&quot;row&quot; style=&quot;list-style:none&quot;&gt;
+&lt;div&gt;&lt;div class=&quot;ph&quot; role=&quot;img&quot; aria-label=&quot;Thumbnail placeholder for Replay title 04 (to be supplied)&quot;&gt;
+&lt;span class=&quot;tag&quot;&gt;Thumbnail placeholder&lt;/span&gt;
+&lt;span class=&quot;play sm&quot;&gt;&lt;svg width=&quot;22&quot; height=&quot;22&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;currentColor&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M9 6.5v11l9-5.5z&quot;/&gt;&lt;/svg&gt;&lt;/span&gt;
+&lt;span class=&quot;dur&quot;&gt;00:00&lt;/span&gt;
+&lt;span class=&quot;note&quot;&gt;16:9 poster image, self-hosted&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div&gt;
+&lt;h3 style=&quot;margin-top:0&quot;&gt;Replay title 04 (to be supplied)&lt;/h3&gt;
+&lt;p class=&quot;meta&quot; style=&quot;margin-top:8px&quot;&gt;Recorded date &amp;middot; Duration &amp;middot; Topic (all to be supplied)&lt;/p&gt;
+&lt;p class=&quot;d&quot;&gt;One or two sentences saying what this session covers and who it helps. Supplied with the video.&lt;/p&gt;
+&lt;a class=&quot;wl&quot; href=&quot;#&quot;&gt;&lt;svg width=&quot;18&quot; height=&quot;18&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;currentColor&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M9 6.5v11l9-5.5z&quot;/&gt;&lt;/svg&gt; Watch replay&lt;/a&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li class=&quot;row&quot; style=&quot;list-style:none&quot;&gt;
+&lt;div&gt;&lt;div class=&quot;ph&quot; role=&quot;img&quot; aria-label=&quot;Thumbnail placeholder for Replay title 05 (to be supplied)&quot;&gt;
+&lt;span class=&quot;tag&quot;&gt;Thumbnail placeholder&lt;/span&gt;
+&lt;span class=&quot;play sm&quot;&gt;&lt;svg width=&quot;22&quot; height=&quot;22&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;currentColor&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M9 6.5v11l9-5.5z&quot;/&gt;&lt;/svg&gt;&lt;/span&gt;
+&lt;span class=&quot;dur&quot;&gt;00:00&lt;/span&gt;
+&lt;span class=&quot;note&quot;&gt;16:9 poster image, self-hosted&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div&gt;
+&lt;h3 style=&quot;margin-top:0&quot;&gt;Replay title 05 (to be supplied)&lt;/h3&gt;
+&lt;p class=&quot;meta&quot; style=&quot;margin-top:8px&quot;&gt;Recorded date &amp;middot; Duration &amp;middot; Topic (all to be supplied)&lt;/p&gt;
+&lt;p class=&quot;d&quot;&gt;One or two sentences saying what this session covers and who it helps. Supplied with the video.&lt;/p&gt;
+&lt;a class=&quot;wl&quot; href=&quot;#&quot;&gt;&lt;svg width=&quot;18&quot; height=&quot;18&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;currentColor&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M9 6.5v11l9-5.5z&quot;/&gt;&lt;/svg&gt; Watch replay&lt;/a&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&quot;note-board&quot;&gt;Board note: rows 6 to 12 repeat this pattern. Real page renders all 11 library rows.&lt;/div&gt;
+&lt;/section&gt;
+
+&lt;section style=&quot;background:#EEF3FC;border-top:1px solid #D2DAE8;border-bottom:1px solid #D2DAE8&quot;&gt;&lt;div class=&quot;wrap sec&quot; style=&quot;padding-top:64px;padding-bottom:64px&quot;&gt;
+&lt;div class=&quot;g3&quot; style=&quot;display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);column-gap:56px&quot;&gt;
+&lt;h2 class=&quot;hd&quot; style=&quot;font-weight:700;font-size:26px;line-height:1.15;letter-spacing:-.01em&quot;&gt;Keep learning&lt;/h2&gt;
+&lt;ul style=&quot;list-style:none&quot;&gt;
+&lt;li class=&quot;qa&quot; style=&quot;border-top:2px solid #04153A&quot;&gt;&lt;a href=&quot;#&quot; style=&quot;font:700 18px &#x27;Manrope&#x27;,sans-serif&quot;&gt;Live training&lt;/a&gt;&lt;p style=&quot;margin-top:4px;color:#425068&quot;&gt;Learn with an instructor in a live format.&lt;/p&gt;&lt;/li&gt;
+&lt;li class=&quot;qa&quot;&gt;&lt;a href=&quot;#&quot; style=&quot;font:700 18px &#x27;Manrope&#x27;,sans-serif&quot;&gt;Browse training topics&lt;/a&gt;&lt;p style=&quot;margin-top:4px;color:#425068&quot;&gt;Find the topic a replay belongs to and what else we teach on it.&lt;/p&gt;&lt;/li&gt;
+&lt;li class=&quot;qa&quot; style=&quot;border-bottom:1px solid #D2DAE8&quot;&gt;&lt;a href=&quot;#&quot; style=&quot;font:700 18px &#x27;Manrope&#x27;,sans-serif&quot;&gt;Read the resources&lt;/a&gt;&lt;p style=&quot;margin-top:4px;color:#425068&quot;&gt;Guides, checklists, and templates that go with the training.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/div&gt;&lt;/div&gt;&lt;/section&gt;
+
+&lt;section class=&quot;wrap sec&quot; style=&quot;padding-top:96px;padding-bottom:96px&quot; aria-labelledby=&quot;faq&quot;&gt;
+&lt;div class=&quot;g3&quot; style=&quot;display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);column-gap:56px&quot;&gt;
+&lt;h2 id=&quot;faq&quot; class=&quot;hd&quot; style=&quot;font-weight:700;font-size:26px;line-height:1.15;letter-spacing:-.01em&quot;&gt;Questions about replays&lt;/h2&gt;
+&lt;div style=&quot;border-top:2px solid #04153A&quot;&gt;
+&lt;details class=&quot;qa&quot; open style=&quot;border-top:0&quot;&gt;&lt;summary&gt;What is a session replay?&lt;/summary&gt;&lt;p&gt;A recording of a past Agency Back Office session, published here so you can watch it later.&lt;/p&gt;&lt;/details&gt;
+&lt;details class=&quot;qa&quot;&gt;&lt;summary&gt;Do I need an account to watch?&lt;/summary&gt;&lt;p&gt;No. Replays on this page play without signing in.&lt;/p&gt;&lt;/details&gt;
+&lt;details class=&quot;qa&quot; style=&quot;border-bottom:1px solid #D2DAE8&quot;&gt;&lt;summary&gt;Can I ask a question about a replay?&lt;/summary&gt;&lt;p&gt;Yes. Use the &lt;a href=&quot;#&quot;&gt;contact page&lt;/a&gt; and name the replay you watched.&lt;/p&gt;&lt;/details&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/section&gt;
+
+&lt;section style=&quot;background:#04153A;color:#fff&quot;&gt;&lt;div class=&quot;wrap sec&quot; style=&quot;padding-top:80px;padding-bottom:80px&quot;&gt;
+&lt;h2 class=&quot;hd&quot; style=&quot;font-weight:700;font-size:28px;line-height:1.15;letter-spacing:-.01em;max-width:20ch;color:#fff&quot;&gt;Ready to go beyond the replays?&lt;/h2&gt;
+&lt;p style=&quot;margin-top:16px;color:#C9D4EA;max-width:50ch&quot;&gt;See how to get started with Agency Back Office training.&lt;/p&gt;
+&lt;p style=&quot;margin-top:28px&quot;&gt;&lt;a class=&quot;btn&quot; href=&quot;#&quot; style=&quot;border-color:#7BA7FF&quot;&gt;Get started&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;/section&gt;
+&lt;/main&gt;
+&lt;footer style=&quot;background:#04153A;border-top:1px solid #0A2352;color:#C9D4EA&quot;&gt;&lt;div class=&quot;wrap&quot; style=&quot;padding-top:28px;padding-bottom:28px;font-size:14px&quot;&gt;Footer reuses the existing component (Company group: About, Reviews, Contact, Get Started).&lt;/div&gt;&lt;/footer&gt;
+&lt;/body&gt;&lt;/html&gt;"></iframe>
+</body></html>

@@ -68,6 +68,7 @@ Defined in `styles/globals.css`.
 | H1 | `clamp(2.25rem, 1.6rem + 2.6vw, 3.5rem)` | Manrope 700, tracking -0.02em | 1.1 |
 | H2 | `clamp(1.75rem, 1.4rem + 1.4vw, 2.25rem)` | Manrope 700 | 1.2 |
 | H3 | 1.25rem | Manrope 600 | 1.3 |
+| Replay title (Sessions library H3) | 1.375rem | Manrope 700 | 1.25 |
 | Definition term | 1.5rem | Manrope 700 | 1.2 |
 | Step numeral | 2.5rem | Manrope 800, tracking -0.02em | 1 |
 | Body | 1.0625rem | Inter 400 | 1.65 |
@@ -131,6 +132,15 @@ Used by conversion pages. All controls are native elements at least 48px tall wi
 - **Clear answer:** the Back styling, placed under an optional pill group. Shown only after an answer is chosen. Clears the group and returns focus to its first pill. Fires no analytics event.
 - **Annotated example:** `tint` panel with a 1px `rule` border, `highlight` spans with small numbered `ink` badges, and a numbered list of callouts below.
 
+## Replay Player and Library
+
+Used on `/training/sessions/`. Styles are scoped with the `rp-` prefix.
+
+- **Screen:** a fixed 16:9 box holding the self-hosted poster (or the image placeholder, dark for the latest replay), a circular play marker (64px latest, 48px rows), and the duration in the bottom right corner. The player replaces the poster in the same box, so nothing shifts.
+- **Library:** a ruled list, not a card grid. Each row has a 320px thumbnail column (240px at 980px) and stacks at 720px and below.
+- **Chapters:** a ruled list labelled "In this replay", under the latest player and under the details in a library row. Rendered only when a replay has chapters.
+- **Focus:** 3px `accent` outline with 2px offset (`accent-on-dark` on navy).
+
 ## Ruled-Line Motif
 
 Structure comes from lines, not boxes. A 2px `ink` rule opens tables, lists, and FAQ columns. 1px `rule` hairlines separate rows. Group labels sit on a 2px rule. Use this motif for lists, tables, and row layouts before reaching for a card.
@@ -161,9 +171,10 @@ Added 2026-10-25. This supersedes the earlier "no scroll-triggered animation" gu
 Added 2026-10-25. Icons are functional only.
 
 - Inline SVG on a 24px grid, 1.75px stroke, round caps and joins, `currentColor`, `aria-hidden` by default.
-- Allowed uses: the resources table, training formats, the process loop bar, and menu, arrow, external-link, and download markers. Conversion pages also use check (selected pill), alert (errors), and the message, layers, and file icons that label rows on Contact.
+- Allowed uses: the resources table, training formats, the process loop bar, and menu, arrow, external-link, download, and replay play-control markers. Conversion pages also use check (selected pill), alert (errors), and the message, layers, and file icons that label rows on Contact.
 - Do not use icons as decoration or build an icon collection. Do not add an icon library.
 - Set: live (broadcast), calendar, book (guides), checklist, template, glossary, help (FAQ), edit (blog), loop, menu, arrow, external, download. Live, calendar, book, checklist, template, glossary, help, edit, and loop come from the approved reference. Menu, arrow, external, and download are drawn in the same style.
+- Play (added with the Sessions page): a filled triangle on the same 24px grid in `currentColor`, as the Sessions design reference shows. It is the one filled icon. Use it only on play controls, never as decoration.
 
 ## Avoid Generic AI/SaaS Patterns
 

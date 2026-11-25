@@ -1,7 +1,11 @@
 import type { contactEvents } from "@/data/contact";
+import type { sessionsEvents } from "@/data/sessions";
+
+type EventsOf<T> = T[keyof T];
 
 export type AnalyticsEventName =
-  (typeof contactEvents)[keyof typeof contactEvents];
+  | EventsOf<typeof contactEvents>
+  | EventsOf<typeof sessionsEvents>;
 
 // Only short, non-identifying values. Never pass a name, phone number, email
 // address, message text, or any other typed value (docs/analytics-measurement.md).

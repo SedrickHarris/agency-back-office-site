@@ -77,6 +77,8 @@ const paths = {
       <path d="M14 3v5h5M10 13h6M10 17h6" />
     </>
   ),
+  // Filled, unlike the stroked set. Used only on replay play controls.
+  play: <path d="M9 6.5v11l9-5.5z" fill="currentColor" stroke="none" />,
   check: <path d="M5 12.5l4.5 4.5L19 7.5" />,
   "check-circle": (
     <>

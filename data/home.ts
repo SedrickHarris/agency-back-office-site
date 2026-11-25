@@ -428,6 +428,7 @@ export const closingCta = {
 export const footer = {
   line: "Agency Back Office. Home content last reviewed",
   links: [
+    { label: "Session replays", href: "/training/sessions/" },
     { label: "About", href: "/about/" },
     // Real, verified reviews only. Text until the page exists.
     { label: "Reviews", href: "/reviews/" },

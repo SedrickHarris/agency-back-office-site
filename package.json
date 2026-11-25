@@ -13,7 +13,8 @@
     "test": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --test \"tests/*.test.mts\"",
     "links:home": "node scripts/check-home-links.mjs",
     "links:contact": "node scripts/check-contact-page.mjs",
-    "check": "npm run lint && npm run typecheck && npm run test && npm run build && npm run links:home && npm run links:contact"
+    "links:sessions": "node scripts/check-sessions-page.mjs",
+    "check": "npm run lint && npm run typecheck && npm run test && npm run build && npm run links:home && npm run links:contact && npm run links:sessions"
   },
   "dependencies": {
     "next": "^16.4.3",

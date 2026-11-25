@@ -61,6 +61,16 @@ Recommended for `/contact/`:
 
 Do not add `contactPoint` until a public contact method is supplied. Do not add `LocalBusiness`, `FAQPage`, or `sameAs`. Render only when the site URL is set.
 
+## Sessions Page Schema
+
+Recommended for `/training/sessions/`:
+
+- `CollectionPage` with name, URL, description, and `isPartOf` the WebSite
+- `BreadcrumbList` matching the visible breadcrumb (Home, Training, Sessions)
+- One `VideoObject` per replay on the page with complete data: `name`, `description`, `thumbnailUrl` (absolute URL of the self-hosted poster), `uploadDate` (the recorded date), `duration`, and `embedUrl` (`youtube-nocookie.com`). A replay without a poster gets no `VideoObject`.
+
+Do not add `contentUrl`, `FAQPage`, `Course`, `Review`, ratings, `sameAs`, or view counts. Render only when the site URL is set. Built in `lib/schema/sessions.ts`.
+
 ## Review Schema
 
 Do not add `Review` or `AggregateRating` until real, verified reviews are visible on the page.

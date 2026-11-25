@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { CONTACT_PATH } from "@/data/contact";
+import { SESSIONS_PATH } from "@/data/sessions";
 import { absoluteUrl, isProductionBuild } from "@/lib/site";
 
 export const dynamic = "force-static";
@@ -12,5 +13,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // /contact/ is listed only here, after the launch gate. /api/contact is a
   // non-page endpoint and is never listed.
-  return [{ url: absoluteUrl("/") }, { url: absoluteUrl(CONTACT_PATH) }];
+  return [
+    { url: absoluteUrl("/") },
+    { url: absoluteUrl(CONTACT_PATH) },
+    { url: absoluteUrl(SESSIONS_PATH) },
+  ];
 }
